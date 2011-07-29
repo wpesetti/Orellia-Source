@@ -51,6 +51,7 @@ class ConversationUI(UIBase):
                 
                 #hide other UI components
                 self.hideotherUI()
+                self.world.disableMovement(self.world.hero);
                 playChoices = self.world.conversationMgr.getValidResponses()    
                 textwrap = 110
                 if npc_t =="":#there is no npc chat
@@ -74,6 +75,7 @@ class ConversationUI(UIBase):
             self.radioButtonList.destroy()
             self.playerbgFrame.destroy()
             self.npcbgFrame.destroy()
+            self.world.enableMovement(self.world.hero);
          
             if self.syncedWithConvoMgr:
                 self.syncedWithConvoMgr = False

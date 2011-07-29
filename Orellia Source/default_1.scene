@@ -1700,13 +1700,13 @@
 			</script>
 			<script>
 				<triggerType>
-					LE-trigger-onScene
+					LE-trigger-onCollision
 				</triggerType>
 				<scriptName>
 					worldFunc
 				</scriptName>
 				<parameter>
-					setMountainHeight(74)
+					setMountainHeight(109)
 				</parameter>
 				<parameter>
 					
@@ -2470,136 +2470,6 @@
 				ext_mushroomTree_alt1
 			</asset>
 		</staticmesh>
-		<actor>
-			<name>
-				Meredith
-			</name>
-			<parent>
-				*render
-			</parent>
-			<pos>
-				<x>
-					276.993011475
-				</x>
-				<y>
-					558.37097168
-				</y>
-				<z>
-					37.4735794067
-				</z>
-			</pos>
-			<scale>
-				<x>
-					1.0
-				</x>
-				<y>
-					1.0
-				</y>
-				<z>
-					1.0
-				</z>
-			</scale>
-			<hpr>
-				<x>
-					75.9728622437
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					-0.0
-				</z>
-			</hpr>
-			<shear>
-				<x>
-					0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					0.0
-				</z>
-			</shear>
-			<colorScale>
-				<a>
-					1.0
-				</a>
-				<r>
-					1.0
-				</r>
-				<g>
-					1.0
-				</g>
-				<b>
-					1.0
-				</b>
-			</colorScale>
-			<tag>
-				<key>
-					LE-aggression
-				</key>
-				<tag>
-					0
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-currentHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-maxHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					OBJRoot
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					function
-				</key>
-				<tag>
-					talkToNpc(&quot;meredithconv1&quot;)
-				</tag>
-			</tag>
-			<transparency>
-				0
-			</transparency>
-			<asset>
-				character_female
-			</asset>
-			<currentAnim>
-				anim_chargeFemale
-			</currentAnim>
-			<isLooping>
-				False
-			</isLooping>
-			<isPlaying>
-				False
-			</isPlaying>
-			<playRate>
-				1.0
-			</playRate>
-			<isPosed>
-				False
-			</isPosed>
-			<frame>
-				0
-			</frame>
-		</actor>
 		<staticmesh>
 			<name>
 				ext_splitMushroom:1
@@ -3120,22 +2990,22 @@
 				ext_splitMushroom_alt1
 			</asset>
 		</staticmesh>
-		<staticmesh>
+		<actor>
 			<name>
-				ext_splitMushroom_alt1:1
+				Mredith
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					281.210327148
+					276.993011475
 				</x>
 				<y>
-					357.649536133
+					558.37097168
 				</y>
 				<z>
-					31.1931667328
+					37.4735794067
 				</z>
 			</pos>
 			<scale>
@@ -3151,13 +3021,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					75.9728622437
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -3217,13 +3087,39 @@
 					1
 				</tag>
 			</tag>
+			<tag>
+				<key>
+					function
+				</key>
+				<tag>
+					talkToNpc(&quot;meredithconv1&quot;)
+				</tag>
+			</tag>
 			<transparency>
 				0
 			</transparency>
 			<asset>
-				ext_splitMushroom_alt1
+				character_female
 			</asset>
-		</staticmesh>
+			<currentAnim>
+				anim_idleFemale
+			</currentAnim>
+			<isLooping>
+				False
+			</isLooping>
+			<isPlaying>
+				False
+			</isPlaying>
+			<playRate>
+				1.0
+			</playRate>
+			<isPosed>
+				False
+			</isPosed>
+			<frame>
+				0
+			</frame>
+		</actor>
 		<staticmesh>
 			<name>
 				ext_splitMushroom_alt1:3
@@ -3538,42 +3434,42 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
-				ext_splitMushroom_alt1:5
+				ext_glowyPlant_alt1:18
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					243.102996826
+					143.983184814
 				</x>
 				<y>
-					339.358520508
+					656.863098145
 				</y>
 				<z>
-					31.1931667328
+					46.0127639771
 				</z>
 			</pos>
 			<scale>
 				<x>
-					1.0
+					1.7152415514
 				</x>
 				<y>
-					1.0
+					1.7152415514
 				</y>
 				<z>
-					1.0
+					1.7152415514
 				</z>
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-65.9239578247
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -3637,7 +3533,7 @@
 				0
 			</transparency>
 			<asset>
-				ext_splitMushroom_alt1
+				ext_glowyPlant_alt1
 			</asset>
 		</staticmesh>
 		<actor>
@@ -4653,7 +4549,7 @@
 				character_female_alt2
 			</asset>
 			<currentAnim>
-				anim_chargeFemale
+				anim_idleFemale
 			</currentAnim>
 			<isLooping>
 				False
@@ -4879,44 +4775,44 @@
 				ext_glowyPlant_alt1
 			</asset>
 		</staticmesh>
-		<camera>
+		<staticmesh>
 			<name>
-				ShroomCam
+				ext_splitMushroom_alt1:5
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					122.810401917
+					243.102996826
 				</x>
 				<y>
-					659.660522461
+					339.358520508
 				</y>
 				<z>
-					248.174972534
+					31.1931667328
 				</z>
 			</pos>
 			<scale>
 				<x>
-					11.9215478897
+					1.0
 				</x>
 				<y>
-					11.9215459824
+					1.0
 				</y>
 				<z>
-					11.921546936
+					1.0
 				</z>
 			</scale>
 			<hpr>
 				<x>
-					-47.7389297485
+					0.0
 				</x>
 				<y>
-					-41.4371604919
+					0.0
 				</y>
 				<z>
-					26.1240215302
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -4979,42 +4875,10 @@
 			<transparency>
 				0
 			</transparency>
-			<lens>
-				<lensType>
-					perspective
-				</lensType>
-				<fovHoriz>
-					30.0
-				</fovHoriz>
-				<fovVert>
-					30.0
-				</fovVert>
-				<near>
-					1.0
-				</near>
-				<far>
-					100000.0
-				</far>
-				<filmSizeWidth>
-					1.0
-				</filmSizeWidth>
-				<filmSizeHeight>
-					1.0
-				</filmSizeHeight>
-			</lens>
-			<frustumHidden>
-				1
-			</frustumHidden>
-			<speed>
-				1.0
-			</speed>
-			<seqTime>
-				10.0
-			</seqTime>
-			<followPath>
-				0
-			</followPath>
-		</camera>
+			<asset>
+				ext_splitMushroom_alt1
+			</asset>
+		</staticmesh>
 		<staticmesh>
 			<name>
 				ext_giantMushroom_alt1:2
@@ -5384,13 +5248,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -5503,10 +5367,10 @@
 			</pos>
 			<scale>
 				<x>
-					1.00000011921
+					1.0
 				</x>
 				<y>
-					1.00000011921
+					1.0
 				</y>
 				<z>
 					1.0
@@ -5613,110 +5477,6 @@
 				0
 			</frame>
 		</actor>
-		<staticmesh>
-			<name>
-				ext_glowyPlant_alt1:18
-			</name>
-			<parent>
-				*render
-			</parent>
-			<pos>
-				<x>
-					143.983184814
-				</x>
-				<y>
-					656.863098145
-				</y>
-				<z>
-					46.0127639771
-				</z>
-			</pos>
-			<scale>
-				<x>
-					1.7152415514
-				</x>
-				<y>
-					1.7152415514
-				</y>
-				<z>
-					1.7152415514
-				</z>
-			</scale>
-			<hpr>
-				<x>
-					-65.9239578247
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					-0.0
-				</z>
-			</hpr>
-			<shear>
-				<x>
-					0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					0.0
-				</z>
-			</shear>
-			<colorScale>
-				<a>
-					1.0
-				</a>
-				<r>
-					1.0
-				</r>
-				<g>
-					1.0
-				</g>
-				<b>
-					1.0
-				</b>
-			</colorScale>
-			<tag>
-				<key>
-					LE-aggression
-				</key>
-				<tag>
-					0
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-currentHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-maxHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					OBJRoot
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<transparency>
-				0
-			</transparency>
-			<asset>
-				ext_glowyPlant_alt1
-			</asset>
-		</staticmesh>
 		<staticmesh>
 			<name>
 				ext_glowyPlant_alt1:14
@@ -6149,31 +5909,31 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
-				ext_hookPlant_alt2:1
+				ext_splitMushroom_alt1:1
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					269.806976318
+					281.210327148
 				</x>
 				<y>
-					352.173095703
+					357.649536133
 				</y>
 				<z>
-					40.916885376
+					31.1931667328
 				</z>
 			</pos>
 			<scale>
 				<x>
-					0.585910320282
+					1.0
 				</x>
 				<y>
-					0.585910320282
+					1.0
 				</y>
 				<z>
-					0.585910320282
+					1.0
 				</z>
 			</scale>
 			<hpr>
@@ -6248,7 +6008,7 @@
 				0
 			</transparency>
 			<asset>
-				ext_hookPlant_alt2
+				ext_splitMushroom_alt1
 			</asset>
 		</staticmesh>
 		<LETerrain>
@@ -6602,6 +6362,110 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
+				ext_hookPlant_alt2:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					269.806976318
+				</x>
+				<y>
+					352.173095703
+				</y>
+				<z>
+					40.916885376
+				</z>
+			</pos>
+			<scale>
+				<x>
+					0.585910320282
+				</x>
+				<y>
+					0.585910320282
+				</y>
+				<z>
+					0.585910320282
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				ext_hookPlant_alt2
+			</asset>
+		</staticmesh>
+		<staticmesh>
+			<name>
 				ext_giantMushroom:1
 			</name>
 			<parent>
@@ -6623,7 +6487,7 @@
 					1.16095685959
 				</x>
 				<y>
-					1.31765019894
+					1.31765007973
 				</y>
 				<z>
 					1.60604059696

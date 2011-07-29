@@ -162,7 +162,6 @@ class Enemy(DirectObject):
         if not self.lerphpr == None:
             self.lerphpr.pause()
         taskMgr.remove("enemyUpdate")
-
     def resume(self):
         print "Resume!"
         self.paused = False;
@@ -170,7 +169,7 @@ class Enemy(DirectObject):
             self.moveS.resume()
         if not self.lerphpr == None:
             self.lerphpr.resume()
-        taskMgr.add(self.enemyUpdate, "enemyUpdate")
+        #taskMgr.add(self.enemyUpdate, "enemyUpdate")
         
     def enemyUpdate(self,task):
        # self.gameObj.setZ(self.goodZ)

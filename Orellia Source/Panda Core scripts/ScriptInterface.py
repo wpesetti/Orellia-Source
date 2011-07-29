@@ -122,8 +122,8 @@ class ScriptInterface:
         else:
             self.PrintToConsole('==ERROR== no GameObject named \'%s\' in scene' %(gameObjString))
             return None
-    def RunCamera(self, cameraName, isLoop,length):
-        self.world.runCamera(cameraName, isLoop,length)
+    def RunCamera(self, cameraName, isLoop):
+        self.world.runCamera(cameraName, isLoop)
         
     def AddItem(self,itemType, count):
         self.world.inventoryMgr.addItem(itemType,int(count))

@@ -1,4 +1,4 @@
-def main(cameraName,isLoop,length):
+def main(cameraName,isLoop):
     Interface.RunCamera(cameraName,isLoop)
 
 # expected output format (let me know if you want to change)

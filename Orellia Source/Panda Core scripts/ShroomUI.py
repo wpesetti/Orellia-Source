@@ -31,6 +31,7 @@ class ShroomUI(UIBase):
         self.b = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
                           text_scale = (0.15,0.15), pos = (-1.25, 0, -0.12), relief=None, scale=0.38, command=dummyMethod, parent= base.a2dTopRight,
                           text = "Shrooms: 0")
+        self.shroomCount = 0;
         self.updateShrooms(1);
             
     '''
@@ -44,7 +45,14 @@ class ShroomUI(UIBase):
     def showAll(self):
         pass
     
+    def giveShroom(self):
+        self.shroomCount += 1
+        self.updateShrooms(self.shroomCount);
+    def takeShroom(self):
+        self.shroomCount -= 1;
+        self.updateShrooms(self.shroomCount);
     def updateShrooms(self, shroomCount):
+        self.shroomCount = shroomCount;
         self.b["text"] = "Shrooms: " + str(shroomCount);
         self.b.setText();
             

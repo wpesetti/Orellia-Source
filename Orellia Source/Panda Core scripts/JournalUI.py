@@ -141,7 +141,7 @@ class JournalUI(UIBase):
     '''        
 #----------------------------------------------
     def hideAll(self):
-        self.b.hide()
+        #self.b.hide()
         if not self.window_show:
             self.journal_window_frame.hide()
             

@@ -93,9 +93,11 @@ def LoopObjectOnRopeLookAt(world, gameObj,rope,sequenceTime,lookAtObj):
     main(world, gameObj,rope,sequenceTime,lookAtObj)
 SCRIPTS_LIST.append(LoopObjectOnRopeLookAt)
 
-def RunCamera(world, cameraName,isLoop,length):
-    def main(world, cameraName,isLoop,length):
-        world.scriptInterface.RunCamera(cameraName,isLoop,length)
+def RunCamera(world, cameraName,isLoop):
+    def main(world, cameraName,isLoop):
+        world.scriptInterface.RunCamera(cameraName,isLoop)
+    
+
     main(world, cameraName,isLoop)
 SCRIPTS_LIST.append(RunCamera)
 
@@ -194,10 +196,9 @@ SCRIPTS_LIST.append(StartMob)
 def worldFunc(world,funcName,param=""):
     def main(world,funcName,param):
         if param == "":
-            print "AUTOPARAM"
             world.callFunc(funcName)
         elif eval("world."+param):
-            print "LOLOL",param
+            print "LOLOL"
             world.callFunc(funcName)
     main(world,funcName,param)
 SCRIPTS_LIST.append(worldFunc)

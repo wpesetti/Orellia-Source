@@ -21,10 +21,10 @@
 			</pos>
 			<scale>
 				<x>
-					0.499999791384
+					0.499999850988
 				</x>
 				<y>
-					0.499999850988
+					0.499999910593
 				</y>
 				<z>
 					0.499999940395
@@ -32,24 +32,24 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.616350233555
+					-0.616350293159
 				</x>
 				<y>
-					7.5185136795
+					7.51851272583
 				</y>
 				<z>
-					-10.963971138
+					-10.9639692307
 				</z>
 			</hpr>
 			<shear>
 				<x>
-					1.59019852841e-09
+					0.0
 				</x>
 				<y>
-					2.74231997111e-08
+					0.0
 				</y>
 				<z>
-					7.51275219812e-09
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -472,13 +472,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -986,7 +986,7 @@
 			</parent>
 			<pos>
 				<x>
-					558.896911621
+					481.711730957
 				</x>
 				<y>
 					1205.51379395
@@ -1085,7 +1085,7 @@
 					worldFunc
 				</scriptName>
 				<parameter>
-					setMountainHeight(220)
+					setMountainHeight(170)
 				</parameter>
 				<parameter>
 					
@@ -1132,13 +1132,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -1209,7 +1209,7 @@
 					worldFunc
 				</scriptName>
 				<parameter>
-					setMountainHeight(88)
+					setMountainHeight(80)
 				</parameter>
 				<parameter>
 					
@@ -1256,13 +1256,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -1975,7 +1975,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-7.46814166064e-09
+					0.0
 				</x>
 				<y>
 					0.0
@@ -2766,13 +2766,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2959,44 +2959,44 @@
 				ext_umbrellaTree_alt1
 			</asset>
 		</staticmesh>
-		<staticmesh>
+		<actor>
 			<name>
-				ext_fanPlant_alt2:3
+				enemyBot:1
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					404.09362793
+					853.064941406
 				</x>
 				<y>
-					2197.84985352
+					2452.72167969
 				</y>
 				<z>
-					205.288757324
+					201.579772949
 				</z>
 			</pos>
 			<scale>
 				<x>
-					2.11029314995
+					1.0
 				</x>
 				<y>
-					1.75231540203
+					1.0
 				</y>
 				<z>
-					1.26735925674
+					1.0
 				</z>
 			</scale>
 			<hpr>
 				<x>
-					163.442214966
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -3056,13 +3056,55 @@
 					1
 				</tag>
 			</tag>
+			<tag>
+				<key>
+					enemy
+				</key>
+				<tag>
+					point
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					mergeSim
+				</key>
+				<tag>
+					True
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					param
+				</key>
+				<tag>
+					back
+				</tag>
+			</tag>
 			<transparency>
 				0
 			</transparency>
 			<asset>
-				ext_fanPlant_alt2
+				character_bot
 			</asset>
-		</staticmesh>
+			<currentAnim>
+				anim_NPC_walk
+			</currentAnim>
+			<isLooping>
+				False
+			</isLooping>
+			<isPlaying>
+				False
+			</isPlaying>
+			<playRate>
+				1.0
+			</playRate>
+			<isPosed>
+				False
+			</isPosed>
+			<frame>
+				0
+			</frame>
+		</actor>
 		<staticmesh>
 			<name>
 				ext_umbrellaTree_alt1:29
@@ -3094,13 +3136,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -4878,7 +4920,7 @@
 					worldFunc
 				</scriptName>
 				<parameter>
-					setMountainHeight(88)
+					setMountainHeight(80)
 				</parameter>
 				<parameter>
 					
@@ -5015,7 +5057,7 @@
 					0.533191978931
 				</x>
 				<y>
-					0.629745960236
+					0.629746079445
 				</y>
 				<z>
 					0.50486010313
@@ -5034,7 +5076,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.02460848694e-08
+					0.0
 				</x>
 				<y>
 					0.0
@@ -7429,116 +7471,6 @@
 				skydome_day_2
 			</asset>
 		</staticmesh>
-		<box>
-			<name>
-				spawnPoint
-			</name>
-			<parent>
-				*render
-			</parent>
-			<pos>
-				<x>
-					483.480102539
-				</x>
-				<y>
-					2114.02490234
-				</y>
-				<z>
-					292.324645996
-				</z>
-			</pos>
-			<scale>
-				<x>
-					1.0
-				</x>
-				<y>
-					34.0539703369
-				</y>
-				<z>
-					15.6335258484
-				</z>
-			</scale>
-			<hpr>
-				<x>
-					-0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					-0.0
-				</z>
-			</hpr>
-			<shear>
-				<x>
-					0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					0.0
-				</z>
-			</shear>
-			<colorScale>
-				<a>
-					1.0
-				</a>
-				<r>
-					1.0
-				</r>
-				<g>
-					1.0
-				</g>
-				<b>
-					1.0
-				</b>
-			</colorScale>
-			<tag>
-				<key>
-					LE-aggression
-				</key>
-				<tag>
-					0
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-currentHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-maxHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					OBJRoot
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<transparency>
-				0
-			</transparency>
-			<tangible>
-				1
-			</tangible>
-			<fromBitMask>
-				1048575
-			</fromBitMask>
-			<intoBitMask>
-				1048575
-			</intoBitMask>
-		</box>
 		<staticmesh>
 			<name>
 				ext_mushroomTree_alt1:1
@@ -7581,7 +7513,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.97205167751e-08
+					0.0
 				</x>
 				<y>
 					0.0
@@ -9694,44 +9626,44 @@
 				ext_fanPlant_alt2
 			</asset>
 		</staticmesh>
-		<actor>
+		<staticmesh>
 			<name>
-				enemyBot:1
+				ext_fanPlant_alt2:3
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					853.064941406
+					404.09362793
 				</x>
 				<y>
-					2452.72167969
+					2197.84985352
 				</y>
 				<z>
-					201.579772949
+					205.288757324
 				</z>
 			</pos>
 			<scale>
 				<x>
-					1.0
+					2.11029314995
 				</x>
 				<y>
-					1.0
+					1.75231540203
 				</y>
 				<z>
-					1.0
+					1.26735925674
 				</z>
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					163.442214966
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9791,55 +9723,13 @@
 					1
 				</tag>
 			</tag>
-			<tag>
-				<key>
-					enemy
-				</key>
-				<tag>
-					point
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					mergeSim
-				</key>
-				<tag>
-					True
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					param
-				</key>
-				<tag>
-					back
-				</tag>
-			</tag>
 			<transparency>
 				0
 			</transparency>
 			<asset>
-				character_bot
+				ext_fanPlant_alt2
 			</asset>
-			<currentAnim>
-				anim_NPC_walk
-			</currentAnim>
-			<isLooping>
-				False
-			</isLooping>
-			<isPlaying>
-				False
-			</isPlaying>
-			<playRate>
-				1.0
-			</playRate>
-			<isPosed>
-				False
-			</isPosed>
-			<frame>
-				0
-			</frame>
-		</actor>
+		</staticmesh>
 		<staticmesh>
 			<name>
 				ext_fanPlant_alt2:2
