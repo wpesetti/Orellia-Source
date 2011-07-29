@@ -50,7 +50,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
-SCENE_FILE = 'default_2.scene'
+SCENE_FILE = 'default_0.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -147,7 +147,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.blockingText = OnscreenText(text = "", pos = (0.5, 0.2), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
         self.stopTasks = []
         self.heroHeading = 0.0
-        self.currScene = "default_2"
+        self.currScene = "default_0"
         self.mHeight = 135
         
         self.backSoundSeq = None
