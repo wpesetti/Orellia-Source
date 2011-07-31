@@ -48,20 +48,19 @@ class EnemyManager(DirectObject):
 class Enemy(DirectObject):
     def __init__(self,world,gameObj,enemyTag,points = None,backing = False):
         self.worldObj = world
-        
         self.DEBUG = False
         self.paused = False;
         # This function sets the current scan range rotation, as well as sets up the scanning box
         self.gameObj = gameObj #sets the local gameObj as the inherited one
         self.points = points #sets up the nodes for a point drone
         self.back = backing
-        self.isBack = False
-        if "station" in enemyTag: 
-            self.scanrange = 0 #sets up scan range
+        self.isBack = backing
+        if "stationary" in enemyTag: 
+            self.scanrange = 180 #sets up scan range
             self.scanrange2 = 0 #sets up scan range
             self.scanlimit = 360
             self.scan = "circle"
-            self.scanIncr = 2.2 #sets up how fast the scanning is
+            self.scanIncr = 15.2 #sets up how fast the scanning is
             self.isAlerted = False
             self.canWalk = False
             self.isWalking = False
@@ -104,7 +103,7 @@ class Enemy(DirectObject):
         self.movementType = "normal"
         if "point" in enemyTag:
             self.movementType = "point"
-            self.moveTime = random.uniform(1.0,3.0) #Will fluctuate depending on distance
+            self.moveTime = 1.0 #Will fluctuate depending on distance
             self.walkNode = 1
             self.gameObj.setPos(points['1'].getPos())
             if self.DEBUG:
@@ -135,7 +134,7 @@ class Enemy(DirectObject):
         self.collisionSphere.show()
         self.collisionNode2.show()
         taskMgr.add(self.enemyUpdate,"enemyUpdate") #starts the enemy ai loop
-        taskMgr.add(self.updateHeight,"enemyHeight") #starts the enemy ai loop
+        #taskMgr.add(self.updateHeight,"enemyHeight") #starts the enemy ai loop
         print "ENEMY CREATED"
         self.moveS = None
         self.lerphpr = None
@@ -169,7 +168,7 @@ class Enemy(DirectObject):
             self.moveS.resume()
         if not self.lerphpr == None:
             self.lerphpr.resume()
-        #taskMgr.add(self.enemyUpdate, "enemyUpdate")
+        taskMgr.add(self.enemyUpdate, "enemyUpdate")
         
     def enemyUpdate(self,task):
        # self.gameObj.setZ(self.goodZ)
@@ -189,7 +188,7 @@ class Enemy(DirectObject):
                 self.scan = "left"
         elif self.scan == "circle":
             self.scanrange -= self.scanIncr
-            self.scanrange2 += self.scanIncr
+            self.scanrange2 -= self.scanIncr
         if self.movementType == "point":
             if not self.isWalking and self.canWalk:
                 self.walkPointSetup()

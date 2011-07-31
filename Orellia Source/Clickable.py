@@ -29,10 +29,13 @@ class ClickManager(DirectObject):
             print "Gone"
 
     def destroyAll(self): #destroys all Clickables
-        for ii in self.ClickableList:
+        copy = self.ClickableList.copy()
+        for ii in copy:
             temp = self.ClickableList[ii]
             self.ClickableList.pop(ii)
             del temp
+            taskMgr.remove("clickUpdater")
+
     def notifyClickable(self,name):
         self.ClickableList[name].notify()
 
