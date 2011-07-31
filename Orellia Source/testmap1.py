@@ -4,7 +4,8 @@
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
 IN_DEVELOP = False
 
-import sys, math, os
+from PauseGameState import *
+import sys, math, os, random
 from math import exp
 from direct.showbase.ShowBase import ShowBase
 from pandac.PandaModules import *
@@ -50,6 +51,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
+SCENE_FILE = 'default_0.scene'
 SCENE_FILE = 'default_1.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
@@ -147,12 +149,14 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.blockingText = OnscreenText(text = "", pos = (0.5, 0.2), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
         self.stopTasks = []
         self.heroHeading = 0.0
-        self.currScene = "default_1"
+        self.currScene = SCENE_FILE[:6]
         self.mHeight = 135
-        
+         
         self.backSoundSeq = None
         self.screenSounds = {"default_0":["tutorial_music_ALPHA", "tutorial_music_background_ALPHA"], "default_1":["village_music_ALPHA","village_music_background_ALPHA"], "default_2":["forest_music_ALPHA", "forest_music_background_ALPHA"], "default_3":["ship_music_ALPHA", "ship_music_background_ALPHA"]};
-        self.moveFactor = 1.0
+        self.moveFactor = 2.0
+
+        self.devMove = 1
         #############################
         
 
@@ -173,6 +177,10 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         
     #== Environment and Rendering Settings ==
         base.setFrameRateMeter(FLAG_SHOW_FRAMES_PER_SECOND)
+        
+        #self.framerate = TextNode("Framerate")
+        #self.framerate.setText("   1.0 fps   "
+        
         if FLAG_USE_AUTOSHADER:
             render.setShaderAuto()
         self.filters = CommonFilters(base.win, self.cam) # NEW
@@ -328,6 +336,10 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.accept('playSound3d',self.scriptInterface.playSound3d)
         self.accept('addCollision',self.addCollision)  
         self.accept('q',self.throwShroom)
+        self.accept('8',self.devTool,[1])
+        self.accept('8-up',self.devTool,[-1])
+        self.accept('[',self.devTool,[2])
+        self.accept('[-up',self.devTool,[-2])
         ##self.accept('mouse3-up',self.toggleMouse,[self.disMouse])
         self.accept('playerDie',self.playerDie)
         for keyVal in self.scenes:
@@ -355,8 +367,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             if gameObj.getNP().hasTag('enemy'):
                 print len(self.enemies)
                 self.enemies[len(self.enemies)] = gameObj
+                backing = False
                 if "point" in gameObj.getNP().getTag("enemy"):
-                    backing = False
                     objName = gameObj.getName()
                     if "True" in gameObj.getNP().getTag("mergeSim"):
                         objName = objName[:1]
@@ -377,7 +389,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             #    gameObj.setTag("LE-wall","1")
         ###############LOAD THE WORLD THROUGH SAVE FILE###########
         self.saveMan.loadWorld()
-    
+       
+
 ##== Utility and World Initialization functions =============================##
     def playMovie(self, movieName):
         try:
@@ -963,7 +976,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         moveStep = MAIN_CHAR_MOVE_SPEED*dt*impair
         if moveStep > MAIN_CHAR_MAX_STEP:
             moveStep = MAIN_CHAR_MAX_STEP
-        moveStep *= factor;
+        moveStep *= self.devMove
+        moveStep *= self.moveFactor
+        moveStep *= factor
         temp.setPos(self.hero, 0,-direction*moveStep, 0)
         temp.show()
         #oldPos = self.heroWallCollideX.getPos()
@@ -1058,7 +1073,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         moveStep = MAIN_CHAR_MOVE_SPEED*dt*impair
         if moveStep > MAIN_CHAR_MAX_STEP:
             moveStep = MAIN_CHAR_MAX_STEP
-        moveStep *= factor;
+        moveStep *= self.devMove
+        moveStep *= self.moveFactor
+        moveStep *= factor
         temp.setPos(self.camPivot, dir * moveStep,0, 0)
         
         #self.oldPos = self.hero.getPos()
@@ -1304,6 +1321,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.scenes['default_1.scene'] = 'default_1.scene'
         self.scenes['default_2.scene'] = 'default_2.scene'
         self.scenes['default_3.scene'] = 'default_3.scene'
+        self.scenes['default_4.scene'] = 'default_4.scene'
         # NOTE: Do not remove!  This function is populated by StandaloneExporter
         pass
     
@@ -1334,7 +1352,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.cTrav.removeCollider(self.heroCNP)
         self.heroGroundHandler.clearEntries()
         self.heroCollisionQueue.clearEntries()
-        
+        self.clickMan.destroyAll()
         self.journalMgr.reset()
         
 
@@ -1528,6 +1546,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         if traverse == "Handle":
             self.cTrav.addCollider(object,self.cHandle)
     def mouseTask(self,task):
+        
         if not self.disMouse and base.mouseWatcherNode.hasMouse():
             centerx =  base.win.getProperties().getXSize()/2.0 
             centery =  base.win.getProperties().getYSize()/2.0 
@@ -1777,7 +1796,15 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         mySound = base.loader.loadSfx(sound)
         mySound.setLoop(True)
         mySound.play()
-      
-
+        
+    def devTool(self,toolNum):
+        if toolNum == 1:
+            self.devMove = 10
+        if toolNum == -1:
+            self.devMove = 1
+        if toolNum == 2:
+            self.mHeight += 1000
+        if toolNum == -2:
+            self.mHeight -= 1000
 world = World()
 world.run();

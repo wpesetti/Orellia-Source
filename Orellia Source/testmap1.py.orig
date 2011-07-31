@@ -1,4 +1,3 @@
-# Code Template for exporting a world from the Level Editor.
 # Used as a basis by StandaloneExporter, which fills in some of the values to reflect the local computer and project name.
 
 #== Python and Panda imports ==
@@ -6,7 +5,7 @@ GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
 IN_DEVELOP = False
 
 from PauseGameState import *
-import sys, math, os
+import sys, math, os, random
 from math import exp
 from direct.showbase.ShowBase import ShowBase
 from pandac.PandaModules import *
@@ -38,6 +37,7 @@ print "Appended path"
 sys.path.append("./Panda Core scripts") 
 from LevelLoader import *
 from GameObject import *
+from PauseGameState import *
 from GameplayUI import *
 from JournalEntry import *
 from JournalMgr import *
@@ -52,6 +52,7 @@ from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
 SCENE_FILE = 'default_0.scene'
+SCENE_FILE = 'default_1.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -62,8 +63,8 @@ INVENTORY_FILE = 'testmap1.inventory'
 
 #== Values for Camera and Main Character Movement (feel free to change) =====#
 
-MAIN_CHAR_MAX_STEP = 3.0
-MAIN_CHAR_MOVE_SPEED = 100.0 # [Zeina]:This speed is with the time-step solution for movement. /CONSIDER: calculate dynamically based on model size | default = 3.0
+MAIN_CHAR_MAX_STEP = 3.0 ## SET TO 3.0!!!
+MAIN_CHAR_MOVE_SPEED = 500.0 # SET TO 100.0!!! [Zeina]:This speed is with the time-step solution for movement. /CONSIDER: calculate dynamically based on model size | default = 3.0
 MAIN_CHAR_ROTATE_SPEED = 2.2 # default = 3.2
 MAIN_CHAR_GROUND_OFFSET = 0.0 # This is the distance (offset) above the ground plane to place the main character | default = 0.0
 CAMERA_HEIGHT = 1.4 # Relative height of the camera above the main character model (positive = above) | default = 1.0
@@ -120,6 +121,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.billboardObjects = {}
         self.enemyMan = EnemyManager()
         self.clickMan = ClickManager()
+
         self.mX = 0
         self.mY = 0
         self.hasLine = False
@@ -131,17 +133,30 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.saveMan = SaveManager(self)
         self.spawnPoint = Point3(0,0,0)
         self.disableObjects = []
-<<<<<<< local
         self.tasks = []
         self.camAdjust = False
         self.dTime = 0
-=======
         self.movements = []
-        self.movementConstants = []
+        self.movementConstants = [['w'], ['d'], ['s'], ['a'], ['w', 'd'], ['w', 'a'], ['s', 'a'], ['s', 'd']];
+        self.movementHeadings = [0, -90, 180, 90, -45, 45, 135, -135];
+        self.diagonal = math.sqrt(2.0) / 2.2;
+
         self.currentAnim = 0
         self.animations = ["anim_idleFemale", "anim_jogFemale"]
         self.moved = False;
->>>>>>> other
+        self.sequencesToPause = [] #Useful array to loop through in order to pause all neccecary sequences
+        self.isStopped = False
+        self.blockingText = OnscreenText(text = "", pos = (0.5, 0.2), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
+        self.stopTasks = []
+        self.heroHeading = 0.0
+        self.currScene = SCENE_FILE[:6]
+        self.mHeight = 135
+         
+        self.backSoundSeq = None
+        self.screenSounds = {"default_0":["tutorial_music_ALPHA", "tutorial_music_background_ALPHA"], "default_1":["village_music_ALPHA","village_music_background_ALPHA"], "default_2":["forest_music_ALPHA", "forest_music_background_ALPHA"], "default_3":["ship_music_ALPHA", "ship_music_background_ALPHA"]};
+        self.moveFactor = 2.0
+
+        self.devMove = 1
         #############################
         
 
@@ -154,12 +169,18 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         props.setCursorHidden(True) 
         base.win.requestProperties(props) 
         
+        self.paused = False;
         self.pauseState = PauseGameState(self)
+        self.accept('p', self.pauseToggle);
         self.createLoadScreen('./LEGameAssets/Textures/title_screen.png')
         base.graphicsEngine.renderFrame()
         
     #== Environment and Rendering Settings ==
         base.setFrameRateMeter(FLAG_SHOW_FRAMES_PER_SECOND)
+        
+        #self.framerate = TextNode("Framerate")
+        #self.framerate.setText("   1.0 fps   "
+        
         if FLAG_USE_AUTOSHADER:
             render.setShaderAuto()
         self.filters = CommonFilters(base.win, self.cam) # NEW
@@ -177,7 +198,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.loadBar.reparentTo(render2d)
         self.loadBar.hide()
         base.graphicsEngine.renderFrame()
-        
+       
+
+
         self.setBackgroundColor(166.0/255.0,207.0/255.0,240.0/255.0,1)
         self.skybox = self.loader.loadModel("LEGameAssets/Models/skybox_final.egg")
         self.skybox.setScale(50)
@@ -232,6 +255,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.hero.setTag('LE-mainChar', '180')
             self.gameObjects[self.hero.getName()] = self.hero
         
+
         self.setCollideMasks(self.gameObjects)
         ################SPECIAL EFFECTS###################
 
@@ -240,22 +264,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             del self.objects[self.hero.getName()]
         
         ###########################SPECIAL###########################
-        self.enemies = {}
-        for name, gameObj in self.gameObjects.iteritems():
-            points = {}
-            if gameObj.getNP().hasTag('enemy'):
-                print len(self.enemies)
-                self.enemies[len(self.enemies)] = gameObj
-                if "point" in gameObj.getNP().getTag("enemy"):
-                    backing = False
-                    for name2, gameObj2 in self.gameObjects.iteritems():
-                        if gameObj.getName() in name2 and "-Point" in name2:
-                            points[gameObj2.getNP().getTag("point")] = gameObj2
-                    if "back" in gameObj.getNP().getTag("param"):
-                            backing = True
-                self.enemyMan.createEnemy(gameObj,gameObj.getNP().getTag("enemy"),points,backing)
-            if gameObj.getNP().hasTag('function'):
-                self.clickMan.createClickable(self,gameObj,gameObj.getName(),gameObj.getNP().getTag("function"))
+        
                 
                 
     #== Camera ==
@@ -289,7 +298,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.enableMovement(self.hero)
         self.accept("mouse1", self.onClickin3D)
         self.accept('escape', self.close)
-        self.accept('z', render.place) 
+        #self.accept('z', render.place) 
     
     #== UI and Combat ==
         self.gameplayUI = GameplayUI(self)
@@ -327,8 +336,16 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.accept('playSound3d',self.scriptInterface.playSound3d)
         self.accept('addCollision',self.addCollision)  
         self.accept('q',self.throwShroom)
+        self.accept('8',self.devTool,[1])
+        self.accept('8-up',self.devTool,[-1])
+        self.accept('[',self.devTool,[2])
+        self.accept('[-up',self.devTool,[-2])
         ##self.accept('mouse3-up',self.toggleMouse,[self.disMouse])
         self.accept('playerDie',self.playerDie)
+        for keyVal in self.scenes:
+            print keyVal;
+        #print("Background Sound Scene: " + sceneName);
+        self.updateBackgroundSound(self.currScene);
     ##=============================##
     
         filterok = self.filters.setBloom( blend = (1,0,0,1),desat = -.5, intensity = 3, size=8)
@@ -339,18 +356,41 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         #Starts sequence for displaying
         seq = Sequence(Func(self.displayText,"Use the mouse to rotate the character, and wasd to move."),
                        Wait(5),
-                       Func(self.displayText,"Right clicking will enable mouse actions, such as clicking on the UI. Right clicking again will lock the mouse for character movement."),
-                       Wait(5),
-                       Func(self.displayText,"Pressing \"q\" will bring up an ark to show where you will throw a mushroom. Mushrooms can be thrown at robots to disable their scanning capabilities temporarily."),
-                       Wait(7),
-                       Func(self.displayText,"While the arc is displayed, you can use the scroll wheel to increase or decrease the distance of the throw. In addition, pressing \"e\" will get you out of the arc interface."),
-                       Wait(7),
                        Func(self.displayText,""))
         seq.start()
         self.spawnPoint = self.hero.getPos()
+
+        ##################CREATE ENEMIES AND OTHER SPECIAL OBJECTS#####################
+        self.enemies = {}
+        for name, gameObj in self.gameObjects.iteritems():
+            points = {}
+            if gameObj.getNP().hasTag('enemy'):
+                print len(self.enemies)
+                self.enemies[len(self.enemies)] = gameObj
+                backing = False
+                if "point" in gameObj.getNP().getTag("enemy"):
+                    objName = gameObj.getName()
+                    if "True" in gameObj.getNP().getTag("mergeSim"):
+                        objName = objName[:1]
+                        print gameObj.getName(),"--",objName
+                    for name2, gameObj2 in self.gameObjects.iteritems():
+                        if objName in name2 and "-Point" in name2:
+                            points[gameObj2.getNP().getTag("point")] = gameObj2
+                            print gameObj2.getNP().getTag("point")
+                    if "back" in gameObj.getNP().getTag("param"):
+                            backing = True
+                self.enemyMan.createEnemy(self,gameObj,gameObj.getNP().getTag("enemy"),points,backing)
+            if gameObj.getNP().hasTag('function') and gameObj.getNP().getTag("functionName"):
+                self.clickMan.createClickable(self,gameObj,gameObj.getName(),gameObj.getNP().getTag("function"),gameObj.getNP().getTag("functionName"))
+            elif gameObj.getNP().hasTag('function'):
+                self.clickMan.createClickable(self,gameObj,gameObj.getName(),gameObj.getNP().getTag("function"))
+            #if "int_wallA" in name and not "floor" in name:
+            #    print name,"and",gameObj,"is being walled"
+            #    gameObj.setTag("LE-wall","1")
         ###############LOAD THE WORLD THROUGH SAVE FILE###########
         self.saveMan.loadWorld()
-    
+       
+
 ##== Utility and World Initialization functions =============================##
     def playMovie(self, movieName):
         try:
@@ -369,11 +409,18 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         if hasSound:
             movieSound.play()
         Sequence(Wait(movieSound.length()),Func(self.killMovie)).start()
-        
+    
+    def pauseToggle(self):
+        if self.paused:
+            self.resume();
+        else:
+            self.pause();
+        self.paused = not self.paused;
     def pause(self):
         #Part3: stop all of the tasks
+        self.hero.getActorHandle().stop('anim_jogFemale')
         self.tasks = []
-        self.enemyMan.pauseAll();
+        self.enemyMan.pauseAll()
         
         for taskName in taskMgr.getAllTasks():
             if not "Loop" in str(taskName) and not "ival" in str(taskName):
@@ -384,9 +431,11 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         
         self.toggleMouse(not True);
         self.pauseState.activate()
-           
-        print "STUPID PENGAS"
     def resume(self):
+        if len(self.tempMovements) > 0:
+            self.hero.getActorHandle().loop('anim_jogFemale')
+        else:
+            self.hero.getActorHandle().loop('anim_idleFemale')
         self.pauseState.deactivate()
         self.toggleMouse(not False);
         self.enemyMan.resumeAll();
@@ -864,12 +913,11 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                 #only react to objects that are tagged as the ground
                 if np.hasTag('LE-ground'):
                     groundEntries.append(e)
-                    
-        if groundEntries:
+                
+        if len(groundEntries) > 0:
             #sort the collision entries based on height
             groundEntries.sort(lambda x,y: cmp(y.getSurfacePoint(render).getZ(),x.getSurfacePoint(render).getZ()))
-            
-            if not groundEntries[0].getSurfacePoint(render).getZ() + MAIN_CHAR_GROUND_OFFSET > 135.0:
+            if not groundEntries[0].getSurfacePoint(render).getZ() + MAIN_CHAR_GROUND_OFFSET > self.mHeight:
                 #set hero height and pivot height
                 self.hero.setZ(groundEntries[0].getSurfacePoint(render).getZ() + MAIN_CHAR_GROUND_OFFSET)
                 self.camPivot.setZ(groundEntries[0].getSurfacePoint(render).getZ() + MAIN_CHAR_GROUND_OFFSET)
@@ -882,14 +930,25 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         wallEntries = []
         for w in queue.getEntries():
             np = w.getIntoNodePath().findNetTag('OBJRoot')
+            ##print np,"andddd",w
             if np.hasTag('LE-wall'):
-                if self.isInObstacleRange(self.hero, w, stepSize):
-                    wallEntries.append(w)
+                #if self.isInObstacleRange(self.hero, w, stepSize):
+                wallEntries.append(w)
         if len(wallEntries) > 0:
             self.herowallcollision = True
+            if not self.isStopped:
+                self.isStopped = True
+                if not w.getIntoNodePath().getTag("stopName") == None:
+                    text = w.getIntoNodePath().getTag("stopName")
+                else:
+                    text = "I cannot go that way..."
+                ##print "BLOCKED!!!!"
+                self.blockingText = OnscreenText(text = text, pos = (0.5, 0.8), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
             #self.collisionsurfaceP = wallEntries[0].getSurfacePoint(render)
         else:
+            ##print "NOT BLOCKED!!!!"
             self.herowallcollision = False
+            self.blockingText.destroy()
             
     def updateCameraCollision(self):
         self.cameraHeroLine.setPointA(self.cam.getPos(render))
@@ -909,7 +968,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             
         
 
-    def moveHero(self,direction, dt):
+    def moveHero(self,direction, dt, factor = 1.0):
         temp = render.attachNewNode("Dummy")#NodePath()
         impair = 1
         if self.stealth:
@@ -917,10 +976,14 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         moveStep = MAIN_CHAR_MOVE_SPEED*dt*impair
         if moveStep > MAIN_CHAR_MAX_STEP:
             moveStep = MAIN_CHAR_MAX_STEP
+        moveStep *= self.devMove
+        moveStep *= self.moveFactor
+        moveStep *= factor
         temp.setPos(self.hero, 0,-direction*moveStep, 0)
         temp.show()
         #oldPos = self.heroWallCollideX.getPos()
         
+
         ##print self.oldPos,",",self.hero.getPos()
                 
         ## hypot = math.sqrt( ( abs(self.hero.getX() - temp.getX()) )**2 + (abs(temp.getZ() - self.hero.getZ())) **2)
@@ -947,6 +1010,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         #    self.badDir = direction
         #    canMove = False
         #self.oldPos = self.hero.getPos()
+
         # print abs(abs(self.hero.getZ())-abs(self.oldPos.getZ()));
         # print "HOLY";
         self.heroWallCollideX.setX(temp.getX())
@@ -991,7 +1055,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         return False
 
     
-    def MoveHeroLR(self,dt,dir):
+    def MoveHeroLR(self,dt,dir, factor = 1.0):
         ## up = render.getRelativeVector(base.cam, Vec3(0, 0, 1))
         ## up.normalize()
         
@@ -1009,10 +1073,14 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         moveStep = MAIN_CHAR_MOVE_SPEED*dt*impair
         if moveStep > MAIN_CHAR_MAX_STEP:
             moveStep = MAIN_CHAR_MAX_STEP
+        moveStep *= self.devMove
+        moveStep *= self.moveFactor
+        moveStep *= factor
         temp.setPos(self.camPivot, dir * moveStep,0, 0)
         
         #self.oldPos = self.hero.getPos()
         
+
         self.heroWallCollideX.setX(temp.getX())
         self.heroWallCollideY.setY(temp.getY())
         self.heroWallCollideZ.setZ(temp.getZ())#+10)
@@ -1038,6 +1106,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             ## ##self.hero.setH(-90)
         ## else:
             ## ##self.hero.setH(90)
+
         self.updateCameraCollision()
         temp.detachNode()
         #self.updateHeroHeight()
@@ -1045,6 +1114,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     
     def disableMovement(self, gameObj):
         if gameObj.getName() == self.hero.getName():
+            self.movements = [];
+            self.tempMovements = [];
             self.ignore('w')
             self.ignore('w-up')
             self.ignore('a')
@@ -1073,6 +1144,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                 gameObj.getAIBehaviorsHandle().resumeAi('pursue')
     
     def setKeyStatus(self, key, isDown):
+
         if isDown:
             if not key in self.movements:
                 self.movements.append(key);
@@ -1200,17 +1272,24 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         elif self.currentAnim == 0:
             self.hero.getActorHandle().stop(self.animations[self.currentAnim])
             self.currentAnim = 1 # TODO: replace with constant
-            if 's' in self.tempMovements:
+            if False: # 's' in self.tempMovements:
                 self.hero.getActorHandle().setPlayRate(-0.7, 'anim_jogFemale')
             else:
+
                 self.hero.getActorHandle().setPlayRate(1.0, 'anim_jogFemale')
             self.hero.getActorHandle().loop(self.animations[self.currentAnim])
+
     def moveHeroTask(self, task):
         dt = globalClock.getDt()
+        dt *= self.moveFactor
         currentMove = self.processMovements();
         self.setAnim()
+        factor = 1.0;
 
-        direction = int('w' in self.tempMovements)-int('s' in self.tempMovements)
+        direction = int('w' in self.tempMovements or 's' in self.tempMovements)
+        if len(self.tempMovements) >= 2:
+            factor *= (self.diagonal);
+
         self.oldPos = self.hero.getPos()
         self.moved = False;
         if len(self.tempMovements) == 0:
@@ -1218,16 +1297,18 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.hero.getActorHandle().loop('anim_idleFemale')
         if 'a' in self.tempMovements:
             self.moved = True
-            self.MoveHeroLR(dt,-1)
+            self.MoveHeroLR(dt,-1, factor)
         elif 'd' in self.tempMovements:
             self.moved = True
-            self.MoveHeroLR(dt,1)
+            self.MoveHeroLR(dt,1, factor)
         if not direction == 0:
             self.moved = True
-            self.moveHero(direction, dt)
+            self.moveHero(direction, dt, factor)
         self.updateHeroHeight()
         if self.moved:
             self.placeCamera(self.hero)
+        if not currentMove == -1:
+            self.heroHeading = self.movementHeadings[currentMove];
         
         return task.cont
             
@@ -1237,6 +1318,10 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     def loadScenes(self):
 
         self.scenes['default_0'] = 'default_0.scene'
+        self.scenes['default_1.scene'] = 'default_1.scene'
+        self.scenes['default_2.scene'] = 'default_2.scene'
+        self.scenes['default_3.scene'] = 'default_3.scene'
+        self.scenes['default_4.scene'] = 'default_4.scene'
         # NOTE: Do not remove!  This function is populated by StandaloneExporter
         pass
     
@@ -1261,11 +1346,14 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.startLoadBar(12)
         self.createLoadScreen()
         
+        self.currScene = sceneName
+
         #Part2:Clear all of the collision lists
         self.cTrav.removeCollider(self.heroCNP)
         self.heroGroundHandler.clearEntries()
         self.heroCollisionQueue.clearEntries()
-        
+        self.clickMan.destroyAll()
+        self.journalMgr.reset()
         
 
         self.resetAllSequences()
@@ -1328,11 +1416,12 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         
         self.increaseLoadBar(1)
         
-        #Part9:Add the hero to the new gameObject list and remove the duplicates of the hero
-        self.gameObjects[self.hero.getName()] = self.hero      
+        #Part9:Add the hero to the new gameObject list and remove the duplicates of the hero   
         if(self.objects.has_key(self.hero.getName())):
            object = self.objects[self.hero.getName()]
            if(object.hasTag('LE-mainChar')):
+               self.hero.setPos(object.getPos())
+               self.placeCamera(self.hero)
                object.detachNode()
                del self.objects[self.hero.getName()]
                
@@ -1342,6 +1431,34 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                 bitmask = gameObj.getNP().getCollideMask()
                 bitmask |= BITMASK_GROUND
                 gameObj.getNP().setCollideMask(bitmask)
+
+        ##################CREATE ENEMIES AND OTHER SPECIAL OBJECTS#####################
+        self.enemies = {}
+        for name, gameObj in self.gameObjects.iteritems():
+            points = {}
+            if gameObj.getNP().hasTag('enemy'):
+                print len(self.enemies)
+                self.enemies[len(self.enemies)] = gameObj
+                if "point" in gameObj.getNP().getTag("enemy"):
+                    backing = False
+                    objName = gameObj.getName()
+                    if "True" in gameObj.getNP().getTag("mergeSim"):
+                       objName = objName[:1]
+                       print gameObj.getName(),"--",objName
+                    for name2, gameObj2 in self.gameObjects.iteritems():
+                       if objName in name2 and "-Point" in name2:
+                           points[gameObj2.getNP().getTag("point")] = gameObj2
+                           print gameObj2.getNP().getTag("point")
+                    if "back" in gameObj.getNP().getTag("param"):
+                       backing = True
+                self.enemyMan.createEnemy(self,gameObj,gameObj.getNP().getTag("enemy"),points,backing)
+            if gameObj.getNP().hasTag('function') and gameObj.getNP().getTag("functionName"):
+                self.clickMan.createClickable(self,gameObj,gameObj.getName(),gameObj.getNP().getTag("function"),gameObj.getNP().getTag("functionName"))
+            elif gameObj.getNP().hasTag('function'):
+                self.clickMan.createClickable(self,gameObj,gameObj.getName(),gameObj.getNP().getTag("function"))
+        #if "int_wallA" in name and not "floor" in name:
+        #    print name,"and",gameObj,"is being walled"
+        #    gameObj.setTag("LE-wall","1")
         self.increaseLoadBar(1)
         
         #Part10:Restart the tasks.                    
@@ -1386,6 +1503,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.cTrav.addCollider(self.heroCNP, self.heroCollisionQueue)
         
         self.destroyLoadScreen()
+        self.currLevel = sceneName
+        print("Background Sound Scene: " + sceneName);
+        self.updateBackgroundSound(sceneName);
         #self.loadBar.hide()
         #self.destroyLoadScreen() 
 ############################# SPECIAL TEST FUNCTIONS #######################################
@@ -1426,7 +1546,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         if traverse == "Handle":
             self.cTrav.addCollider(object,self.cHandle)
     def mouseTask(self,task):
-        if not self.disMouse:
+        
+        if not self.disMouse and base.mouseWatcherNode.hasMouse():
             centerx =  base.win.getProperties().getXSize()/2.0 
             centery =  base.win.getProperties().getYSize()/2.0 
             mouse = base.win.getPointer(0)
@@ -1448,29 +1569,42 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                     RotValue = 50
                 expon =  exp(-RotValue / 50)
                 rotsmooth = RotValue*expon
+
                 RotValue = rotsmooth
             elif RotValue < 0:
                 if RotValue < -50:
                     RotValue = -50
                 expon =  exp(RotValue / 50)
                 rotsmooth = RotValue*expon
+
                 RotValue = rotsmooth
-            self.hero.setH(HValue) 
+            if self.moved or self.hasLine:
+                self.hero.setH(HValue + self.heroHeading)
+
+
             
             self.camH = HValue + 180 #What camera should be
             self.camHCurr = self.camPivot.getH() #What cam is
+            
+            self.camP = RotValue
+            self.camPCurr = self.camPivot.getP()
             
             self.dTime += globalClock.getDt()
             
             if self.dTime < .2:
                 self.dTime = .2
-            camDelta = self.camH - self.camHCurr
+            
+            camHDelta = self.camH - self.camHCurr
+            camPDelta = self.camP - self.camPCurr
             
             exponH = (0.3) ** self.dTime
             
-            self.camHCurr += camDelta * (1 - exponH)
+            self.camHCurr += camHDelta * (1 - exponH)
+            self.camPCurr += camPDelta * (1 - exponH)
             
             self.camPivot.setH(self.camHCurr)
+            self.camPivot.setP(self.camPCurr)
+            
             self.throwV = (RotValue + 30) * ( (RotValue + 30) / 20)
             base.win.movePointer(0,centerx,centery)
         return task.cont
@@ -1506,25 +1640,31 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             taskMgr.add(self.updateArc,"updateArk")
         elif self.notThrow:
             self.notThrow = False
-            self.collisionShroom = CollisionNode("Shroom")
-            self.collisionShroom.addSolid(CollisionSphere((0,0,0),5))
-            self.collisionShroom.setIntoCollideMask(BitMask32.bit(2))
-            self.collisionNode = render.attachNewNode(self.collisionShroom)
-            self.addCollision(self.collisionNode,"Handle")
-            self.collisionNode.show()
-            ##self.scriptInterface.RunObjectRope(self.collisionNode,self.ropetst, 5,False,True)
-            sequence = UniformRopeMotionInterval(self.ropetst,
-                                             self.collisionNode,
-                                             duration= 1.9,
-                                             followPath = True)
-            mySequence = Sequence(Func(sequence.start),Wait(1.1),Func(sequence.finish),Func(self.stopLine))
-            sequence.start()
+            if self.hasShrooms():
+                self.collisionShroom = CollisionNode("Shroom")
+                self.collisionShroom.addSolid(CollisionSphere((0,0,0),5))
+                self.collisionShroom.setIntoCollideMask(BitMask32.bit(2))
+                self.collisionNode = render.attachNewNode(self.collisionShroom)
+                self.addCollision(self.collisionNode,"Handle")
+                self.collisionNode.show()
+                ##self.scriptInterface.RunObjectRope(self.collisionNode,self.ropetst, 5,False,True)
+                sequence = UniformRopeMotionInterval(self.ropetst,
+                                                 self.collisionNode,
+                                                 duration= 1.9,
+                                                 followPath = True)
+                mySequence = Sequence(Func(sequence.start),Wait(1.1),Func(sequence.finish),Func(self.stopLine))
+                sequence.start()
+                mySequence.start()
+                self.gameplayUI.shroomUI.takeShroom();
             self.ropetst.hide()
             taskMgr.remove("updateArk")
             ##self.ignore('wheel_up')
             ##self.ignore('wheel_down')
             self.ignore('e')
-            mySequence.start()
+            if not self.hasShrooms():
+                self.stopLine();
+    def hasShrooms(self):
+        return (self.gameplayUI.shroomUI.shroomCount > 0);
     def updateArc(self,task):
             self.LinePoint1.setHpr(0,0,0)
             self.LinePoint2.setHpr(0,0,0)
@@ -1535,12 +1675,12 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.LinePoint3.setPos(-2,-self.throwV * (self.hero.getZ() / 45),0)
             self.LinePoint4.setPos(-2,-self.throwV * (self.hero.getZ() / 45),-self.hero.getZ())
             
-            self.ropetst.removeNode()
-            self.ropetst = Rope("tstArc")
-            self.ropetst.setup(3,[(self.LinePoint1,self.LinePoint1.getPos()),(self.LinePoint2,self.LinePoint2.getPos()),(self.LinePoint3,self.LinePoint3.getPos()),(self.LinePoint4,self.LinePoint4.getPos())])
-            self.ropetst.setColor(1,0,0,1) 
-            self.ropetst.reparentTo(self.hero)
             if self.hasLine:
+                self.ropetst.removeNode()
+                self.ropetst = Rope("tstArc")
+                self.ropetst.setup(3,[(self.LinePoint1,self.LinePoint1.getPos()),(self.LinePoint2,self.LinePoint2.getPos()),(self.LinePoint3,self.LinePoint3.getPos()),(self.LinePoint4,self.LinePoint4.getPos())])
+                self.ropetst.setColor(1,0,0,1) 
+                self.ropetst.reparentTo(self.hero)
                 return Task.cont
         
     def incrThrow(self,value):
@@ -1553,8 +1693,11 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     
     def stopLine(self,task=None):
         self.ropetst.removeNode()
-        if self.collisionNode != None:
-            self.collisionNode.removeNode()
+        try:
+            if self.collisionShroom != None:
+                self.collisionShroom.removeNode()
+        except:
+            pass
         self.hasLine = False
         self.notThrow = True
     
@@ -1577,7 +1720,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             props.setCursorHidden(False)
             self.enableMouse()
         base.win.requestProperties(props)
-        self.accept('mouse3-up',self.toggleMouse,[self.disMouse]) 
+        ##self.accept('mouse3-up',self.toggleMouse,[self.disMouse]) 
     
     def displayText(self,text1):
         self.textScreen.destroy()
@@ -1588,5 +1731,80 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         sys.exit()
     def playerDie(self):
         self.hero.setPos(self.spawnPoint)
+        self.placeCamera(self.hero)
+    def startMob(self,mobName):
+        self.enemyMan.enemyList[mobName].resume()
+    def moveDownward(self,gameObj,sec,useParticles):
+        print gameObj,sec,useParticles
+        downObj = self.objects[gameObj]
+        moveLerp = LerpPosInterval(downObj,sec,downObj.getPos() + (0,0,-150),downObj.getPos())
+        self.stopTasks.append(moveLerp)
+        ##if useParticles:
+        ##    model = render.attachNewNode(PandaNode("DustParticle"))
+        ##    model.setPos(downObj.getPos() + (0,0,25))
+        ##    model.setScale(25,25,25)
+        ##    particle = ParticleEffect()
+        ##    print Filename('./particles/steam.ptf')
+        ##    particle.loadConfig(Filename('./particles/steam.ptf'))
+        ##    particle.start(model)
+        moveLerp.start()
+    def callFunc(self,funcName):
+        print funcName
+        exec "self."+funcName
+
+    def resumeEnemiesStagger(self):
+        enemySeq = Sequence()
+        for ii in self.enemyMan.enemyList:
+            enemySeq.append(Func(self.enemyMan.enemyList[ii].resume))
+            enemySeq.append(Wait(2))
+        print "Start em!"
+        enemySeq.start()
+    def Truth(self):
+        return True
+
+    def endDemo(self):
+        seq = Sequence(Func(self.displayText,"This ends our demo of Orellia. Thank you for participating in the Alpha phase of this project."),
+                       Wait(10),
+                       Func(sys.exit))
+        seq.start()
+
+    def setMountainHeight(self,newHeight):
+        self.mHeight = newHeight
+
+    def updateBackgroundSound(self, sceneName):
+        try:
+            if sceneName == "default_2.scene" or sceneName == "default_2":
+                print "fail0: " + sceneName
+                self.moveFactor = 500.0;
+            else:
+                print "fail: " + sceneName
+                self.moveFactor = 1.0;
+
+            if not self.backSoundSeq == None:
+                self.backSoundSeq.finish();
+            self.backSoundSeq = Sequence();
+            paraSeq = Parallel();
+            print(sceneName)
+            for soundName in self.screenSounds[sceneName]:
+                print soundName;
+                paraSeq.append(Func(self.playBackground, "Sounds\\" + soundName + ".mp3"));
+            self.backSoundSeq.append(paraSeq);
+            self.backSoundSeq.start();
+        except:
+            pass
+    def playBackground(self, sound):
+        mySound = base.loader.loadSfx(sound)
+        mySound.setLoop(True)
+        mySound.play()
+        
+    def devTool(self,toolNum):
+        if toolNum == 1:
+            self.devMove = 10
+        if toolNum == -1:
+            self.devMove = 1
+        if toolNum == 2:
+            self.mHeight += 1000
+        if toolNum == -2:
+            self.mHeight -= 1000
 world = World()
-world.run()
+world.run();

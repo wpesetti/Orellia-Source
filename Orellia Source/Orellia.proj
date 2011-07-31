@@ -38,6 +38,14 @@
 			default_3.scene
 		</Filepath>
 	</SceneFile>
+	<SceneFile>
+		<Name>
+			default_4
+		</Name>
+		<Filepath>
+			default_4.scene
+		</Filepath>
+	</SceneFile>
 	<JournalFile>
 		testmap1.journal
 	</JournalFile>
