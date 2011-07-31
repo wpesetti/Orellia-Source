@@ -4,7 +4,6 @@
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
 IN_DEVELOP = False
 
-from PauseGameState import *
 import sys, math, os
 from math import exp
 from direct.showbase.ShowBase import ShowBase
@@ -37,6 +36,7 @@ print "Appended path"
 sys.path.append("./Panda Core scripts") 
 from LevelLoader import *
 from GameObject import *
+from PauseGameState import *
 from GameplayUI import *
 from JournalEntry import *
 from JournalMgr import *
@@ -50,7 +50,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
-SCENE_FILE = 'default_0.scene'
+SCENE_FILE = 'default_1.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -147,7 +147,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.blockingText = OnscreenText(text = "", pos = (0.5, 0.2), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
         self.stopTasks = []
         self.heroHeading = 0.0
-        self.currScene = "default_0"
+        self.currScene = "default_1"
         self.mHeight = 135
         
         self.backSoundSeq = None
@@ -165,7 +165,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         props.setCursorHidden(True) 
         base.win.requestProperties(props) 
         
+        self.paused = False;
         self.pauseState = PauseGameState(self)
+        self.accept('p', self.pauseToggle);
         self.createLoadScreen('./LEGameAssets/Textures/title_screen.png')
         base.graphicsEngine.renderFrame()
         
@@ -394,11 +396,18 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         if hasSound:
             movieSound.play()
         Sequence(Wait(movieSound.length()),Func(self.killMovie)).start()
-        
+    
+    def pauseToggle(self):
+        if self.paused:
+            self.resume();
+        else:
+            self.pause();
+        self.paused = not self.paused;
     def pause(self):
         #Part3: stop all of the tasks
+        self.hero.getActorHandle().stop('anim_jogFemale')
         self.tasks = []
-        self.enemyMan.pauseAll();
+        self.enemyMan.pauseAll()
         
         for taskName in taskMgr.getAllTasks():
             if not "Loop" in str(taskName) and not "ival" in str(taskName):
@@ -409,9 +418,11 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         
         self.toggleMouse(not True);
         self.pauseState.activate()
-           
-        print "STUPID PENGAS"
     def resume(self):
+        if len(self.tempMovements) > 0:
+            self.hero.getActorHandle().loop('anim_jogFemale')
+        else:
+            self.hero.getActorHandle().loop('anim_idleFemale')
         self.pauseState.deactivate()
         self.toggleMouse(not False);
         self.enemyMan.resumeAll();
@@ -944,7 +955,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             
         
 
-    def moveHero(self,direction, dt):
+    def moveHero(self,direction, dt, factor = 1.0):
         temp = render.attachNewNode("Dummy")#NodePath()
         impair = 1
         if self.stealth:
@@ -952,6 +963,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         moveStep = MAIN_CHAR_MOVE_SPEED*dt*impair
         if moveStep > MAIN_CHAR_MAX_STEP:
             moveStep = MAIN_CHAR_MAX_STEP
+        moveStep *= factor;
         temp.setPos(self.hero, 0,-direction*moveStep, 0)
         temp.show()
         #oldPos = self.heroWallCollideX.getPos()
@@ -1028,7 +1040,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         return False
 
     
-    def MoveHeroLR(self,dt,dir):
+    def MoveHeroLR(self,dt,dir, factor = 1.0):
         ## up = render.getRelativeVector(base.cam, Vec3(0, 0, 1))
         ## up.normalize()
         
@@ -1046,6 +1058,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         moveStep = MAIN_CHAR_MOVE_SPEED*dt*impair
         if moveStep > MAIN_CHAR_MAX_STEP:
             moveStep = MAIN_CHAR_MAX_STEP
+        moveStep *= factor;
         temp.setPos(self.camPivot, dir * moveStep,0, 0)
         
         #self.oldPos = self.hero.getPos()
@@ -1254,10 +1267,11 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         dt *= self.moveFactor
         currentMove = self.processMovements();
         self.setAnim()
+        factor = 1.0;
 
         direction = int('w' in self.tempMovements or 's' in self.tempMovements)
         if len(self.tempMovements) >= 2:
-            dt *= (self.diagonal);
+            factor *= (self.diagonal);
 
         self.oldPos = self.hero.getPos()
         self.moved = False;
@@ -1266,13 +1280,13 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.hero.getActorHandle().loop('anim_idleFemale')
         if 'a' in self.tempMovements:
             self.moved = True
-            self.MoveHeroLR(dt,-1)
+            self.MoveHeroLR(dt,-1, factor)
         elif 'd' in self.tempMovements:
             self.moved = True
-            self.MoveHeroLR(dt,1)
+            self.MoveHeroLR(dt,1, factor)
         if not direction == 0:
             self.moved = True
-            self.moveHero(direction, dt)
+            self.moveHero(direction, dt, factor)
         self.updateHeroHeight()
         if self.moved:
             self.placeCamera(self.hero)
