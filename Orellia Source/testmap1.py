@@ -36,6 +36,7 @@ print "Appended path"
 sys.path.append("./Panda Core scripts") 
 from LevelLoader import *
 from GameObject import *
+from MainMenuUI import *
 from PauseGameState import *
 from GameplayUI import *
 from JournalEntry import *
@@ -50,8 +51,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
-SCENE_FILE = 'default_0.scene'
-SCENE_FILE = 'default_1.scene'
+SCENE_FILE = 'default_2.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -170,6 +170,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         
         self.paused = False;
         self.pauseState = PauseGameState(self)
+        #self.mainMenu = MainMenuUI(self);
+        
         self.accept('p', self.pauseToggle);
         self.createLoadScreen('./LEGameAssets/Textures/title_screen.png')
         base.graphicsEngine.renderFrame()
@@ -387,7 +389,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             #    print name,"and",gameObj,"is being walled"
             #    gameObj.setTag("LE-wall","1")
         ###############LOAD THE WORLD THROUGH SAVE FILE###########
-        self.saveMan.loadWorld()
+        #self.pauseToggle();
        
 
 ##== Utility and World Initialization functions =============================##
@@ -1438,8 +1440,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             if gameObj.getNP().hasTag('enemy'):
                 print len(self.enemies)
                 self.enemies[len(self.enemies)] = gameObj
+                backing = False
                 if "point" in gameObj.getNP().getTag("enemy"):
-                    backing = False
                     objName = gameObj.getName()
                     if "True" in gameObj.getNP().getTag("mergeSim"):
                        objName = objName[:1]

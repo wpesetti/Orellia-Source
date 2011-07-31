@@ -41,9 +41,6 @@ class PauseStateUI(UIBase):
         self.resumeBtn = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
                           text_scale = (0.15,0.15), pos = (-1.25, 0, -0.60), relief=None, scale=0.38, command=self.OnResume, parent= base.a2dTopRight,
                           text = "Resume")
-        self.saveBtn = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
-                          text_scale = (0.15,0.15), pos = (-1.25, 0, -0.60 - 0.24), relief=None, scale=0.38, command=self.OnSave, parent= base.a2dTopRight,
-                          text = "Save")
         self.quitBtn = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
                           text_scale = (0.15,0.15), pos = (-1.25, 0, -0.60 - 0.48), relief=None, scale=0.38, command=self.OnQuit, parent= base.a2dTopRight,
                           text = "Quit")
@@ -51,15 +48,13 @@ class PauseStateUI(UIBase):
     def OnResume(self):
         self.world.pauseToggle();
     def OnSave(self):
-        self.world.saveMan.save();
+        self.world.saveMan.saveWorld();
     def OnQuit(self):
         sys.exit();
         
     def showAll(self):
         self.resumeBtn.show();
-        self.saveBtn.show();
         self.quitBtn.show();
     def hideAll(self):
         self.resumeBtn.hide();
-        self.saveBtn.hide();
         self.quitBtn.hide();
