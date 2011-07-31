@@ -4,7 +4,6 @@
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
 IN_DEVELOP = False
 
-from PauseGameState import *
 import sys, math, os, random
 from math import exp
 from direct.showbase.ShowBase import ShowBase
