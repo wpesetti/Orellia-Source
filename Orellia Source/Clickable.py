@@ -17,6 +17,22 @@ class ClickManager(DirectObject):
         self.accept('createClickable',self.createClickable)
         self.accept('destroyClickable',self.destroyClickable)
         self.accept('destroyAllClickables',self.destroyAll)
+        #self.accept('u',self.OnClick)
+        taskMgr.add(self.clickUpdate,"clickUpdater")
+    
+    def clickUpdate(self, task):
+        for clickable in self.ClickableList.values():
+            if not clickable.disable:
+                playerPos = Vec2(clickable.worldObj.hero.getX(), clickable.worldObj.hero.getY())
+                clickPos = Vec2(clickable.gameObj.getX(), clickable.gameObj.getY())
+                if (clickPos - playerPos).length() < 60.0:
+                    if not clickable.textOn:
+                        clickable.textScreen = OnscreenText(clickable.text, pos = (.5, 0.5), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
+                    clickable.accept('u',clickable.handleFunc)
+                    clickable.textOn = True
+                    break;
+        return task.cont;
+                    
         
     def createClickable(self,world,object,name,clickFunc,textIn = None):
         self.ClickableList[object.getName()] = Clickable(world,object,name,clickFunc,textIn) #Creates enemies
@@ -63,10 +79,11 @@ class Clickable(DirectObject):
             playerPos = Vec2(self.worldObj.hero.getX(), self.worldObj.hero.getY())
             clickPos = Vec2(self.gameObj.getX(), self.gameObj.getY())
             if (clickPos - playerPos).length() < 60.0:
-                if not self.textOn:
-                    self.textScreen = OnscreenText(self.text, pos = (.5, 0.5), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
-                self.accept('u',self.handleFunc)
-                self.textOn = True
+                # if not self.textOn:
+                    # self.textScreen = OnscreenText(self.text, pos = (.5, 0.5), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
+                # self.accept('u',self.handleFunc)
+                # self.textOn = True
+                pass
             else:
                 if self.textOn:
                     self.textScreen.destroy()

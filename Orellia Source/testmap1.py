@@ -51,7 +51,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
-SCENE_FILE = 'default_2.scene'
+SCENE_FILE = 'default_0.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
