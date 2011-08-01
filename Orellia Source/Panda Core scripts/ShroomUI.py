@@ -30,9 +30,9 @@ class ShroomUI(UIBase):
         
         self.b = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
                           text_scale = (0.15,0.15), pos = (-1.25, 0, -0.12), relief=None, scale=0.38, command=dummyMethod, parent= base.a2dTopRight,
-                          text = "Shrooms: 0")
-        self.shroomCount = 0;
-        self.updateShrooms(1);
+                          text = "Shrooms: 999")
+        self.shroomCount = 999;
+        self.updateShrooms(5);
             
     '''
     These functions are for the other parts to call to hide/show the JournalUI
@@ -46,7 +46,7 @@ class ShroomUI(UIBase):
         pass
     
     def giveShroom(self):
-        self.shroomCount += 1
+        self.shroomCount += 1;
         self.updateShrooms(self.shroomCount);
     def takeShroom(self):
         self.shroomCount -= 1;

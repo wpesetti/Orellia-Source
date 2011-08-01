@@ -147,7 +147,6 @@
     <Compile Include="Scripts\RunObjectOnRope_2.py" />
     <Compile Include="Scripts\ScriptInterface.py" />
     <Compile Include="Scripts\SetJournalEntryValue.py" />
-    <Compile Include="Scripts\ShroomUI.py" />
     <Compile Include="Scripts\StartMob.py" />
     <Compile Include="Scripts\worldFunc.py" />
     <Compile Include="Scripts\worldFunc_2.py" />

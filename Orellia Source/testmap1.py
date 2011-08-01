@@ -51,7 +51,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
-SCENE_FILE = 'default_1.scene'
+SCENE_FILE = 'default_0.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -1631,7 +1631,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.hasLine = True
             self.ropetst = Rope("tstArc")
             self.ropetst.setup(3,[(self.LinePoint1,self.LinePoint1.getPos()),(self.LinePoint2,self.LinePoint2.getPos()),(self.LinePoint3,self.LinePoint3.getPos()),(self.LinePoint4,self.LinePoint4.getPos())])
-            self.ropetst.setColor(1,0,0,1) 
+            self.ropetst.setColor(1,0,0,1)
             self.ropetst.reparentTo(self.hero)
             self.throwV = 55
             

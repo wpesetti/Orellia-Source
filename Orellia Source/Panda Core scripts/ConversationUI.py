@@ -1,3 +1,5 @@
+# @WESLEY: search for "playConvoSound" without quotations (this is the method to implement).
+
 from direct.gui.DirectGui import *
 from pandac.PandaModules import *
 from direct.showbase.DirectObject import DirectObject
@@ -66,6 +68,8 @@ class ConversationUI(UIBase):
                     else: #we have both of them             
                         self.npcchat(npc_t,textwrap)                
                         self.playerchat(playChoices)
+
+                    self.playConvoSound();
         
                 self.syncedWithConvoMgr = True
         else:
@@ -79,6 +83,10 @@ class ConversationUI(UIBase):
          
             if self.syncedWithConvoMgr:
                 self.syncedWithConvoMgr = False
+
+    def playConvoSound(self):
+        #@Wesley: this is the method you want to implement.
+        print("HALLO WORLD");
          
                                     
     #npc text display
