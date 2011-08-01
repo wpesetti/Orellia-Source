@@ -36,7 +36,6 @@ print "Appended path"
 sys.path.append("./PandaCore") 
 from LevelLoader import *
 from GameObject import *
-from MainMenuUI import *
 from PauseGameState import *
 from GameplayUI import *
 from JournalEntry import *

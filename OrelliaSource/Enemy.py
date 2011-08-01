@@ -7,7 +7,7 @@ from pandac.PandaModules import *
 from direct.task import Task
 from direct.interval.ActorInterval import ActorInterval
 from direct.interval.IntervalGlobal import *
-sys.path.append("./Panda Core scripts")
+sys.path.append("./PandaCore") 
 import ScriptInterface  
 
 
