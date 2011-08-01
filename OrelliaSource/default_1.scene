@@ -445,110 +445,6 @@
 		</actor>
 		<staticmesh>
 			<name>
-				ext_splitMushroom_alt1:5
-			</name>
-			<parent>
-				*render
-			</parent>
-			<pos>
-				<x>
-					243.102996826
-				</x>
-				<y>
-					339.358520508
-				</y>
-				<z>
-					31.1931667328
-				</z>
-			</pos>
-			<scale>
-				<x>
-					1.0
-				</x>
-				<y>
-					1.0
-				</y>
-				<z>
-					1.0
-				</z>
-			</scale>
-			<hpr>
-				<x>
-					0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					0.0
-				</z>
-			</hpr>
-			<shear>
-				<x>
-					0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					0.0
-				</z>
-			</shear>
-			<colorScale>
-				<a>
-					1.0
-				</a>
-				<r>
-					1.0
-				</r>
-				<g>
-					1.0
-				</g>
-				<b>
-					1.0
-				</b>
-			</colorScale>
-			<tag>
-				<key>
-					LE-aggression
-				</key>
-				<tag>
-					0
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-currentHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-maxHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					OBJRoot
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<transparency>
-				0
-			</transparency>
-			<asset>
-				ext_splitMushroom_alt1
-			</asset>
-		</staticmesh>
-		<staticmesh>
-			<name>
 				ext_mushroomTree:2
 			</name>
 			<parent>
@@ -2576,6 +2472,110 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
+				ext_giantMushroom_alt1:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					518.144104004
+				</x>
+				<y>
+					44.4326019287
+				</y>
+				<z>
+					32.6043701172
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				ext_giantMushroom_alt1
+			</asset>
+		</staticmesh>
+		<staticmesh>
+			<name>
 				ext_splitMushroom:1
 			</name>
 			<parent>
@@ -2888,20 +2888,20 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
-				ext_mushroomTree_alt2:1
+				ext_splitMushroom_alt1:5
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					116.518066406
+					243.102996826
 				</x>
 				<y>
-					294.548370361
+					339.358520508
 				</y>
 				<z>
-					-0.0001220703125
+					31.1931667328
 				</z>
 			</pos>
 			<scale>
@@ -2909,10 +2909,10 @@
 					1.0
 				</x>
 				<y>
-					1.17107653618
+					1.0
 				</y>
 				<z>
-					1.31809067726
+					1.0
 				</z>
 			</scale>
 			<hpr>
@@ -2987,7 +2987,7 @@
 				0
 			</transparency>
 			<asset>
-				ext_mushroomTree_alt2
+				ext_splitMushroom_alt1
 			</asset>
 		</staticmesh>
 		<staticmesh>
@@ -3189,6 +3189,14 @@
 				</key>
 				<tag>
 					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					function
+				</key>
+				<tag>
+					talkToNpc(&quot;meredithconv1&quot;)
 				</tag>
 			</tag>
 			<transparency>
@@ -3793,13 +3801,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -4630,6 +4638,14 @@
 					1
 				</tag>
 			</tag>
+			<tag>
+				<key>
+					function
+				</key>
+				<tag>
+					talkToNpc(&quot;priestess_convo2&quot;)
+				</tag>
+			</tag>
 			<transparency>
 				0
 			</transparency>
@@ -4865,20 +4881,20 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
-				ext_giantMushroom_alt1:1
+				ext_mushroomTree_alt2:1
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					518.144104004
+					116.518066406
 				</x>
 				<y>
-					44.4326019287
+					294.548370361
 				</y>
 				<z>
-					32.6043701172
+					-0.0001220703125
 				</z>
 			</pos>
 			<scale>
@@ -4886,10 +4902,10 @@
 					1.0
 				</x>
 				<y>
-					1.0
+					1.17107653618
 				</y>
 				<z>
-					1.0
+					1.31809067726
 				</z>
 			</scale>
 			<hpr>
@@ -4964,7 +4980,7 @@
 				0
 			</transparency>
 			<asset>
-				ext_giantMushroom_alt1
+				ext_mushroomTree_alt2
 			</asset>
 		</staticmesh>
 		<staticmesh>
@@ -6162,13 +6178,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>

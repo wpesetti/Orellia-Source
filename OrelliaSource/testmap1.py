@@ -147,11 +147,11 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.blockingText = OnscreenText(text = "", pos = (0.5, 0.2), scale = 0.07,wordwrap = 10,fg = (1,1,1,1),bg = (0,0,0,1))
         self.stopTasks = []
         self.heroHeading = 0.0
-        self.currScene = SCENE_FILE[:6]
+        self.currScene = SCENE_FILE[:-6]
         self.mHeight = 135
          
         self.backSoundSeq = None
-        self.screenSounds = {"default_0":["tutorial_music_ALPHA", "tutorial_music_background_ALPHA"], "default_1":["village_music_ALPHA","village_music_background_ALPHA"], "default_2":["forest_music_ALPHA", "forest_music_background_ALPHA"], "default_3":["ship_music_ALPHA", "ship_music_background_ALPHA"]};
+        self.screenSounds = {"default_0":["tutorial_music_ALPHA", "tutorial_music_background_ALPHA"], "default_1":["village_music_ALPHA","village_music_background_ALPHA"], "default_21":["forest_music_ALPHA", "forest_music_background_ALPHA"], "default_3":["ship_music_ALPHA", "ship_music_background_ALPHA"]};
         self.moveFactor = 2.0
 
         self.devMove = 1
@@ -345,6 +345,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         for keyVal in self.scenes:
             print keyVal;
         #print("Background Sound Scene: " + sceneName);
+        print self.currScene
         self.updateBackgroundSound(self.currScene);
     ##=============================##
     
@@ -1778,7 +1779,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
     def updateBackgroundSound(self, sceneName):
         try:
-            self.moveFactor = 1
             if not self.backSoundSeq == None:
                 self.backSoundSeq.finish();
             self.backSoundSeq = Sequence();
