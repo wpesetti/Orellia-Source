@@ -1927,17 +1927,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Door_alt1.png
-			</File>
-			<Name>
-				int_doorClosed_alt1_Interior_Door_alt1
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/Interior_Door_alt1.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/butterfly_plant2_diffuse_alt1.png
 			</File>
 			<Name>
@@ -2286,17 +2275,6 @@
 			</Name>
 			<Thumbnail>
 				Textures/Village Map Fixed//Thumbnails/umbrellatree_glow_3.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/skydome_glow.png
-			</File>
-			<Name>
-				skydome_night_skydome_glow
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/skydome_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2686,6 +2664,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/Village Map Fixed/character_female_diffuse_alt1.png
+			</File>
+			<Name>
+				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt1.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/Village Map Fixed/charactermale_diffuse.png
 			</File>
 			<Name>
@@ -2847,17 +2836,6 @@
 			</Name>
 			<Thumbnail>
 				Textures//Thumbnails/giantmushroom_diffuse_alt1.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/Interior_Door_2.png
-			</File>
-			<Name>
-				int_doorClosed_Interior_Door
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/Interior_Door_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3027,13 +3005,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/character_female_diffuse_alt1.png
+				Textures/Village Map Fixed/spiralplant_diffuse_alt2.png
 			</File>
 			<Name>
-				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
+				Village Map Fixed_ext_spiralPlant_alt2_spiralplant_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt1.png
+				Textures/Village Map Fixed//Thumbnails/spiralplant_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3126,6 +3104,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/Village Map Fixed/charactermale_diffuse_alt2.png
+			</File>
+			<Name>
+				Village Map Fixed_character_male_alt2_charactermale_diffuse_alt2
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse_alt2.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/twisttree_diffuse.png
 			</File>
 			<Name>
@@ -3133,6 +3122,17 @@
 			</Name>
 			<Thumbnail>
 				Textures//Thumbnails/twisttree_diffuse.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/spiralplant_glow_3.png
+			</File>
+			<Name>
+				ext_spiralPlant_alt2_spiralplant_glow
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/spiralplant_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3346,13 +3346,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/spiralplant_diffuse_alt2.png
+				Textures/skydome_glow.png
 			</File>
 			<Name>
-				Village Map Fixed_ext_spiralPlant_alt2_spiralplant_diffuse_alt2
+				skydome_night_skydome_glow
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/spiralplant_diffuse_alt2.png
+				Textures//Thumbnails/skydome_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3412,13 +3412,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/charactermale_glow_3.png
+				Textures/eyestalkplant_glow_3.png
 			</File>
 			<Name>
-				character_male_alt2_charactermale_glow
+				ext_stalkPlant_alt2_eyestalkplant_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/charactermale_glow_3.png
+				Textures//Thumbnails/eyestalkplant_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3478,13 +3478,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/spiralplant_glow_3.png
+				Textures/Interior_Door_2.png
 			</File>
 			<Name>
-				ext_spiralPlant_alt2_spiralplant_glow
+				int_doorClosed_Interior_Door
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/spiralplant_glow_3.png
+				Textures//Thumbnails/Interior_Door_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3511,13 +3511,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/charactermale_diffuse_alt2.png
+				Textures/Interior_Door_alt1.png
 			</File>
 			<Name>
-				Village Map Fixed_character_male_alt2_charactermale_diffuse_alt2
+				int_doorClosed_alt1_Interior_Door_alt1
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse_alt2.png
+				Textures//Thumbnails/Interior_Door_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3698,13 +3698,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/eyestalkplant_glow_3.png
+				Textures/charactermale_glow_3.png
 			</File>
 			<Name>
-				ext_stalkPlant_alt2_eyestalkplant_glow
+				character_male_alt2_charactermale_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/eyestalkplant_glow_3.png
+				Textures//Thumbnails/charactermale_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -5250,6 +5250,63 @@
 		</Actor>
 		<Actor>
 			<File>
+				Models/Village Map Fixed/character_Vasherie_alt2.egg
+			</File>
+			<Name>
+				Village Map Fixed_character_female_alt1
+			</Name>
+			<Thumbnail>
+				Models/Village Map Fixed//Thumbnails/character_Vasherie_alt2.jpg
+			</Thumbnail>
+			<TexRef>
+				Village Map Fixed_character_female_alt1_character_female_glow
+			</TexRef>
+			<TexRef>
+				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
+			</TexRef>
+			<Anim>
+				<LocalName>
+					anim_idleFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_idleFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_runFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_runFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_jogFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_jogFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_attackFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_attackFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_chargeFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_chargeFemale_2
+				</AssetName>
+			</Anim>
+		</Actor>
+		<Actor>
+			<File>
 				Models/Village Map Fixed/character_male_alt1.egg
 			</File>
 			<Name>
@@ -5302,63 +5359,6 @@
 				</LocalName>
 				<AssetName>
 					Village Map Fixed_anim_attackMale_2
-				</AssetName>
-			</Anim>
-		</Actor>
-		<Actor>
-			<File>
-				Models/character_Vasherie_alt3.egg
-			</File>
-			<Name>
-				character_female_alt2
-			</Name>
-			<Thumbnail>
-				/Models/Thumbnails/character_Vasherie_alt3.jpg
-			</Thumbnail>
-			<TexRef>
-				character_female_alt2_character_female_glow
-			</TexRef>
-			<TexRef>
-				character_female_alt2_character_female_diffuse_alt2
-			</TexRef>
-			<Anim>
-				<LocalName>
-					anim_chargeFemale
-				</LocalName>
-				<AssetName>
-					anim_chargeFemale_3
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_runFemale
-				</LocalName>
-				<AssetName>
-					anim_runFemale_3
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_jogFemale
-				</LocalName>
-				<AssetName>
-					anim_jogFemale_3
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_attackFemale
-				</LocalName>
-				<AssetName>
-					anim_attackFemale_3
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_idleFemale
-				</LocalName>
-				<AssetName>
-					anim_idleFemale_3
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -5768,26 +5768,26 @@
 		</Actor>
 		<Actor>
 			<File>
-				Models/Village Map Fixed/character_Vasherie_alt2.egg
+				Models/character_Vasherie_alt3.egg
 			</File>
 			<Name>
-				Village Map Fixed_character_female_alt1
+				character_female_alt2
 			</Name>
 			<Thumbnail>
-				Models/Village Map Fixed//Thumbnails/character_Vasherie_alt2.jpg
+				/Models/Thumbnails/character_Vasherie_alt3.jpg
 			</Thumbnail>
 			<TexRef>
-				Village Map Fixed_character_female_alt1_character_female_glow
+				character_female_alt2_character_female_glow
 			</TexRef>
 			<TexRef>
-				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
+				character_female_alt2_character_female_diffuse_alt2
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_idleFemale_2
+					anim_chargeFemale_3
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5795,7 +5795,7 @@
 					anim_runFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_runFemale_2
+					anim_runFemale_3
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5803,7 +5803,7 @@
 					anim_jogFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_jogFemale_2
+					anim_jogFemale_3
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5811,15 +5811,15 @@
 					anim_attackFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_attackFemale_2
+					anim_attackFemale_3
 				</AssetName>
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
+					anim_idleFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_chargeFemale_2
+					anim_idleFemale_3
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -6254,18 +6254,18 @@
 		</Script>
 		<Script>
 			<File>
-				Scripts/worldFunc_2.py
-			</File>
-			<Name>
-				worldFunc
-			</Name>
-		</Script>
-		<Script>
-			<File>
 				Scripts/ChangeSceneTo_2.py
 			</File>
 			<Name>
 				ChangeSceneTo
+			</Name>
+		</Script>
+		<Script>
+			<File>
+				Scripts/OpenConversation.py
+			</File>
+			<Name>
+				OpenConversation
 			</Name>
 		</Script>
 		<Script>
@@ -6310,10 +6310,10 @@
 		</Script>
 		<Script>
 			<File>
-				Scripts/OpenConversation.py
+				Scripts/worldFunc_2.py
 			</File>
 			<Name>
-				OpenConversation
+				worldFunc
 			</Name>
 		</Script>
 	</Scripts>
@@ -6412,6 +6412,17 @@
 			</Name>
 			<Thumbnail>
 				Textures/Thumbnails/default_2_terrain01.png
+			</Thumbnail>
+		</Terrain>
+		<Terrain>
+			<File>
+				Textures/default_2_terrain02.png
+			</File>
+			<Name>
+				default_2_terrain2
+			</Name>
+			<Thumbnail>
+				Textures/Thumbnails/default_2_terrain02.png
 			</Thumbnail>
 		</Terrain>
 		<Terrain>

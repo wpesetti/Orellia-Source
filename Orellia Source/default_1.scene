@@ -3870,7 +3870,7 @@
 					ChangeScene
 				</scriptName>
 				<parameter>
-					default_2.scene
+					default_21.scene
 				</parameter>
 			</script>
 			<tangible>
@@ -5287,7 +5287,7 @@
 				character_female_alt1
 			</asset>
 			<currentAnim>
-				anim_idleFemale
+				anim_chargeFemale
 			</currentAnim>
 			<isLooping>
 				False
@@ -5539,6 +5539,142 @@
 				ext_glowyPlant_alt1
 			</asset>
 		</staticmesh>
+		<camera>
+			<name>
+				camShroom
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					88.6975097656
+				</x>
+				<y>
+					740.784790039
+				</y>
+				<z>
+					235.401092529
+				</z>
+			</pos>
+			<scale>
+				<x>
+					15.7566976547
+				</x>
+				<y>
+					15.756696701
+				</y>
+				<z>
+					15.756696701
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-87.3238601685
+				</x>
+				<y>
+					-40.8502807617
+				</y>
+				<z>
+					3.38540849043e-05
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<lens>
+				<lensType>
+					perspective
+				</lensType>
+				<fovHoriz>
+					30.0
+				</fovHoriz>
+				<fovVert>
+					30.0
+				</fovVert>
+				<near>
+					1.0
+				</near>
+				<far>
+					100000.0
+				</far>
+				<filmSizeWidth>
+					1.0
+				</filmSizeWidth>
+				<filmSizeHeight>
+					1.0
+				</filmSizeHeight>
+			</lens>
+			<frustumHidden>
+				1
+			</frustumHidden>
+			<speed>
+				1.0
+			</speed>
+			<seqTime>
+				10.0
+			</seqTime>
+			<followPath>
+				0
+			</followPath>
+		</camera>
 		<box>
 			<name>
 				Preventer1
@@ -6026,13 +6162,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -6471,7 +6607,7 @@
 					1.16095685959
 				</x>
 				<y>
-					1.31765007973
+					1.31765019894
 				</y>
 				<z>
 					1.60604059696

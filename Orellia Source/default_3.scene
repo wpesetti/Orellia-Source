@@ -1904,20 +1904,20 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
-				ext_splitMushroom_alt1:2
+				ext_fanPlant_alt2:6
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					1001.21704102
+					810.037719727
 				</x>
 				<y>
-					1119.21740723
+					636.186401367
 				</y>
 				<z>
-					12.6149730682
+					17.5213432312
 				</z>
 			</pos>
 			<scale>
@@ -1933,13 +1933,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-47.1090698242
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2003,7 +2003,7 @@
 				0
 			</transparency>
 			<asset>
-				ext_splitMushroom_alt1
+				ext_fanPlant_alt2
 			</asset>
 		</staticmesh>
 		<dummy>
@@ -2037,13 +2037,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2146,13 +2146,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2463,13 +2463,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2780,13 +2780,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2889,13 +2889,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2998,13 +2998,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -3107,13 +3107,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -3216,13 +3216,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -4648,6 +4648,136 @@
 		</staticmesh>
 		<actor>
 			<name>
+				character_female_alt1:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					289.89465332
+				</x>
+				<y>
+					167.96395874
+				</y>
+				<z>
+					12.2750396729
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-158.991226196
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-mainChar
+				</key>
+				<tag>
+					180
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				character_female
+			</asset>
+			<currentAnim>
+				anim_idleFemale
+			</currentAnim>
+			<isLooping>
+				False
+			</isLooping>
+			<isPlaying>
+				False
+			</isPlaying>
+			<playRate>
+				1.0
+			</playRate>
+			<isPosed>
+				False
+			</isPosed>
+			<frame>
+				0
+			</frame>
+		</actor>
+		<actor>
+			<name>
 				botPoint
 			</name>
 			<parent>
@@ -5352,13 +5482,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -5461,13 +5591,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -5570,13 +5700,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -5783,13 +5913,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -7491,20 +7621,20 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
-				ext_fanPlant_alt2:6
+				ext_splitMushroom_alt1:2
 			</name>
 			<parent>
 				*render
 			</parent>
 			<pos>
 				<x>
-					810.037719727
+					1001.21704102
 				</x>
 				<y>
-					636.186401367
+					1119.21740723
 				</y>
 				<z>
-					17.5213432312
+					12.6149730682
 				</z>
 			</pos>
 			<scale>
@@ -7520,13 +7650,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-47.1090698242
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -7590,7 +7720,7 @@
 				0
 			</transparency>
 			<asset>
-				ext_fanPlant_alt2
+				ext_splitMushroom_alt1
 			</asset>
 		</staticmesh>
 		<staticmesh>
@@ -8737,136 +8867,6 @@
 				ext_giantMushroom_alt1
 			</asset>
 		</staticmesh>
-		<actor>
-			<name>
-				character_female1:1
-			</name>
-			<parent>
-				*render
-			</parent>
-			<pos>
-				<x>
-					289.89465332
-				</x>
-				<y>
-					167.96395874
-				</y>
-				<z>
-					12.2750396729
-				</z>
-			</pos>
-			<scale>
-				<x>
-					1.0
-				</x>
-				<y>
-					1.0
-				</y>
-				<z>
-					1.0
-				</z>
-			</scale>
-			<hpr>
-				<x>
-					-158.991226196
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					-0.0
-				</z>
-			</hpr>
-			<shear>
-				<x>
-					0.0
-				</x>
-				<y>
-					0.0
-				</y>
-				<z>
-					0.0
-				</z>
-			</shear>
-			<colorScale>
-				<a>
-					1.0
-				</a>
-				<r>
-					1.0
-				</r>
-				<g>
-					1.0
-				</g>
-				<b>
-					1.0
-				</b>
-			</colorScale>
-			<tag>
-				<key>
-					LE-aggression
-				</key>
-				<tag>
-					0
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-currentHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-mainChar
-				</key>
-				<tag>
-					180
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					LE-maxHealth
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<tag>
-				<key>
-					OBJRoot
-				</key>
-				<tag>
-					1
-				</tag>
-			</tag>
-			<transparency>
-				0
-			</transparency>
-			<asset>
-				character_female
-			</asset>
-			<currentAnim>
-				anim_chargeFemale
-			</currentAnim>
-			<isLooping>
-				False
-			</isLooping>
-			<isPlaying>
-				False
-			</isPlaying>
-			<playRate>
-				1.0
-			</playRate>
-			<isPosed>
-				False
-			</isPosed>
-			<frame>
-				0
-			</frame>
-		</actor>
 		<staticmesh>
 			<name>
 				ext_fanPlant_alt2:11
@@ -9210,13 +9210,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
