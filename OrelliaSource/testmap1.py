@@ -1292,12 +1292,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
         direction = int('w' in self.tempMovements or 's' in self.tempMovements)
         if len(self.tempMovements) >= 2:
-<<<<<<< HEAD
             dt *= (self.diagonal);
-=======
-            factor *= (self.diagonal);
-
->>>>>>> d540488ba036b8326e761b3dff02193e094e9c43
         self.oldPos = self.hero.getPos()
         self.moved = False;
         if len(self.tempMovements) == 0:
@@ -1784,10 +1779,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
     def updateBackgroundSound(self, sceneName):
         try:
-<<<<<<< HEAD
             self.moveFactor = 1
-=======
->>>>>>> d540488ba036b8326e761b3dff02193e094e9c43
             if not self.backSoundSeq == None:
                 self.backSoundSeq.finish();
             self.backSoundSeq = Sequence();
