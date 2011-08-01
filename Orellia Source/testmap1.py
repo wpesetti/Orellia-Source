@@ -51,7 +51,7 @@ from SpellConstants import *
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
-SCENE_FILE = 'default_0.scene'
+SCENE_FILE = 'default_1.scene'
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -1774,13 +1774,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
     def updateBackgroundSound(self, sceneName):
         try:
-            if sceneName == "default_2.scene" or sceneName == "default_2":
-                print "fail0: " + sceneName
-                self.moveFactor = 500.0;
-            else:
-                print "fail: " + sceneName
-                self.moveFactor = 1.0;
-
             if not self.backSoundSeq == None:
                 self.backSoundSeq.finish();
             self.backSoundSeq = Sequence();

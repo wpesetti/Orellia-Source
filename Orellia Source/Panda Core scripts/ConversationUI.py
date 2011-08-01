@@ -42,9 +42,9 @@ class ConversationUI(UIBase):
                 self.radioButtonList.destroy()
                 self.playerbgFrame.destroy()
                 self.npcbgFrame.destroy()
-               
+                
                 npc_t = self.world.conversationMgr.getNPCStatement()  
-                   
+                
                 if(npc_t == None):
                     self.showotherUI()
                     return

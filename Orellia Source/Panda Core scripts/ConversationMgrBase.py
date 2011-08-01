@@ -122,6 +122,8 @@ class ConversationMgrBase:
 #                        pass
                     
                 self.curValidResponseIDs = self.__calculateValidResponseIDs(self.curNPCStatementID)
+                # Yo dude
+                self.playLineSound();
                 if len(self.curValidResponseIDs) == 0:
                    Debug.debug(__name__,'(player response list is empty)')
                    # TODO: close conversation while still showing the last NPC line...involve ConversationUI?
@@ -131,6 +133,9 @@ class ConversationMgrBase:
                     
         else:
             print 'WARNING: playResponse called when no conversation was open'
+    
+    def playLineSound(self):
+        pass
     
     def __doLineScripts(self, lineID):
         if lineID == LineIDType.END_CONVERSATION:
