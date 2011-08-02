@@ -34,8 +34,10 @@ def module_exists(module_name):
 #    sys.path.append(GAMEPLAY_FOLDER)
 print "Appended path"
 sys.path.append("./PandaCore") 
+
 from LevelLoader import *
 from GameObject import *
+
 from PauseGameState import *
 from GameplayUI import *
 from JournalEntry import *
@@ -51,6 +53,7 @@ from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 
 SCENE_FILE = 'default_1.scene'
+
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'testmap1.journal'
 SCRIPTS_FILE = 'Scripts.py'
@@ -148,10 +151,12 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.stopTasks = []
         self.heroHeading = 0.0
         self.currScene = SCENE_FILE[:-6]
+
         self.mHeight = 135
          
         self.backSoundSeq = None
         self.screenSounds = {"default_0":["tutorial_music_ALPHA", "tutorial_music_background_ALPHA"], "default_1":["village_music_ALPHA","village_music_background_ALPHA"], "default_21":["forest_music_ALPHA", "forest_music_background_ALPHA"], "default_3":["ship_music_ALPHA", "ship_music_background_ALPHA"]};
+
         self.moveFactor = 2.0
 
         self.devMove = 1
@@ -345,7 +350,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         for keyVal in self.scenes:
             print keyVal;
         #print("Background Sound Scene: " + sceneName);
-        print self.currScene
         self.updateBackgroundSound(self.currScene);
     ##=============================##
     
@@ -369,6 +373,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             if gameObj.getNP().hasTag('enemy'):
                 print len(self.enemies)
                 self.enemies[len(self.enemies)] = gameObj
+
                 if "point" in gameObj.getNP().getTag("enemy"):
                     objName = gameObj.getName()
                     if "True" in gameObj.getNP().getTag("mergeSim"):
@@ -787,6 +792,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.cam.setP(CAMERA_PITCH)
         
     #Entire task is now useless due to camera rotation being handled when the character is turned.
+
     ## def cameraFollowTask(self, task):
         ## heroH = self.hero.getH(render) + self.heroHeadingOffset
         ## camPivotH = self.camPivot.getH(render)
@@ -925,7 +931,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                 # TODO: unlink these from being in the same task in case we want pivot to not be linked to hero (ex. cutscene)
             else:
                 self.hero.setPos(self.oldPos)
-                print "Something ",self.hero.getPos()
         self.heroGroundHandler.clearEntries()
     
     def updateHeroPos(self, queue, stepSize):
@@ -1045,9 +1050,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         
     def moveHeroToWallCollide(self,pos):
         if self.herowallcollision==False:
-            #print "Something Col 1",self.hero.getPos()
             self.hero.setPos(pos)#self.camPivot, 0, MAIN_CHAR_MOVE_SPEED, 0)
-            #print "Something Col",self.hero.getPos()
     
     def isInObstacleRange(self, mover, colEntry, stepSize):
         colPoint = colEntry.getSurfacePoint(render)
@@ -1292,7 +1295,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
         direction = int('w' in self.tempMovements or 's' in self.tempMovements)
         if len(self.tempMovements) >= 2:
-            dt *= (self.diagonal);
+            factor *= (self.diagonal);
+
         self.oldPos = self.hero.getPos()
         self.moved = False;
         if len(self.tempMovements) == 0:
@@ -1323,6 +1327,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.scenes['default_0'] = 'default_0.scene'
         self.scenes['default_1.scene'] = 'default_1.scene'
         self.scenes['default_21.scene'] = 'default_5.scene'
+
         self.scenes['default_3.scene'] = 'default_3.scene'
         self.scenes['default_4.scene'] = 'default_4.scene'
         # NOTE: Do not remove!  This function is populated by StandaloneExporter
@@ -1424,7 +1429,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
            object = self.objects[self.hero.getName()]
            if(object.hasTag('LE-mainChar')):
                self.hero.setPos(object.getPos())
-               print self.hero.getPos()
                self.placeCamera(self.hero)
                object.detachNode()
                del self.objects[self.hero.getName()]
@@ -1634,7 +1638,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.hasLine = True
             self.ropetst = Rope("tstArc")
             self.ropetst.setup(3,[(self.LinePoint1,self.LinePoint1.getPos()),(self.LinePoint2,self.LinePoint2.getPos()),(self.LinePoint3,self.LinePoint3.getPos()),(self.LinePoint4,self.LinePoint4.getPos())])
-            self.ropetst.setColor(1,0,0,1) 
+            self.ropetst.setColor(1,0,0,1)
             self.ropetst.reparentTo(self.hero)
             self.throwV = 55
             
@@ -1735,7 +1739,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         sys.exit()
     def playerDie(self):
         self.hero.setPos(self.spawnPoint)
-        print "Die ",self.hero.getPos()
         self.placeCamera(self.hero)
     def startMob(self,mobName):
         self.enemyMan.enemyList[mobName].resume()

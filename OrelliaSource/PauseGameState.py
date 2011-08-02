@@ -12,6 +12,7 @@ from direct.interval.IntervalGlobal import *
 from JournalMgr import *
 from UIBase import *
 sys.path.append("./PandaCore") 
+
 import ScriptInterface
 
 
