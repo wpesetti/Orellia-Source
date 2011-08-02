@@ -2000,16 +2000,24 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             transition.setFadeColor(color[0],color[1],color[2])
             transition.fadeOut(time)
 
+    def takeSnapShot(self, task):
+        if (task.time > self.nextclick):
+            self.nextclick += 1.0 / self.clickrate
+            if (self.nextclick < task.time):
+                self.nextclick = task.time
+            base.win.triggerCopy()
+        return Task.cont
 
-
-
-
-
-
-
-
-
-
+    def chooseEffectGhost(self):
+        base.setBackgroundColor(0,0,0,1)
+        self.bcard.hide()
+        self.fcard.show()
+        self.fcard.setColor(1.0,1.0,1.0,0.5)
+        self.fcard.setScale(1.00)
+        self.fcard.setPos(0,0,0)
+        self.fcard.setR(0)
+        self.clickrate = 1000
+        self.nextclick = 0
 
     def fadeToFire(self,task,model):
         model.setSa(model.getSa() + .01)
@@ -2028,16 +2036,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         p = Particle.ParticleHolder()
         p.addParticleEffect('./particles/fireish.ptf',(0,0,0),(1,1,1),particleNode = model)
         #particle.start(model)
-
-
-
-
-
-
-
-
-
-
 
 world = World()
 world.run();
