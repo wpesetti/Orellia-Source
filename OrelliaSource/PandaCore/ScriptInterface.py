@@ -214,9 +214,11 @@ class ScriptInterface:
         else:
             sequence.start()
         
-    def playSound(self, soundName,canLoop):
+    def playSound(self, soundName,canLoop,bypass=False):
         if soundName in self.world.assets.sounds:
             soundObj = self.world.assets.sounds[soundName]
+        elif bypass:
+            soundObj = soundName;
         else:
             self.PrintToConsole('==ERROR== no GameObject named \'%s\' in scene' %(soundName))
             return
@@ -226,14 +228,17 @@ class ScriptInterface:
             mySound.setLoop(True)
         mySound.play()
 
-    def playSound3d(self, object,soundName,canLoop):
+    def playSound3d(self, object,soundName,canLoop,bypass=False):
         if soundName in self.world.assets.sounds:
             soundObj = self.world.assets.sounds[soundName]
+        elif bypass:
+            soundObj = soundName;
         else:
             self.PrintToConsole('==ERROR== no GameObject named \'%s\' in scene' %(soundName))
             return
         print soundObj
         mySound = self.audio3d.loadSfx(soundObj)
+        self.audio3d.setSoundMinDistance(mySound,1)
         self.audio3d.attachSoundToObject(mySound,object)
         if canLoop:
             mySound.setLoop(True)
