@@ -1,0 +1,2 @@
+def main(world,funcName):
+    print "LOLOLOLOL"
