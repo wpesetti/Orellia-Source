@@ -5,13 +5,13 @@
   ../Textures/journalBtn.png
 }
 <Texture> ok {
-  ../Textures/journalBtn.png
+  ../Textures/ui/journalBtn.png
 }
 <Texture> disable {
-   ../Textures/journalBtn.png
+   ../Textures/ui/journalBtn.png
 }
 <Texture> click {
-   ../Textures/journalBtn.png
+   ../Textures/ui/journalBtn.png
 }
 <Group> {
   <Switch> { 1 }

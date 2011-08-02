@@ -1,7 +1,7 @@
 # Used as a basis by StandaloneExporter, which fills in some of the values to reflect the local computer and project name.
 from pandac.PandaModules import loadPrcFileData
-#loadPrcFileData("", """fullscreen 1
-#win-size 1024 768""")
+loadPrcFileData("", """fullscreen 0
+win-size 1024 768""")
 
 #== Python and Panda imports ==
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
@@ -14,6 +14,7 @@ from pandac.PandaModules import *
 from panda3d.ai import *
 from direct.filter.CommonFilters import CommonFilters
 from direct.task.Task import Task, cont
+
 #== Special Imports for final: ####SPECIAL
 from direct.gui.OnscreenText import OnscreenText
 #####SPECIAL######
@@ -52,11 +53,12 @@ from CombatMgr import *
 from InventoryMgr import *
 from SpellConstants import *
 import Particle
+
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 from direct.showbase.Transitions import Transitions 
 
-SCENE_FILE = 'default_4.scene'
+SCENE_FILE = 'default_0.scene'
 
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'Orellia.journal'
@@ -165,6 +167,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
         self.devMove = 1
         self.activeTerm = 0
+        
+        self.doingAnim = False;
+        self.canMove = True;
         #############################
         
 
@@ -347,6 +352,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.accept('addCollision',self.addCollision)  
         ##self.accept('q',self.throwShroom)
         #The code is there, it will live on in our hearts...
+
         self.accept('8',self.devTool,[1])
         self.accept('8-up',self.devTool,[-1])
         self.accept('[',self.devTool,[2])
@@ -401,7 +407,37 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             #    gameObj.setTag("LE-wall","1")
         ###############LOAD THE WORLD THROUGH SAVE FILE###########
         #self.pauseToggle();
-        #self.openCutScene()
+        
+        # create a texture into which we can copy the main window.
+
+        self.tex = Texture()
+        self.tex.setMinfilter(Texture.FTLinear)
+        base.win.addRenderTexture(self.tex, GraphicsOutput.RTMTriggeredCopyTexture)
+        
+        # Create another 2D camera. Tell it to render before the main camera.
+
+        self.backcam = base.makeCamera2d(base.win, sort=-10)
+        self.background = NodePath("background")
+        self.backcam.reparentTo(self.background)
+        self.background.setDepthTest(0)
+        self.background.setDepthWrite(0)
+        self.backcam.node().getDisplayRegion(0).setClearDepthActive(0)
+
+        # Obtain two texture cards. One renders before the dragon, the other after.
+        self.bcard = base.win.getTextureCard()
+        self.bcard.reparentTo(self.background)
+        self.bcard.setTransparency(1)
+        self.fcard = base.win.getTextureCard()
+        self.fcard.reparentTo(render2d)
+        self.fcard.setTransparency(1)
+
+        # Initialize one of the nice effects.
+        self.chooseEffectGhost()
+        
+        # Add the task that initiates the screenshots.
+        taskMgr.add(self.takeSnapShot, "takeSnapShot")
+        
+        self.openCutScene()
 
 ##== Utility and World Initialization functions =============================##
     def playMovie(self, movieName):
@@ -433,9 +469,12 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.hero.getActorHandle().stop('anim_jogFemale')
         self.tasks = []
         self.enemyMan.pauseAll()
+        self.ignore("j");
+        if self.gameplayUI.journalUI.window_show:
+            self.gameplayUI.journalUI.popoutWindow();
         
         for taskName in taskMgr.getAllTasks():
-            if not "Loop" in str(taskName) and not "ival" in str(taskName):
+            if not "Loop" in str(taskName) and not "ival" in str(taskName) and not "takeSnapShot" in str(taskName):
                 taskMgr.remove(taskName)
                 self.tasks.append( (taskName,str(taskName)[11:]) )
             else:
@@ -444,6 +483,10 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.toggleMouse(not True);
         self.pauseState.activate()
     def resume(self):
+        world.accept("j", self.gameplayUI.journalUI.popoutWindow);
+        if not self.gameplayUI.journalUI.window_show:
+            self.gameplayUI.journalUI.popoutWindow();
+        
         if len(self.tempMovements) > 0:
             self.hero.getActorHandle().loop('anim_jogFemale')
         else:
@@ -873,7 +916,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
         self.dr.setCamera(self.objects[cameraName])
         
-        Move1 = LerpPosInterval(self.objects[cameraName],3,self.objects[cameraName].getPos(),self.objects[cameraName].getPos())
+        Move1 = LerpPosInterval(self.objects[cameraName],runTime,self.objects[cameraName].getPos(),self.objects[cameraName].getPos())
         sequence = Sequence(Move1);
         def temp():
 
@@ -1297,7 +1340,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         dt = globalClock.getDt()
         dt *= self.moveFactor
         currentMove = self.processMovements();
-        self.setAnim()
         factor = 1.0;
 
         direction = int('w' in self.tempMovements or 's' in self.tempMovements)
@@ -1306,6 +1348,12 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
 
         self.oldPos = self.hero.getPos()
         self.moved = False;
+        
+        if not self.canMove:
+            return task.cont;
+        
+        self.setAnim()
+        
         if len(self.tempMovements) == 0:
             self.hero.getActorHandle().stop('anim_jogFemale')
             self.hero.getActorHandle().loop('anim_idleFemale')
@@ -1747,14 +1795,21 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         #sys.exit()
         #self.conversationMgr.closeConversation()
         pass
-    def playerDie(self):
+    def playerDie(self):   
         self.hero.setPos(self.spawnPoint)
         self.placeCamera(self.hero)
     def startMob(self,mobName):
         self.enemyMan.enemyList[mobName].resume()
     def moveDownward(self,gameObj,sec,useParticles):
         print gameObj,sec,useParticles
+        
+        if self.doingAnim:
+            return;
+        self.doingAnim = True;
+        
+        self.clickMan.destroyClickable("ext_giantMushroom:1");
         downObj = self.objects[gameObj]
+        seq = Sequence();
         moveLerp = LerpPosInterval(downObj,sec,downObj.getPos() + (0,0,-150),downObj.getPos())
         self.stopTasks.append(moveLerp)
         if useParticles:
@@ -1768,7 +1823,23 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             p.addParticleEffect('./particles/dust.ptf',(0,0,0),(1,1,1),particleNode = model)
             #particle.start(model)
         moveLerp.start()
+
+
+
+
+
+
+
+
+
+
+
+
+
         self.runCamera("camShroom",10)
+    def setClickManLikeABoss(self):
+        self.doingAnim = not False;
+        #self.clickMan.canClick = True
     def callFunc(self,funcName):
         print funcName
         exec "self."+funcName
@@ -1833,8 +1904,12 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         ##Sequence(Wait(runTime),self.moveCamPosLerp.stop,self.moveCamHprLerp.stop).start
 
     def openCutScene(self):
-        self.runCamera("cam1",500)
-        self.scriptInterface.RunObjectRope(self.objects["cam1"],self.objects["ropeCam"],5)
+        self.canMove = False;
+        self.runCamera("cam1",4.4)
+        self.scriptInterface.RunObjectRope(self.objects["cam1"],self.objects["ropeCam"],5,lookAtObject=self.hero.getName())
+        def smallFunc():
+            self.canMove = True;
+        Sequence(Wait(4.4), Func(smallFunc)).start();
 
     def finalScene(self):
          #Part3: stop all of the tasks
@@ -1850,7 +1925,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                 print str(taskName)[11:] + " still working";
         
         self.toggleMouse(not True);
-        self.toggleMouse(False)
         self.gameplayUI.hideAll()
 
         self.runCamera("CameraFin",500,True)
@@ -1862,8 +1936,10 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                        Func(self.displayTextF,"Regulus: Ah, a primitive being here to worship at the alter of the false mother. You do know that she has used you and will continue to use you? She will direct you and manipulate you. She will tell you her tragedy and you will accept it without question, just like your father did, like his mother before him. You know that she is no God. She told you herself, but you will continue to worship her as if she were one. It is time to destroy the false God."),
                        Func(self.finalSoundBeep,"regulus1"),
                        Wait(28),#28
+
                        Func(self.displayTextF,"Vasherie: You can't do this!"),
                        Wait(5),#5
+
                        Func(self.displayTextF,"Regulus: I can and I will, thanks to you. By repairing the nanobot control consoles, you have given me the ability to directly influence the other nanobots-- to show them the truth.  My people need freedom. There can be no freedom with the continued existence of the false mother. She has ensured that your people remain at a primitive level. You cannot hope to destroy..."),
                        Func(self.finalSoundBeep,"regulus2"),
                        Wait(22),#22
@@ -1875,11 +1951,21 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
                        Func(self.displayTextF,"AI: Fortunately for you, Regulus' speech gave me enough time to access his core functions. He is stunned, but not for long. You must dispose of him quickly."),
                        Func(self.finalSoundBeep,"regulus3"),
                        Wait(10),#10
+
+
+
+
+
+
+
                        Func(self.fadeToColor,"in",red,5),
                        Wait(5),#5
+
                        Func(self.fadeToColor,"out",black,.2),
                        Wait(2),#2
                        Func(self.endingExit)
+
+
                        )
         seq.start()
 
@@ -1887,6 +1973,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         mySound = base.loader.loadSfx("Sounds\\"+soundName+".mp3")
         if soundName == "alert_1":
             mySound.setVolume(0.5)
+
+
         mySound.play()
 
     def displayTextF(self,text1):
@@ -1912,6 +2000,17 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             transition.setFadeColor(color[0],color[1],color[2])
             transition.fadeOut(time)
 
+
+
+
+
+
+
+
+
+
+
+
     def fadeToFire(self,task,model):
         model.setSa(model.getSa() + .01)
         return task.cont
@@ -1929,6 +2028,16 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         p = Particle.ParticleHolder()
         p.addParticleEffect('./particles/fireish.ptf',(0,0,0),(1,1,1),particleNode = model)
         #particle.start(model)
+
+
+
+
+
+
+
+
+
+
 
 world = World()
 world.run();

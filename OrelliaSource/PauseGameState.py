@@ -37,14 +37,13 @@ class PauseStateUI(UIBase):
         UIBase.__init__(self, world)
         self.world = world
         
-        self.button_maps = self.world.loader.loadModel("./LEGameAssets/Models/shroomToggle")
+        self.button_maps = self.world.loader.loadModel("./LEGameAssets/Models/resumeBtn")
+        self.button_maps2 = self.world.loader.loadModel("./LEGameAssets/Models/exitBtn")
         
         self.resumeBtn = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
-                          text_scale = (0.15,0.15), pos = (-1.25, 0, -0.60), relief=None, scale=0.38, command=self.OnResume, parent= base.a2dTopRight,
-                          text = "Resume")
-        self.quitBtn = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
-                          text_scale = (0.15,0.15), pos = (-1.25, 0, -0.60 - 0.48), relief=None, scale=0.38, command=self.OnQuit, parent= base.a2dTopRight,
-                          text = "Quit")
+                          text_scale = (0.15,0.15), pos = (-1.4, 0, -0.34), relief=None, scale=0.38, command=self.OnResume, parent= base.a2dTopRight)
+        self.quitBtn = DirectButton( geom = (self.button_maps2.find("**/ok"),self.button_maps2.find("**/click"),self.button_maps2.find("**/rolling_over"),self.button_maps2.find("**/disable")),
+                          text_scale = (0.15,0.15), pos = (-1.4, 0, -0.34 - 0.26), relief=None, scale=0.38, command=self.OnQuit, parent= base.a2dTopRight)
                           
     def OnResume(self):
         self.world.pauseToggle();

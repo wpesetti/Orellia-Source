@@ -3928,7 +3928,7 @@ class ParticlePropertyPanel(ObjectPropertyPanel):
             temp_str =  str (self.fileNameList_ptf[temp_index])
             temp_str = "./particles/" + temp_str.rsplit('/', 1)[1]
             self.object_particle = self.editor.objectMgr.findObjectByNodePath(base.direct.selected.last)
-            self.object_particle.addParticleEffect(temp_str)
+            self.object_particle.addParticleEffect(temp_str)     
             self.updateParticleListBox()
             
     def removeCustomParticle(self, evt):

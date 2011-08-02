@@ -58,7 +58,7 @@ class GameplayUI(UIBase):
         
         self.journalUI = JournalUI(world)
         self.pauseUI = PauseUI(world)
-        self.shroomUI = ShroomUI(world)
+        #self.shroomUI = ShroomUI(world)
         self.conversationUI = ConversationUI(world)
         self.timerUI = TimerUI(world);
         self.timerUI.killTimer();
@@ -114,7 +114,7 @@ class GameplayUI(UIBase):
         
         return task.cont
     def hideAll(self):
-        self.shroomUI.hideAll()
+        #self.shroomUI.hideAll()
         self.pauseUI.hideAll()
         self.journalUI.hideAll()
         #self.border.hide()
@@ -127,7 +127,7 @@ class GameplayUI(UIBase):
         
     def showAll(self):
         self.pauseUI.showAll()
-        self.shroomUI.showAll();
+        #self.shroomUI.showAll();
         self.journalUI.showAll()
         #self.border.show()
 #        self.journalUI.show()

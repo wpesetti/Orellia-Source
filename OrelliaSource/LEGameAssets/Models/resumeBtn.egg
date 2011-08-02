@@ -2,16 +2,16 @@
   "egg-texture-cards -o pauseBtn.egg -p 240,240 ok.png click.png disable.png rolling_over.png"
 }
 <Texture> rolling_over {
-  ../Textures/ui/pauseBtn.png
+  ../Textures/ui/resumeBtn.png
 }
 <Texture> ok {
-  ../Textures/ui/pauseBtn.png
+  ../Textures/ui/resumeBtn.png
 }
 <Texture> disable {
-   ../Textures/ui/pauseBtn.png
+   ../Textures/ui/resumeBtn.png
 }
 <Texture> click {
-   ../Textures/ui/pauseBtn.png
+   ../Textures/ui/resumeBtn.png
 }
 <Group> {
   <Switch> { 1 }

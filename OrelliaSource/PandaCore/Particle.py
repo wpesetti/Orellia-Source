@@ -131,6 +131,7 @@ class ParticleHolder():
         self.particleList = []
         
     def addParticleEffect(self, particleConfig, pos = (0.0,0.0,0.0), scale = (1.0,1.0,1.0),particleNode = None):
+
         
         #name = str(particleConfig)+'-%d'%len(self.particleEffectList)
         name = Filename(particleConfig).getBasenameWoExtension()+'-%d'%len(self.particleEffectList)
@@ -176,6 +177,7 @@ class ParticleHolder():
     def showParticleEffectByIndex(self, index):
 
         particles = self.nodePath.attachNewNode('particleRenderParents')
+
         particles.setLightOff()
         particles.setTransparency(TransparencyAttrib.MAlpha)
         particles.setBin ('fixed', 0)
@@ -184,6 +186,8 @@ class ParticleHolder():
                 
         self.particleEffectList[index].start(self.nodePath)    
         print self.nodePath.getPos()
+
+
 
          
     def encode(self, doc):

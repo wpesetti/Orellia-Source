@@ -19,8 +19,11 @@ class ClickManager(DirectObject):
         self.accept('destroyAllClickables',self.destroyAll)
         #self.accept('u',self.OnClick)
         taskMgr.add(self.clickUpdate,"clickUpdater")
+        self.canClick = True
     
     def clickUpdate(self, task):
+        if not self.canClick:
+            return task.cont;
         for clickable in self.ClickableList.values():
             if not clickable.disable:
                 playerPos = Vec2(clickable.worldObj.hero.getX(), clickable.worldObj.hero.getY())
@@ -39,6 +42,10 @@ class ClickManager(DirectObject):
         
     def destroyClickable(self,name): #destroys an Clickable
         try:
+            click = self.ClickableList[ii];
+            click.disable = True;
+            click.disable = True;
+            taskMgr.remove("clickUpdater-"+name);
             self.ClickableList[ii].delete()
             self.ClickableList.pop(ii)
         except:
@@ -72,7 +79,7 @@ class Clickable(DirectObject):
             self.text = "Press \""+self.keyBind+"\" to talk with "+self.name
         print self.clickFunc,"-TEXT"
         self.textScreen = OnscreenText(text = "", pos = (-0.6, 0.5), scale = 0.07,wordwrap = 10,fg = (1,0,0,1))
-        taskMgr.add(self.clickUpdate,"clickUpdater")
+        taskMgr.add(self.clickUpdate,"clickUpdater-"+name)
         
     def clickUpdate(self,task):
         if not self.disable:
@@ -120,13 +127,9 @@ class Clickable(DirectObject):
             exec "self.worldObj."+funcName
             
     def activateTerminal(self):
-        self.worldObj.activeTerm += 1
+        self.activeTerm += 1
         self.worldObj.scriptInterface.SetJournalEntryValue("Ship",10,True,0,None)
-        self.textScreen.destroy()
-        self.textOn = False
-        self.disable = True
-        self.ignore('u')
-        if self.worldObj.activeTerm == 3:
+        if self.activeTerm == 3:
             self.worldObj.scriptInterface.DestroyGameObject("SpecialWall")
     def delete(self):
         taskMgr.remove("clickUpdater")

@@ -30,18 +30,16 @@ class PauseUI(UIBase):
             pass
         
         self.b = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
-                          text_scale = (0.15,0.15), pos = (-2.4, 0, -0.12), relief=None, scale=0.38, command=dummyMethod, parent= base.a2dTopRight)
+                          text_scale = (0.15,0.15), pos = (-0.8, 0, -0.12), relief=None, scale=0.38, command=dummyMethod, parent= base.a2dTopRight)
     '''
     These functions are for the other parts to call to hide/show the JournalUI
     '''        
 #----------------------------------------------
     def hideAll(self):
         self.b.hide()
-            
 
     def showAll(self):
         self.b.show();
-            
 
 #-------------------------------------------------
     def destroyAll(self):

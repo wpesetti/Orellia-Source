@@ -81,7 +81,6 @@ class JournalUI(UIBase):
         self.b = DirectButton( geom = (self.button_maps.find("**/ok"),self.button_maps.find("**/click"),self.button_maps.find("**/rolling_over"),self.button_maps.find("**/disable")),
                           text_scale = (0.15,0.15), pos = (-0.23, 0, -0.12), relief=None, scale=0.38, command=dummyMethod, parent= base.a2dTopRight)
         world.accept("j", self.popoutWindow);
-        world.accept("j-up", self.popoutWindow);
         
 
         
@@ -281,7 +280,8 @@ class JournalUI(UIBase):
             offset += -0.08
            
 
-    def createQuest(self):    
+    def createQuest(self):
+        return; # MC did this :)
         self.addButton("Back",(0.45, 0, 0.62),(0.08,0.08),self.showMenu,0,"quest" )
         
         
