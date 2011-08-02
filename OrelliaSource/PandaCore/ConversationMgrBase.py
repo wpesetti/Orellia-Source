@@ -9,7 +9,7 @@ class ConversationMgrBase:
     
     def __init__(self, world, conversations):
         self.world = world
-        
+        self.convoSound = base.loader.loadSfx("Sounds\\alert_1.mp3")
         self.conversations = conversations # key: conversation tag (string), value: Conversation object (Conversation)
         
         self.conversationIsOpen = False
@@ -26,6 +26,7 @@ class ConversationMgrBase:
                 else:
                     self.__doLineScripts(self.curNPCStatementID) # do the scripts for the first line of the conversation, since it appears right away
                     self.curValidResponseIDs = self.__calculateValidResponseIDs(self.curNPCStatementID)
+                    self.playLineSound(conversation_key,1)
                     self.world.toggleMouse(False)
                     return True
             else:
@@ -123,7 +124,7 @@ class ConversationMgrBase:
                     
                 self.curValidResponseIDs = self.__calculateValidResponseIDs(self.curNPCStatementID)
                 # Yo dude
-                self.playLineSound();
+                self.playLineSound(self.curConversationKey,self.curNPCStatementID);
                 if len(self.curValidResponseIDs) == 0:
                    Debug.debug(__name__,'(player response list is empty)')
                    # TODO: close conversation while still showing the last NPC line...involve ConversationUI?
@@ -134,7 +135,10 @@ class ConversationMgrBase:
         else:
             print 'WARNING: playResponse called when no conversation was open'
     
-    def playLineSound(self):
+    def playLineSound(self,conversationName,conversationLine):
+        self.convoSound.stop()
+        self.convoSound = base.loader.loadSfx("Sounds\\" +str(conversationName)+"\\" + str(conversationLine) + ".mp3")
+        self.convoSound.play()
         pass
     
     def __doLineScripts(self, lineID):
