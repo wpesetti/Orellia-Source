@@ -151,6 +151,9 @@ class Enemy(DirectObject):
 
         self.goodZ = self.gameObj.getZ()
 
+        if not "stationary" in enemyTag and False: #undo the false ~ MC
+            self.worldObj.scriptInterface.playSound3d(self.gameObj, "Sounds//robot_walk.mp3", canLoop = True, bypass = True);
+
         if self.worldObj.currScene == "default_0":
             self.pause()
         
@@ -163,6 +166,8 @@ class Enemy(DirectObject):
         taskMgr.remove("enemyUpdate")
     def resume(self):
         print "Resume!"
+        if self.worldObj.currScene == "default_0" and self.worldObj.journalMgr.openedEntryIDs.values()[0] <= 70:
+            return;
         self.paused = False;
         if not self.moveS == None:
             self.moveS.resume()
@@ -202,7 +207,9 @@ class Enemy(DirectObject):
         if not self.isAlerted:
             ## taskMgr.doMethodLater(0,self.disableCollisions,"enemyDis"+self.gameObj.getName())
             print "ALERT! ALERT! DETECTED BY ",self.gameObj.getName()
-            messenger.send("playSound3d",[self.gameObj,"alert_1",False])
+            mySound = self.worldObj.loader.loadSfx("Sounds\\robot_alert.mp3")
+            mySound.play()
+            #messenger.send("playSound",["robot_alert",False,True]) # taken out by MC
             ##self.isAlerted = True
             messenger.send("playerDie")
     
