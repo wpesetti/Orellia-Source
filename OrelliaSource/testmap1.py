@@ -1736,7 +1736,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     
     def close(self):
         ##self.saveMan.saveWorld()
-        sys.exit()
+        #sys.exit()
+        self.conversationMgr.closeConversation()
     def playerDie(self):
         self.hero.setPos(self.spawnPoint)
         self.placeCamera(self.hero)
@@ -1781,7 +1782,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.mHeight = newHeight
 
     def updateBackgroundSound(self, sceneName):
-        return;
         try:
             if not self.backSoundSeq == None:
                 self.backSoundSeq.finish();

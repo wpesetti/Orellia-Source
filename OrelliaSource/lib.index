@@ -37,19 +37,19 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/Umbrellatree_alt2.egg
+				Models/SplitMushroom.egg
 			</File>
 			<Name>
-				ext_umbrellaTree_alt2
+				ext_splitMushroom
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/Umbrellatree_alt2.jpg
+				/Models/Thumbnails/SplitMushroom.jpg
 			</Thumbnail>
 			<TexRef>
-				ext_umbrellaTree_alt2_umbrellatree_glow
+				ext_splitMushroom_splitmushroom_glow
 			</TexRef>
 			<TexRef>
-				ext_umbrellaTree_alt2_umbrellatree_diffuse_alt2
+				ext_splitMushroom_splitmushroom_diffuse
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -373,19 +373,19 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/Village Map Fixed/GirantMushroom.egg
+				Models/Village Map Fixed/Umbrellatree_alt1.egg
 			</File>
 			<Name>
-				Village Map Fixed_ext_giantMushroom
+				Village Map Fixed_ext_umbrellaTree_alt1
 			</Name>
 			<Thumbnail>
-				Models/Village Map Fixed/Thumbnails/GirantMushroom.jpg
+				Models/Village Map Fixed/Thumbnails/Umbrellatree_alt1.jpg
 			</Thumbnail>
 			<TexRef>
-				Village Map Fixed_ext_giantMushroom_giantmushroom_glow
+				Village Map Fixed_ext_umbrellaTree_alt1_umbrellatree_glow
 			</TexRef>
 			<TexRef>
-				Village Map Fixed_ext_giantMushroom_giantmushroom_diffuse
+				Village Map Fixed_ext_umbrellaTree_alt1_umbrellatree_diffuse_alt1
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -441,33 +441,47 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/interior_controlPanelB_alt1.egg
+				Models/interior_ladder.egg
 			</File>
 			<Name>
-				int_controlPanelB_alt1
+				int_ladder
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/interior_controlPanelB_alt1.jpg
+				/Models/Thumbnails/interior_ladder.jpg
+			</Thumbnail>
+		</Mesh>
+		<Mesh>
+			<File>
+				Models/Village Map Fixed/GirantMushroom.egg
+			</File>
+			<Name>
+				Village Map Fixed_ext_giantMushroom
+			</Name>
+			<Thumbnail>
+				Models/Village Map Fixed/Thumbnails/GirantMushroom.jpg
 			</Thumbnail>
 			<TexRef>
-				int_controlPanelB_alt1_Interior_contropanel2_alt1
+				Village Map Fixed_ext_giantMushroom_giantmushroom_glow
+			</TexRef>
+			<TexRef>
+				Village Map Fixed_ext_giantMushroom_giantmushroom_diffuse
 			</TexRef>
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/Village Map Fixed/Umbrellatree_alt1.egg
+				Models/LandAnenome.egg
 			</File>
 			<Name>
-				Village Map Fixed_ext_umbrellaTree_alt1
+				ext_anenome
 			</Name>
 			<Thumbnail>
-				Models/Village Map Fixed/Thumbnails/Umbrellatree_alt1.jpg
+				/Models/Thumbnails/LandAnenome.jpg
 			</Thumbnail>
 			<TexRef>
-				Village Map Fixed_ext_umbrellaTree_alt1_umbrellatree_glow
+				ext_anenome_land_anenome_glow
 			</TexRef>
 			<TexRef>
-				Village Map Fixed_ext_umbrellaTree_alt1_umbrellatree_diffuse_alt1
+				ext_anenome_land_anenome_diffuse
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -565,36 +579,19 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/SplitMushroom.egg
+				Models/Umbrellatree_alt2.egg
 			</File>
 			<Name>
-				ext_splitMushroom
+				ext_umbrellaTree_alt2
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/SplitMushroom.jpg
+				/Models/Thumbnails/Umbrellatree_alt2.jpg
 			</Thumbnail>
 			<TexRef>
-				ext_splitMushroom_splitmushroom_glow
+				ext_umbrellaTree_alt2_umbrellatree_glow
 			</TexRef>
 			<TexRef>
-				ext_splitMushroom_splitmushroom_diffuse
-			</TexRef>
-		</Mesh>
-		<Mesh>
-			<File>
-				Models/Twisttree.egg
-			</File>
-			<Name>
-				ext_twistTree
-			</Name>
-			<Thumbnail>
-				/Models/Thumbnails/Twisttree.jpg
-			</Thumbnail>
-			<TexRef>
-				ext_twistTree_twisttree_glow
-			</TexRef>
-			<TexRef>
-				ext_twistTree_twisttree_diffuse
+				ext_umbrellaTree_alt2_umbrellatree_diffuse_alt2
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -763,16 +760,19 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/interior_wallD.egg
+				Models/HoleontopPlant_alt2.egg
 			</File>
 			<Name>
-				int_wallD
+				ext_holePlant_alt2
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/interior_wallD.jpg
+				/Models/Thumbnails/HoleontopPlant_alt2.jpg
 			</Thumbnail>
 			<TexRef>
-				int_wallD_Interior_wall_04
+				ext_holePlant_alt2_holeontopplant_glow
+			</TexRef>
+			<TexRef>
+				ext_holePlant_alt2_holeontopplant_diffuse_alt2
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -828,14 +828,17 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/interior_ladder.egg
+				Models/interior_controlPanelB_alt1.egg
 			</File>
 			<Name>
-				int_ladder
+				int_controlPanelB_alt1
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/interior_ladder.jpg
+				/Models/Thumbnails/interior_controlPanelB_alt1.jpg
 			</Thumbnail>
+			<TexRef>
+				int_controlPanelB_alt1_Interior_contropanel2_alt1
+			</TexRef>
 		</Mesh>
 		<Mesh>
 			<File>
@@ -1040,16 +1043,19 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/Interior_Door.egg
+				Models/skydome.egg
 			</File>
 			<Name>
-				int_doorClosed
+				skydome_night
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/Interior_Door.jpg
+				/Models/Thumbnails/skydome.jpg
 			</Thumbnail>
 			<TexRef>
-				int_doorClosed_Interior_Door
+				skydome_night_skydome_glow
+			</TexRef>
+			<TexRef>
+				skydome_night_skydome_diffuse
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -1418,19 +1424,19 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/LandAnenome.egg
+				Models/Twisttree.egg
 			</File>
 			<Name>
-				ext_anenome
+				ext_twistTree
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/LandAnenome.jpg
+				/Models/Thumbnails/Twisttree.jpg
 			</Thumbnail>
 			<TexRef>
-				ext_anenome_land_anenome_glow
+				ext_twistTree_twisttree_glow
 			</TexRef>
 			<TexRef>
-				ext_anenome_land_anenome_diffuse
+				ext_twistTree_twisttree_diffuse
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -1720,19 +1726,16 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/HoleontopPlant_alt2.egg
+				Models/interior_wallD.egg
 			</File>
 			<Name>
-				ext_holePlant_alt2
+				int_wallD
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/HoleontopPlant_alt2.jpg
+				/Models/Thumbnails/interior_wallD.jpg
 			</Thumbnail>
 			<TexRef>
-				ext_holePlant_alt2_holeontopplant_glow
-			</TexRef>
-			<TexRef>
-				ext_holePlant_alt2_holeontopplant_diffuse_alt2
+				int_wallD_Interior_wall_04
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -1782,19 +1785,16 @@
 		</Mesh>
 		<Mesh>
 			<File>
-				Models/skydome.egg
+				Models/Interior_Door.egg
 			</File>
 			<Name>
-				skydome_night
+				int_doorClosed
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/skydome.jpg
+				/Models/Thumbnails/Interior_Door.jpg
 			</Thumbnail>
 			<TexRef>
-				skydome_night_skydome_glow
-			</TexRef>
-			<TexRef>
-				skydome_night_skydome_diffuse
+				int_doorClosed_Interior_Door
 			</TexRef>
 		</Mesh>
 		<Mesh>
@@ -1936,6 +1936,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/character_female_glow_2.png
+			</File>
+			<Name>
+				character_female_alt1_character_female_glow
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/character_female_glow_2.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/charactermale_diffuse.png
 			</File>
 			<Name>
@@ -1947,13 +1958,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Cabinet_2.png
+				Textures/butterfly_plant2_diffuse_alt1.png
 			</File>
 			<Name>
-				int_cabinet_Interior_Cabinet
+				ext_butterflyPlantSmall_alt1_butterfly_plant2_diffuse_alt1
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_Cabinet_2.png
+				Textures//Thumbnails/butterfly_plant2_diffuse_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2178,17 +2189,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/mushroomtree_glow.png
-			</File>
-			<Name>
-				ext_mushroomTree_mushroomtree_glow
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/mushroomtree_glow.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/giantmushroom_glow_2.png
 			</File>
 			<Name>
@@ -2277,6 +2277,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/Village Map Fixed/character_female_diffuse_alt2.png
+			</File>
+			<Name>
+				Village Map Fixed_character_female_alt2_character_female_diffuse_alt2
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt2.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/twisttree_glow_3.png
 			</File>
 			<Name>
@@ -2295,6 +2306,17 @@
 			</Name>
 			<Thumbnail>
 				Textures/Village Map Fixed//Thumbnails/umbrellatree_glow_3.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/skydome_glow.png
+			</File>
+			<Name>
+				skydome_night_skydome_glow
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/skydome_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2365,13 +2387,24 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Terrain Texture high fixed.jpg
+				Textures/land_anenome_glow.png
 			</File>
 			<Name>
-				Terrain Texture high fixed
+				ext_anenome_land_anenome_glow
 			</Name>
 			<Thumbnail>
-				Textures/Thumbnails/Terrain Texture high fixed.jpg
+				Textures//Thumbnails/land_anenome_glow.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/Texture.jpg
+			</File>
+			<Name>
+				Texture
+			</Name>
+			<Thumbnail>
+				Textures/Thumbnails/Texture.jpg
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2416,17 +2449,6 @@
 			</Name>
 			<Thumbnail>
 				Textures/Village Map Fixed//Thumbnails/spiralplant_glow.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/eyestalkplant_glow_3.png
-			</File>
-			<Name>
-				ext_stalkPlant_alt2_eyestalkplant_glow
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/eyestalkplant_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2497,17 +2519,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Cabinet_alt1_2.png
-			</File>
-			<Name>
-				int_cabinetOpen_alt1_Interior_Cabinet_alt1
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/Interior_Cabinet_alt1_2.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/Interior_floor_alt1.png
 			</File>
 			<Name>
@@ -2530,17 +2541,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/hookplant_glow_3.png
-			</File>
-			<Name>
-				ext_hookPlant_alt2_hookplant_glow
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/hookplant_glow_3.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/Village Map Fixed/mushroomtree_glow_2.png
 			</File>
 			<Name>
@@ -2552,13 +2552,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_box1_alt1.png
+				Textures/Village Map Fixed/charactermale_diffuse_alt3.png
 			</File>
 			<Name>
-				int_box_alt1_Interior_box1_alt1
+				Village Map Fixed_character_male_alt3_charactermale_diffuse_alt3
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_box1_alt1.png
+				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse_alt3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2574,17 +2574,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Height.jpg
-			</File>
-			<Name>
-				Village Height
-			</Name>
-			<Thumbnail>
-				Textures/Thumbnails/Village Height.jpg
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/Interior_wall_01_alt1.png
 			</File>
 			<Name>
@@ -2592,6 +2581,17 @@
 			</Name>
 			<Thumbnail>
 				Textures//Thumbnails/Interior_wall_01_alt1.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/mushroomtree_glow_2.png
+			</File>
+			<Name>
+				ext_mushroomTree_alt1_mushroomtree_glow
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/mushroomtree_glow_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2618,24 +2618,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/twisttree_diffuse_alt2.png
+				Textures/Interior_Box_alt1.png
 			</File>
 			<Name>
-				Village Map Fixed_ext_twistTree_alt2_twisttree_diffuse_alt2
+				int_crate_alt1_Interior_Box_alt1
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/twisttree_diffuse_alt2.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/Village Map Fixed/umbrellatree_diffuse.png
-			</File>
-			<Name>
-				Village Map Fixed_ext_umbrellaTree_umbrellatree_diffuse
-			</Name>
-			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/umbrellatree_diffuse.png
+				Textures//Thumbnails/Interior_Box_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2739,24 +2728,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/character_female_diffuse_alt1.png
+				Textures/Village Map Fixed/charactermale_diffuse.png
 			</File>
 			<Name>
-				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
+				Village Map Fixed_character_male_charactermale_diffuse
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt1.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/Village Map Fixed/giantmushroom_diffuse.png
-			</File>
-			<Name>
-				Village Map Fixed_ext_giantMushroom_giantmushroom_diffuse
-			</Name>
-			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/giantmushroom_diffuse.png
+				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2783,13 +2761,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Height.jpg
+				Textures/umbrellatree_diffuse_alt2.png
 			</File>
 			<Name>
-				Height
+				ext_umbrellaTree_alt2_umbrellatree_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures/Thumbnails/Height.jpg
+				Textures//Thumbnails/umbrellatree_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2838,17 +2816,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/charactermale_diffuse_alt3.png
-			</File>
-			<Name>
-				character_male_alt3_charactermale_diffuse_alt3
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/charactermale_diffuse_alt3.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/umbrellatree_glow_3.png
 			</File>
 			<Name>
@@ -2860,13 +2827,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/spiralplant_diffuse_alt2.png
+				Textures/Village Map Fixed/character_female_glow_3.png
 			</File>
 			<Name>
-				ext_spiralPlant_alt2_spiralplant_diffuse_alt2
+				Village Map Fixed_character_female_alt2_character_female_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/spiralplant_diffuse_alt2.png
+				Textures/Village Map Fixed//Thumbnails/character_female_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2882,13 +2849,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/glowybugplant_diffuse_alt2.png
+				Textures/eyestalkplant_diffuse_alt2.png
 			</File>
 			<Name>
-				ext_glowyBugPlant_alt2_glowybugplant_diffuse_alt2
+				ext_stalkPlant_alt2_eyestalkplant_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/glowybugplant_diffuse_alt2.png
+				Textures//Thumbnails/eyestalkplant_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -2970,6 +2937,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/splitmushroom_glow_2.png
+			</File>
+			<Name>
+				ext_splitMushroom_alt1_splitmushroom_glow
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/splitmushroom_glow_2.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/umbrellatree_diffuse.png
 			</File>
 			<Name>
@@ -2988,17 +2966,6 @@
 			</Name>
 			<Thumbnail>
 				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt3.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/Forest Heightfield.jpg
-			</File>
-			<Name>
-				Forest Heightfield
-			</Name>
-			<Thumbnail>
-				Textures/Thumbnails/Forest Heightfield.jpg
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3091,13 +3058,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/spiralplant_diffuse_alt2.png
+				Textures/Village Map Fixed/character_female_diffuse_alt1.png
 			</File>
 			<Name>
-				Village Map Fixed_ext_spiralPlant_alt2_spiralplant_diffuse_alt2
+				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/spiralplant_diffuse_alt2.png
+				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3190,6 +3157,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/Village Map Fixed/charactermale_diffuse_alt2.png
+			</File>
+			<Name>
+				Village Map Fixed_character_male_alt2_charactermale_diffuse_alt2
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse_alt2.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/twisttree_diffuse.png
 			</File>
 			<Name>
@@ -3201,13 +3179,35 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Barrel_glow.png
+				Textures/spiralplant_glow_3.png
 			</File>
 			<Name>
-				int_barrel_alt1_Interior_Barrel_glow
+				ext_spiralPlant_alt2_spiralplant_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_Barrel_glow.png
+				Textures//Thumbnails/spiralplant_glow_3.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/Interior_wall_03.png
+			</File>
+			<Name>
+				int_wallC_Interior_wall_03
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/Interior_wall_03.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/giantmushroom_diffuse_alt2.png
+			</File>
+			<Name>
+				ext_giantMushroom_alt2_giantmushroom_diffuse_alt2
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/giantmushroom_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3230,6 +3230,17 @@
 			</Name>
 			<Thumbnail>
 				Textures/Village Map Fixed//Thumbnails/spiralplant_glow_2.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/Village Map Fixed/umbrellatree_diffuse_alt2.png
+			</File>
+			<Name>
+				Village Map Fixed_ext_umbrellaTree_alt2_umbrellatree_diffuse_alt2
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/umbrellatree_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3267,24 +3278,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Texture.jpg
+				Textures/Terrain Texture high fixed.jpg
 			</File>
 			<Name>
-				Texture
+				Terrain Texture high fixed
 			</Name>
 			<Thumbnail>
-				Textures/Thumbnails/Texture.jpg
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/Interior_charger_opaque.png
-			</File>
-			<Name>
-				int_charger_alt1_Interior_charger_opaque
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/Interior_charger_opaque.png
+				Textures/Thumbnails/Terrain Texture high fixed.jpg
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3311,13 +3311,24 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Box_alt1.png
+				Textures/Village Map Fixed/holeontopplant_diffuse.png
 			</File>
 			<Name>
-				int_crate_alt1_Interior_Box_alt1
+				Village Map Fixed_ext_holePlant_holeontopplant_diffuse
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_Box_alt1.png
+				Textures/Village Map Fixed//Thumbnails/holeontopplant_diffuse.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/Village Map Fixed/umbrellatree_diffuse.png
+			</File>
+			<Name>
+				Village Map Fixed_ext_umbrellaTree_umbrellatree_diffuse
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/umbrellatree_diffuse.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3344,13 +3355,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/eyestalkplant_diffuse_alt2.png
+				Textures/glowybugplant_diffuse_alt2.png
 			</File>
 			<Name>
-				ext_stalkPlant_alt2_eyestalkplant_diffuse_alt2
+				ext_glowyBugPlant_alt2_glowybugplant_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/eyestalkplant_diffuse_alt2.png
+				Textures//Thumbnails/glowybugplant_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3362,17 +3373,6 @@
 			</Name>
 			<Thumbnail>
 				Textures//Thumbnails/Interior_Barrel_alt1.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/donut_tree_glow.png
-			</File>
-			<Name>
-				ext_donutTree_donut_tree_glow
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/donut_tree_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3399,35 +3399,24 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/skydome_glow.png
+				Textures/Village Map Fixed/spiralplant_diffuse_alt2.png
 			</File>
 			<Name>
-				skydome_night_skydome_glow
+				Village Map Fixed_ext_spiralPlant_alt2_spiralplant_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/skydome_glow.png
+				Textures/Village Map Fixed//Thumbnails/spiralplant_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/character_female_diffuse_alt3.png
+				Textures/Interior_wall_01.png
 			</File>
 			<Name>
-				character_female_alt3_character_female_diffuse_alt3
+				int_wallA_Interior_wall_01
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/character_female_diffuse_alt3.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/spiralplant_diffuse.png
-			</File>
-			<Name>
-				ext_spiralPlant_spiralplant_diffuse
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/spiralplant_diffuse.png
+				Textures//Thumbnails/Interior_wall_01.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3476,13 +3465,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/charactermale_glow_3.png
+				Textures/eyestalkplant_glow_3.png
 			</File>
 			<Name>
-				character_male_alt2_charactermale_glow
+				ext_stalkPlant_alt2_eyestalkplant_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/charactermale_glow_3.png
+				Textures//Thumbnails/eyestalkplant_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3630,24 +3619,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_charge_glowr_2.png
+				Textures/Interior_charger_opaque.png
 			</File>
 			<Name>
-				int_charger_Interior_charge_glowr
+				int_charger_alt1_Interior_charger_opaque
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_charge_glowr_2.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
-				Textures/Village Map Fixed/character_female_diffuse_alt2.png
-			</File>
-			<Name>
-				Village Map Fixed_character_female_alt2_character_female_diffuse_alt2
-			</Name>
-			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/character_female_diffuse_alt2.png
+				Textures//Thumbnails/Interior_charger_opaque.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3696,17 +3674,6 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/fanplants_diffuse.png
-			</File>
-			<Name>
-				ext_fanPlant_fanplants_diffuse
-			</Name>
-			<Thumbnail>
-				Textures//Thumbnails/fanplants_diffuse.png
-			</Thumbnail>
-		</Texture>
-		<Texture>
-			<File>
 				Textures/Village Map Fixed/giantmushroom_diffuse_alt1.png
 			</File>
 			<Name>
@@ -3718,24 +3685,35 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/charactermale_diffuse.png
+				Textures/Village Map Fixed/giantmushroom_diffuse.png
 			</File>
 			<Name>
-				Village Map Fixed_character_male_charactermale_diffuse
+				Village Map Fixed_ext_giantMushroom_giantmushroom_diffuse
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse.png
+				Textures/Village Map Fixed//Thumbnails/giantmushroom_diffuse.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/umbrellatree_diffuse_alt2.png
+				Textures/Height.jpg
 			</File>
 			<Name>
-				ext_umbrellaTree_alt2_umbrellatree_diffuse_alt2
+				Height
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/umbrellatree_diffuse_alt2.png
+				Textures/Thumbnails/Height.jpg
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/Village Map Fixed/spiralplant_diffuse_alt1.png
+			</File>
+			<Name>
+				Village Map Fixed_ext_spiralPlant_alt1_spiralplant_diffuse_alt1
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/spiralplant_diffuse_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3784,13 +3762,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/splitmushroom_glow_2.png
+				Textures/charactermale_glow_3.png
 			</File>
 			<Name>
-				ext_splitMushroom_alt1_splitmushroom_glow
+				character_male_alt2_charactermale_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/splitmushroom_glow_2.png
+				Textures//Thumbnails/charactermale_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3806,6 +3784,17 @@
 		</Texture>
 		<Texture>
 			<File>
+				Textures/Interior_wall_02.png
+			</File>
+			<Name>
+				int_wallB_Interior_wall_02
+			</Name>
+			<Thumbnail>
+				Textures//Thumbnails/Interior_wall_02.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
 				Textures/butterfly_plant2_diffuse.png
 			</File>
 			<Name>
@@ -3817,13 +3806,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_wall_03.png
+				Textures/Interior_Barrel_glow.png
 			</File>
 			<Name>
-				int_wallC_Interior_wall_03
+				int_barrel_alt1_Interior_Barrel_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_wall_03.png
+				Textures//Thumbnails/Interior_Barrel_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3872,13 +3861,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_wall_01.png
+				Textures/character_female_diffuse_alt3.png
 			</File>
 			<Name>
-				int_wallA_Interior_wall_01
+				character_female_alt3_character_female_diffuse_alt3
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_wall_01.png
+				Textures//Thumbnails/character_female_diffuse_alt3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3927,13 +3916,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Cabinet.png
+				Textures/butterfly_plant2_glow_2.png
 			</File>
 			<Name>
-				int_cabinetOpen_Interior_Cabinet
+				ext_butterflyPlantSmall_alt1_butterfly_plant2_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_Cabinet.png
+				Textures//Thumbnails/butterfly_plant2_glow_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -3971,13 +3960,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/butterfly_plant2_glow_2.png
+				Textures/Interior_Cabinet.png
 			</File>
 			<Name>
-				ext_butterflyPlantSmall_alt1_butterfly_plant2_glow
+				int_cabinetOpen_Interior_Cabinet
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/butterfly_plant2_glow_2.png
+				Textures//Thumbnails/Interior_Cabinet.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4092,35 +4081,35 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/mushroomtree_glow_2.png
+				Textures/mushroomtree_glow.png
 			</File>
 			<Name>
-				ext_mushroomTree_alt1_mushroomtree_glow
+				ext_mushroomTree_mushroomtree_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/mushroomtree_glow_2.png
+				Textures//Thumbnails/mushroomtree_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/butterfly_plant2_diffuse_alt1.png
+				Textures/Interior_Cabinet_2.png
 			</File>
 			<Name>
-				ext_butterflyPlantSmall_alt1_butterfly_plant2_diffuse_alt1
+				int_cabinet_Interior_Cabinet
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/butterfly_plant2_diffuse_alt1.png
+				Textures//Thumbnails/Interior_Cabinet_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/land_anenome_glow.png
+				Textures/hookplant_glow_3.png
 			</File>
 			<Name>
-				ext_anenome_land_anenome_glow
+				ext_hookPlant_alt2_hookplant_glow
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/land_anenome_glow.png
+				Textures//Thumbnails/hookplant_glow_3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4180,13 +4169,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/charactermale_diffuse_alt3.png
+				Textures/Interior_box1_alt1.png
 			</File>
 			<Name>
-				Village Map Fixed_character_male_alt3_charactermale_diffuse_alt3
+				int_box_alt1_Interior_box1_alt1
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse_alt3.png
+				Textures//Thumbnails/Interior_box1_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4235,24 +4224,24 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/character_female_glow_3.png
+				Textures/spiralplant_diffuse_alt2.png
 			</File>
 			<Name>
-				Village Map Fixed_character_female_alt2_character_female_glow
+				ext_spiralPlant_alt2_spiralplant_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/character_female_glow_3.png
+				Textures//Thumbnails/spiralplant_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/spiralplant_glow_3.png
+				Textures/spiralplant_diffuse.png
 			</File>
 			<Name>
-				ext_spiralPlant_alt2_spiralplant_glow
+				ext_spiralPlant_spiralplant_diffuse
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/spiralplant_glow_3.png
+				Textures//Thumbnails/spiralplant_diffuse.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4290,13 +4279,13 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/giantmushroom_diffuse_alt2.png
+				Textures/Forest Heightfield.jpg
 			</File>
 			<Name>
-				ext_giantMushroom_alt2_giantmushroom_diffuse_alt2
+				Forest Heightfield
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/giantmushroom_diffuse_alt2.png
+				Textures/Thumbnails/Forest Heightfield.jpg
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4312,35 +4301,35 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/character_female_glow_2.png
+				Textures/charactermale_diffuse_alt3.png
 			</File>
 			<Name>
-				character_female_alt1_character_female_glow
+				character_male_alt3_charactermale_diffuse_alt3
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/character_female_glow_2.png
+				Textures//Thumbnails/charactermale_diffuse_alt3.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/spiralplant_diffuse_alt1.png
+				Textures/Village Map Fixed/twisttree_diffuse_alt2.png
 			</File>
 			<Name>
-				Village Map Fixed_ext_spiralPlant_alt1_spiralplant_diffuse_alt1
+				Village Map Fixed_ext_twistTree_alt2_twisttree_diffuse_alt2
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/spiralplant_diffuse_alt1.png
+				Textures/Village Map Fixed//Thumbnails/twisttree_diffuse_alt2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_groupcharger_alt1.png
+				Textures/Interior_Box.png
 			</File>
 			<Name>
-				int_groupCharger_alt1_Interior_groupcharger_alt1
+				int_crate_Interior_Box
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_groupcharger_alt1.png
+				Textures//Thumbnails/Interior_Box.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4400,24 +4389,24 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/umbrellatree_diffuse_alt2.png
+				Textures/Interior_groupcharger_alt1.png
 			</File>
 			<Name>
-				Village Map Fixed_ext_umbrellaTree_alt2_umbrellatree_diffuse_alt2
+				int_groupCharger_alt1_Interior_groupcharger_alt1
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/umbrellatree_diffuse_alt2.png
+				Textures//Thumbnails/Interior_groupcharger_alt1.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_Box.png
+				Textures/Interior_charge_glowr_2.png
 			</File>
 			<Name>
-				int_crate_Interior_Box
+				int_charger_Interior_charge_glowr
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_Box.png
+				Textures//Thumbnails/Interior_charge_glowr_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4433,13 +4422,24 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Interior_wall_02.png
+				Textures/fanplants_diffuse.png
 			</File>
 			<Name>
-				int_wallB_Interior_wall_02
+				ext_fanPlant_fanplants_diffuse
 			</Name>
 			<Thumbnail>
-				Textures//Thumbnails/Interior_wall_02.png
+				Textures//Thumbnails/fanplants_diffuse.png
+			</Thumbnail>
+		</Texture>
+		<Texture>
+			<File>
+				Textures/Village Map Fixed/splitmushroom_diffuse.png
+			</File>
+			<Name>
+				Village Map Fixed_ext_splitMushroom_splitmushroom_diffuse
+			</Name>
+			<Thumbnail>
+				Textures/Village Map Fixed//Thumbnails/splitmushroom_diffuse.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -4510,35 +4510,35 @@
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/splitmushroom_diffuse.png
+				Textures/Interior_Cabinet_alt1_2.png
 			</File>
 			<Name>
-				Village Map Fixed_ext_splitMushroom_splitmushroom_diffuse
+				int_cabinetOpen_alt1_Interior_Cabinet_alt1
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/splitmushroom_diffuse.png
+				Textures//Thumbnails/Interior_Cabinet_alt1_2.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/holeontopplant_diffuse.png
+				Textures/Village Height.jpg
 			</File>
 			<Name>
-				Village Map Fixed_ext_holePlant_holeontopplant_diffuse
+				Village Height
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/holeontopplant_diffuse.png
+				Textures/Thumbnails/Village Height.jpg
 			</Thumbnail>
 		</Texture>
 		<Texture>
 			<File>
-				Textures/Village Map Fixed/charactermale_diffuse_alt2.png
+				Textures/donut_tree_glow.png
 			</File>
 			<Name>
-				Village Map Fixed_character_male_alt2_charactermale_diffuse_alt2
+				ext_donutTree_donut_tree_glow
 			</Name>
 			<Thumbnail>
-				Textures/Village Map Fixed//Thumbnails/charactermale_diffuse_alt2.png
+				Textures//Thumbnails/donut_tree_glow.png
 			</Thumbnail>
 		</Texture>
 		<Texture>
@@ -5314,63 +5314,6 @@
 		</Actor>
 		<Actor>
 			<File>
-				Models/Village Map Fixed/character_Vasherie_alt2.egg
-			</File>
-			<Name>
-				Village Map Fixed_character_female_alt1
-			</Name>
-			<Thumbnail>
-				Models/Village Map Fixed//Thumbnails/character_Vasherie_alt2.jpg
-			</Thumbnail>
-			<TexRef>
-				Village Map Fixed_character_female_alt1_character_female_glow
-			</TexRef>
-			<TexRef>
-				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
-			</TexRef>
-			<Anim>
-				<LocalName>
-					anim_chargeFemale
-				</LocalName>
-				<AssetName>
-					Village Map Fixed_anim_chargeFemale_2
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_runFemale
-				</LocalName>
-				<AssetName>
-					Village Map Fixed_anim_runFemale_2
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_jogFemale
-				</LocalName>
-				<AssetName>
-					Village Map Fixed_anim_jogFemale_2
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_attackFemale
-				</LocalName>
-				<AssetName>
-					Village Map Fixed_anim_attackFemale_2
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_idleFemale
-				</LocalName>
-				<AssetName>
-					Village Map Fixed_anim_idleFemale_2
-				</AssetName>
-			</Anim>
-		</Actor>
-		<Actor>
-			<File>
 				Models/Village Map Fixed/character_male_alt1.egg
 			</File>
 			<Name>
@@ -5423,6 +5366,63 @@
 				</LocalName>
 				<AssetName>
 					Village Map Fixed_anim_attackMale_2
+				</AssetName>
+			</Anim>
+		</Actor>
+		<Actor>
+			<File>
+				Models/character_Vasherie_alt3.egg
+			</File>
+			<Name>
+				character_female_alt2
+			</Name>
+			<Thumbnail>
+				/Models/Thumbnails/character_Vasherie_alt3.jpg
+			</Thumbnail>
+			<TexRef>
+				character_female_alt2_character_female_glow
+			</TexRef>
+			<TexRef>
+				character_female_alt2_character_female_diffuse_alt2
+			</TexRef>
+			<Anim>
+				<LocalName>
+					anim_chargeFemale
+				</LocalName>
+				<AssetName>
+					anim_chargeFemale_3
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_runFemale
+				</LocalName>
+				<AssetName>
+					anim_runFemale_3
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_jogFemale
+				</LocalName>
+				<AssetName>
+					anim_jogFemale_3
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_attackFemale
+				</LocalName>
+				<AssetName>
+					anim_attackFemale_3
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_idleFemale
+				</LocalName>
+				<AssetName>
+					anim_idleFemale_3
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -5485,58 +5485,63 @@
 		</Actor>
 		<Actor>
 			<File>
-				Models/character_Vasherie_alt4.egg
+				Models/Interior_NPC_Robot.egg
 			</File>
 			<Name>
-				character_female_alt3
+				character_bot
 			</Name>
 			<Thumbnail>
-				/Models/Thumbnails/character_Vasherie_alt4.jpg
+				/Models/Thumbnails/Interior_NPC_Robot.jpg
 			</Thumbnail>
 			<TexRef>
-				character_female_alt3_character_female_glow
-			</TexRef>
-			<TexRef>
-				character_female_alt3_character_female_diffuse_alt3
+				character_bot_Interior_NPC_robot
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_NPC_walk
 				</LocalName>
 				<AssetName>
-					anim_idleFemale_4
+					anim_NPC_walk_4
 				</AssetName>
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_runFemale
+					anim_NPC_shoot
 				</LocalName>
 				<AssetName>
-					anim_runFemale_4
+					anim_NPC_shoot_4
 				</AssetName>
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_jogFemale
+					anim_NPC_shootFinish
 				</LocalName>
 				<AssetName>
-					anim_jogFemale_4
+					anim_NPC_shootFinish_4
 				</AssetName>
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_attackFemale
+					anim_NPC_shootReady
 				</LocalName>
 				<AssetName>
-					anim_attackFemale_4
+					anim_NPC_shootReady_4
 				</AssetName>
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
+					anim_NPC_transform
 				</LocalName>
 				<AssetName>
-					anim_chargeFemale_4
+					anim_NPC_transform_4
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_NPC_transform_back
+				</LocalName>
+				<AssetName>
+					anim_NPC_transform_back_4
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -5672,10 +5677,10 @@
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_idleFemale_3
+					Village Map Fixed_anim_chargeFemale_3
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5704,10 +5709,10 @@
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
+					anim_idleFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_chargeFemale_3
+					Village Map Fixed_anim_idleFemale_3
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -5729,10 +5734,10 @@
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_idleFemale_4
+					Village Map Fixed_anim_chargeFemale_4
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5761,97 +5766,35 @@
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
-				</LocalName>
-				<AssetName>
-					Village Map Fixed_anim_chargeFemale_4
-				</AssetName>
-			</Anim>
-		</Actor>
-		<Actor>
-			<File>
-				Models/Interior_NPC_Robot.egg
-			</File>
-			<Name>
-				character_bot
-			</Name>
-			<Thumbnail>
-				/Models/Thumbnails/Interior_NPC_Robot.jpg
-			</Thumbnail>
-			<TexRef>
-				character_bot_Interior_NPC_robot
-			</TexRef>
-			<Anim>
-				<LocalName>
-					anim_NPC_walk
-				</LocalName>
-				<AssetName>
-					anim_NPC_walk_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_NPC_shoot
-				</LocalName>
-				<AssetName>
-					anim_NPC_shoot_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_NPC_shootFinish
-				</LocalName>
-				<AssetName>
-					anim_NPC_shootFinish_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_NPC_shootReady
-				</LocalName>
-				<AssetName>
-					anim_NPC_shootReady_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_NPC_transform
-				</LocalName>
-				<AssetName>
-					anim_NPC_transform_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_NPC_transform_back
-				</LocalName>
-				<AssetName>
-					anim_NPC_transform_back_4
-				</AssetName>
-			</Anim>
-		</Actor>
-		<Actor>
-			<File>
-				Models/character_Vasherie_alt3.egg
-			</File>
-			<Name>
-				character_female_alt2
-			</Name>
-			<Thumbnail>
-				/Models/Thumbnails/character_Vasherie_alt3.jpg
-			</Thumbnail>
-			<TexRef>
-				character_female_alt2_character_female_glow
-			</TexRef>
-			<TexRef>
-				character_female_alt2_character_female_diffuse_alt2
-			</TexRef>
-			<Anim>
-				<LocalName>
 					anim_idleFemale
 				</LocalName>
 				<AssetName>
-					anim_idleFemale_3
+					Village Map Fixed_anim_idleFemale_4
+				</AssetName>
+			</Anim>
+		</Actor>
+		<Actor>
+			<File>
+				Models/character_Vasherie_alt4.egg
+			</File>
+			<Name>
+				character_female_alt3
+			</Name>
+			<Thumbnail>
+				/Models/Thumbnails/character_Vasherie_alt4.jpg
+			</Thumbnail>
+			<TexRef>
+				character_female_alt3_character_female_glow
+			</TexRef>
+			<TexRef>
+				character_female_alt3_character_female_diffuse_alt3
+			</TexRef>
+			<Anim>
+				<LocalName>
+					anim_chargeFemale
+				</LocalName>
+				<AssetName>
+					anim_chargeFemale_4
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5859,7 +5802,7 @@
 					anim_runFemale
 				</LocalName>
 				<AssetName>
-					anim_runFemale_3
+					anim_runFemale_4
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5867,7 +5810,7 @@
 					anim_jogFemale
 				</LocalName>
 				<AssetName>
-					anim_jogFemale_3
+					anim_jogFemale_4
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5875,7 +5818,64 @@
 					anim_attackFemale
 				</LocalName>
 				<AssetName>
-					anim_attackFemale_3
+					anim_attackFemale_4
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_idleFemale
+				</LocalName>
+				<AssetName>
+					anim_idleFemale_4
+				</AssetName>
+			</Anim>
+		</Actor>
+		<Actor>
+			<File>
+				Models/Village Map Fixed/character_Vasherie_alt2.egg
+			</File>
+			<Name>
+				Village Map Fixed_character_female_alt1
+			</Name>
+			<Thumbnail>
+				Models/Village Map Fixed//Thumbnails/character_Vasherie_alt2.jpg
+			</Thumbnail>
+			<TexRef>
+				Village Map Fixed_character_female_alt1_character_female_glow
+			</TexRef>
+			<TexRef>
+				Village Map Fixed_character_female_alt1_character_female_diffuse_alt1
+			</TexRef>
+			<Anim>
+				<LocalName>
+					anim_idleFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_idleFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_runFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_runFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_jogFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_jogFemale_2
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_attackFemale
+				</LocalName>
+				<AssetName>
+					Village Map Fixed_anim_attackFemale_2
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5883,7 +5883,7 @@
 					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					anim_chargeFemale_3
+					Village Map Fixed_anim_chargeFemale_2
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -5962,10 +5962,10 @@
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_idleFemale
+					Village Map Fixed_anim_chargeFemale
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -5994,10 +5994,67 @@
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
+					anim_idleFemale
 				</LocalName>
 				<AssetName>
-					Village Map Fixed_anim_chargeFemale
+					Village Map Fixed_anim_idleFemale
+				</AssetName>
+			</Anim>
+		</Actor>
+		<Actor>
+			<File>
+				Models/character_male_alt3.egg
+			</File>
+			<Name>
+				character_male_alt3
+			</Name>
+			<Thumbnail>
+				/Models/Thumbnails/character_male_alt3.jpg
+			</Thumbnail>
+			<TexRef>
+				character_male_alt3_charactermale_glow
+			</TexRef>
+			<TexRef>
+				character_male_alt3_charactermale_diffuse_alt3
+			</TexRef>
+			<Anim>
+				<LocalName>
+					anim_jogMale
+				</LocalName>
+				<AssetName>
+					anim_jogMale_3
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_attackMale
+				</LocalName>
+				<AssetName>
+					anim_attackMale_4
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_runMale
+				</LocalName>
+				<AssetName>
+					anim_runMale_4
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_chargeMale
+				</LocalName>
+				<AssetName>
+					anim_chargeMale_4
+				</AssetName>
+			</Anim>
+			<Anim>
+				<LocalName>
+					anim_idleMale
+				</LocalName>
+				<AssetName>
+					anim_idleMale_4
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -6076,10 +6133,10 @@
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					anim_idleFemale
+					anim_chargeFemale
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -6108,67 +6165,10 @@
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
+					anim_idleFemale
 				</LocalName>
 				<AssetName>
-					anim_chargeFemale
-				</AssetName>
-			</Anim>
-		</Actor>
-		<Actor>
-			<File>
-				Models/character_male_alt3.egg
-			</File>
-			<Name>
-				character_male_alt3
-			</Name>
-			<Thumbnail>
-				/Models/Thumbnails/character_male_alt3.jpg
-			</Thumbnail>
-			<TexRef>
-				character_male_alt3_charactermale_glow
-			</TexRef>
-			<TexRef>
-				character_male_alt3_charactermale_diffuse_alt3
-			</TexRef>
-			<Anim>
-				<LocalName>
-					anim_jogMale
-				</LocalName>
-				<AssetName>
-					anim_jogMale_3
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_attackMale
-				</LocalName>
-				<AssetName>
-					anim_attackMale_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_runMale
-				</LocalName>
-				<AssetName>
-					anim_runMale_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_chargeMale
-				</LocalName>
-				<AssetName>
-					anim_chargeMale_4
-				</AssetName>
-			</Anim>
-			<Anim>
-				<LocalName>
-					anim_idleMale
-				</LocalName>
-				<AssetName>
-					anim_idleMale_4
+					anim_idleFemale
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -6190,10 +6190,10 @@
 			</TexRef>
 			<Anim>
 				<LocalName>
-					anim_chargeFemale
+					anim_idleFemale
 				</LocalName>
 				<AssetName>
-					anim_chargeFemale_2
+					anim_idleFemale_2
 				</AssetName>
 			</Anim>
 			<Anim>
@@ -6222,10 +6222,10 @@
 			</Anim>
 			<Anim>
 				<LocalName>
-					anim_idleFemale
+					anim_chargeFemale
 				</LocalName>
 				<AssetName>
-					anim_idleFemale_2
+					anim_chargeFemale_2
 				</AssetName>
 			</Anim>
 		</Actor>
@@ -6278,10 +6278,10 @@
 		</Script>
 		<Script>
 			<File>
-				Scripts/RunObjectOnRope_2.py
+				Scripts/NotHasJournalEntryAndValue.py
 			</File>
 			<Name>
-				RunObjectOnRope
+				NotHasJournalEntryAndValue
 			</Name>
 		</Script>
 		<Script>
@@ -6290,14 +6290,6 @@
 			</File>
 			<Name>
 				DestroyObject
-			</Name>
-		</Script>
-		<Script>
-			<File>
-				Scripts/SetJournalEntryValue.py
-			</File>
-			<Name>
-				SetJournalEntryValue
 			</Name>
 		</Script>
 		<Script>
@@ -6318,6 +6310,22 @@
 		</Script>
 		<Script>
 			<File>
+				Scripts/StartMob.py
+			</File>
+			<Name>
+				StartMob
+			</Name>
+		</Script>
+		<Script>
+			<File>
+				Scripts/worldFunc_2.py
+			</File>
+			<Name>
+				worldFunc
+			</Name>
+		</Script>
+		<Script>
+			<File>
 				Scripts/ChangeSceneTo_2.py
 			</File>
 			<Name>
@@ -6326,18 +6334,10 @@
 		</Script>
 		<Script>
 			<File>
-				Scripts/OpenConversation.py
+				Scripts/RunObjectOnRope_2.py
 			</File>
 			<Name>
-				OpenConversation
-			</Name>
-		</Script>
-		<Script>
-			<File>
-				Scripts/NotHasJournalEntryAndValue.py
-			</File>
-			<Name>
-				NotHasJournalEntryAndValue
+				RunObjectOnRope
 			</Name>
 		</Script>
 		<Script>
@@ -6366,18 +6366,18 @@
 		</Script>
 		<Script>
 			<File>
-				Scripts/StartMob.py
+				Scripts/SetJournalEntryValue.py
 			</File>
 			<Name>
-				StartMob
+				SetJournalEntryValue
 			</Name>
 		</Script>
 		<Script>
 			<File>
-				Scripts/worldFunc_2.py
+				Scripts/OpenConversation.py
 			</File>
 			<Name>
-				worldFunc
+				OpenConversation
 			</Name>
 		</Script>
 	</Scripts>

@@ -50,7 +50,6 @@ class ClickManager(DirectObject):
             temp = self.ClickableList[ii]
             self.ClickableList.pop(ii)
             del temp
-            taskMgr.remove("clickUpdater")
 
     def notifyClickable(self,name):
         self.ClickableList[name].notify()
