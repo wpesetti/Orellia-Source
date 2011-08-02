@@ -114,9 +114,9 @@ class GameplayUI(UIBase):
         
         return task.cont
     def hideAll(self):
-        pass
-        #self.pauseUI.hideAll()
-        #self.journalUI.hideAll()
+        self.shroomUI.hideAll()
+        self.pauseUI.hideAll()
+        self.journalUI.hideAll()
         #self.border.hide()
 #        self.journalUI.hide()
 #        self.conversationUI.hide()

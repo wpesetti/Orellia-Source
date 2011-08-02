@@ -2275,13 +2275,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -2379,13 +2379,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -3003,13 +3003,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -4688,13 +4688,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -4800,13 +4800,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -5136,13 +5136,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -7640,24 +7640,24 @@
 			</scale>
 			<hpr>
 				<x>
-					180.0
+					-180.0
 				</x>
 				<y>
 					-5.00895612277e-06
 				</y>
 				<z>
-					-180.0
+					180.0
 				</z>
 			</hpr>
 			<shear>
 				<x>
-					0.0
+					1.42108547152e-14
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					3.02600318121e-14
 				</z>
 			</shear>
 			<colorScale>
@@ -7755,7 +7755,7 @@
 			</hpr>
 			<shear>
 				<x>
-					1.9374735174e-16
+					0.0
 				</x>
 				<y>
 					0.0
@@ -7947,7 +7947,7 @@
 					4.0
 				</y>
 				<z>
-					0.999999523163
+					0.999999403954
 				</z>
 			</scale>
 			<hpr>
@@ -8691,7 +8691,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.4210854927e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -8784,13 +8784,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -8888,13 +8888,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9216,13 +9216,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9440,13 +9440,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9552,13 +9552,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -11364,13 +11364,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -11580,13 +11580,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -11788,13 +11788,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -12012,13 +12012,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -12796,13 +12796,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -14028,13 +14028,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -14871,13 +14871,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
-					1.42108547152e-14
+					0.0
 				</y>
 				<z>
-					4.45359352695e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -15183,13 +15183,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
-					1.42108547152e-14
+					0.0
 				</y>
 				<z>
-					4.45359352695e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -15661,6 +15661,142 @@
 				int_floor_alt1
 			</asset>
 		</staticmesh>
+		<camera>
+			<name>
+				CameraFin
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-155.257263184
+				</x>
+				<y>
+					-1900.61547852
+				</y>
+				<z>
+					36.3660316467
+				</z>
+			</pos>
+			<scale>
+				<x>
+					14.7900190353
+				</x>
+				<y>
+					14.7900190353
+				</y>
+				<z>
+					14.7900218964
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					134.711608887
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<lens>
+				<lensType>
+					perspective
+				</lensType>
+				<fovHoriz>
+					30.0
+				</fovHoriz>
+				<fovVert>
+					30.0
+				</fovVert>
+				<near>
+					1.0
+				</near>
+				<far>
+					100000.0
+				</far>
+				<filmSizeWidth>
+					1.0
+				</filmSizeWidth>
+				<filmSizeHeight>
+					1.0
+				</filmSizeHeight>
+			</lens>
+			<frustumHidden>
+				1
+			</frustumHidden>
+			<speed>
+				1.0
+			</speed>
+			<seqTime>
+				10.0
+			</seqTime>
+			<followPath>
+				0
+			</followPath>
+		</camera>
 		<staticmesh>
 			<name>
 				int_pipe:1
@@ -16004,13 +16140,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -16103,7 +16239,7 @@
 					8.0
 				</y>
 				<z>
-					0.999998927116
+					0.999998807907
 				</z>
 			</scale>
 			<hpr>
@@ -16311,7 +16447,7 @@
 					4.0
 				</y>
 				<z>
-					0.999999761581
+					0.999999642372
 				</z>
 			</scale>
 			<hpr>
@@ -16535,7 +16671,7 @@
 			</hpr>
 			<shear>
 				<x>
-					2.36847585645e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -18071,13 +18207,13 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.42108547152e-14
+					0.0
 				</x>
 				<y>
-					-1.42108547152e-14
+					0.0
 				</y>
 				<z>
-					4.45359352695e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -18903,13 +19039,13 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					2.94963367425e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -19444,13 +19580,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -20231,13 +20367,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -20428,24 +20564,24 @@
 			</scale>
 			<hpr>
 				<x>
-					-180.0
+					180.0
 				</x>
 				<y>
 					-5.00895612277e-06
 				</y>
 				<z>
-					180.0
+					-180.0
 				</z>
 			</hpr>
 			<shear>
 				<x>
-					0.0
+					-1.42108547152e-14
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					3.02600318121e-14
 				</z>
 			</shear>
 			<colorScale>
@@ -20532,24 +20668,24 @@
 			</scale>
 			<hpr>
 				<x>
-					180.0
+					-180.0
 				</x>
 				<y>
 					-5.00895612277e-06
 				</y>
 				<z>
-					-180.0
+					180.0
 				</z>
 			</hpr>
 			<shear>
 				<x>
-					0.0
+					1.42108547152e-14
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					3.02600318121e-14
 				</z>
 			</shear>
 			<colorScale>
@@ -20636,13 +20772,13 @@
 			</scale>
 			<hpr>
 				<x>
-					180.0
+					-180.0
 				</x>
 				<y>
 					-5.00895612277e-06
 				</y>
 				<z>
-					-180.0
+					180.0
 				</z>
 			</hpr>
 			<shear>
@@ -20751,13 +20887,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -21167,13 +21303,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.78206853718e-08
+					0.0
 				</x>
 				<y>
-					-2.48744980169e-09
+					0.0
 				</y>
 				<z>
-					1.24557242298e-09
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -21468,13 +21604,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -21988,13 +22124,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -22092,13 +22228,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -22300,13 +22436,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -22424,13 +22560,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -22505,7 +22641,7 @@
 				character_female
 			</asset>
 			<currentAnim>
-				anim_chargeFemale
+				anim_idleFemale
 			</currentAnim>
 			<isLooping>
 				False
@@ -23114,13 +23250,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -23450,13 +23586,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -23674,13 +23810,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -23901,13 +24037,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
-					1.42108547152e-14
+					0.0
 				</y>
 				<z>
-					4.45359352695e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -24797,6 +24933,110 @@
 		</staticmesh>
 		<staticmesh>
 			<name>
+				int_disabledRobot:2
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-278.090240479
+				</x>
+				<y>
+					-2061.63183594
+				</y>
+				<z>
+					13.3905344009
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				int_disabledRobot
+			</asset>
+		</staticmesh>
+		<staticmesh>
+			<name>
 				int_disabledRobot:1
 			</name>
 			<parent>
@@ -24837,13 +25077,13 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.14337348478e-08
+					0.0
 				</x>
 				<y>
-					-2.2775477504e-08
+					0.0
 				</y>
 				<z>
-					5.95664939596e-09
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -24941,7 +25181,7 @@
 			</hpr>
 			<shear>
 				<x>
-					2.36847585645e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -25357,7 +25597,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.93784388255e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -25461,7 +25701,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.4210854927e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -25762,6 +26002,214 @@
 			</scale>
 			<hpr>
 				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				int_floor_alt1
+			</asset>
+		</staticmesh>
+		<staticmesh>
+			<name>
+				int_groupCharger:3
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-279.040740967
+				</x>
+				<y>
+					-2061.85522461
+				</y>
+				<z>
+					38.5218887329
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-37.3327445984
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				int_groupCharger
+			</asset>
+		</staticmesh>
+		<staticmesh>
+			<name>
+				int_groupCharger:2
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-279.040740967
+				</x>
+				<y>
+					-2061.85522461
+				</y>
+				<z>
+					30.1718559265
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
 					-0.0
 				</x>
 				<y>
@@ -25832,7 +26280,7 @@
 				0
 			</transparency>
 			<asset>
-				int_floor_alt1
+				int_groupCharger
 			</asset>
 		</staticmesh>
 		<staticmesh>
@@ -26810,24 +27258,24 @@
 			</scale>
 			<hpr>
 				<x>
-					180.0
+					-180.0
 				</x>
 				<y>
 					-5.00895612277e-06
 				</y>
 				<z>
-					-180.0
+					180.0
 				</z>
 			</hpr>
 			<shear>
 				<x>
-					0.0
+					1.42108547152e-14
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					3.02600318121e-14
 				</z>
 			</shear>
 			<colorScale>
@@ -27299,6 +27747,130 @@
 				int_floor_alt1
 			</asset>
 		</staticmesh>
+		<sphere>
+			<name>
+				Collision Sphere:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					96.2985534668
+				</x>
+				<y>
+					160.680328369
+				</y>
+				<z>
+					0.0003662109375
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<script>
+				<triggerType>
+					LE-trigger-onCollision
+				</triggerType>
+				<scriptName>
+					worldFunc
+				</scriptName>
+				<parameter>
+					finalScene()
+				</parameter>
+				<parameter>
+					
+				</parameter>
+			</script>
+			<tangible>
+				1
+			</tangible>
+			<fromBitMask>
+				1048575
+			</fromBitMask>
+			<intoBitMask>
+				1048575
+			</intoBitMask>
+		</sphere>
 		<staticmesh>
 			<name>
 				int_wallA:2
@@ -27890,13 +28462,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -28341,7 +28913,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-9.63010498337e-16
+					0.0
 				</x>
 				<y>
 					0.0
@@ -28437,7 +29009,7 @@
 					1.11279392242
 				</y>
 				<z>
-					0.999999523163
+					0.999999403954
 				</z>
 			</scale>
 			<hpr>
@@ -28453,7 +29025,7 @@
 			</hpr>
 			<shear>
 				<x>
-					0.0
+					9.48724758286e-16
 				</x>
 				<y>
 					0.0
@@ -28549,7 +29121,7 @@
 					0.391270071268
 				</y>
 				<z>
-					0.999999046326
+					0.999998927116
 				</z>
 			</scale>
 			<hpr>
@@ -28565,7 +29137,7 @@
 			</hpr>
 			<shear>
 				<x>
-					0.0
+					1.88498352093e-15
 				</x>
 				<y>
 					0.0
@@ -28666,13 +29238,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -29674,13 +30246,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -29857,6 +30429,110 @@
 			</transparency>
 			<asset>
 				int_floor_alt1
+			</asset>
+		</staticmesh>
+		<staticmesh>
+			<name>
+				int_controlPanelB_alt1:2
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-282.985473633
+				</x>
+				<y>
+					-2036.16772461
+				</y>
+				<z>
+					-2.67028808594e-05
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<asset>
+				int_controlPanelB_alt1
 			</asset>
 		</staticmesh>
 		<staticmesh>
@@ -30450,13 +31126,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -30898,13 +31574,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -31010,13 +31686,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -31133,13 +31809,13 @@
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -31226,18 +31902,18 @@
 			</scale>
 			<hpr>
 				<x>
-					-180.0
+					180.0
 				</x>
 				<y>
 					-5.00895612277e-06
 				</y>
 				<z>
-					180.0
+					-180.0
 				</z>
 			</hpr>
 			<shear>
 				<x>
-					1.42108547152e-14
+					-1.42108547152e-14
 				</x>
 				<y>
 					0.0
@@ -31757,13 +32433,13 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -31861,13 +32537,13 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.42108547152e-14
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					3.02600318121e-14
+					0.0
 				</z>
 			</shear>
 			<colorScale>
@@ -32370,13 +33046,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -32906,13 +33582,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -33021,7 +33697,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-2.78894089389e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -33437,7 +34113,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-7.89491934505e-16
+					0.0
 				</x>
 				<y>
 					0.0
@@ -35858,13 +36534,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -36082,13 +36758,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -36421,7 +37097,7 @@
 			</hpr>
 			<shear>
 				<x>
-					8.44163517266e-16
+					0.0
 				</x>
 				<y>
 					0.0
@@ -37069,7 +37745,7 @@
 					1.0
 				</y>
 				<z>
-					1.0
+					0.999999880791
 				</z>
 			</scale>
 			<hpr>
@@ -37506,13 +38182,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -39322,13 +39998,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -39434,13 +40110,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -39843,6 +40519,107 @@
 				int_monitor
 			</asset>
 		</staticmesh>
+		<dummy>
+			<name>
+				heroNode
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-278.557678223
+				</x>
+				<y>
+					-2008.11315918
+				</y>
+				<z>
+					1.52587890625e-05
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+		</dummy>
 		<staticmesh>
 			<name>
 				int_wallA:76
@@ -40333,7 +41110,7 @@
 			</hpr>
 			<shear>
 				<x>
-					-1.12500639653e-15
+					0.0
 				</x>
 				<y>
 					0.0
@@ -40770,13 +41547,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -40882,13 +41659,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>

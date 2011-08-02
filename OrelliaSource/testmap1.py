@@ -1,4 +1,7 @@
 # Used as a basis by StandaloneExporter, which fills in some of the values to reflect the local computer and project name.
+from pandac.PandaModules import loadPrcFileData
+loadPrcFileData("", """fullscreen 1
+win-size 1024 768""")
 
 #== Python and Panda imports ==
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
@@ -51,6 +54,7 @@ from SpellConstants import *
 
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
+from direct.showbase.Transitions import Transitions 
 
 SCENE_FILE = 'default_0.scene'
 
@@ -307,7 +311,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     
     #== UI and Combat ==
         self.gameplayUI = GameplayUI(self)
-        self.gameplayUI.hideAll()
+        #self.gameplayUI.hideAll()
         
         # for health bars and on screen UI
         self.overlayAmbientLight = AmbientLight('overlayAmbientLight')
@@ -395,7 +399,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             #    gameObj.setTag("LE-wall","1")
         ###############LOAD THE WORLD THROUGH SAVE FILE###########
         #self.pauseToggle();
-       
+        #self.openCutScene()
 
 ##== Utility and World Initialization functions =============================##
     def playMovie(self, movieName):
@@ -853,7 +857,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         ## return task.cont
     
 
-    def runCamera(self, cameraName, isLoop = False):
+    def runCamera(self, cameraName,runTime, isLoop = False):
         debug("Running the camera")
         #debug(str(self.sequences))
 
@@ -876,7 +880,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             self.dr.setActive(False)
             del self.dr
             self.dr = None
-            self.accept("mouse1", self.onClickin3D) 
+            #self.accept("mouse1", self.onClickin3D) 
             debug("Ran")
             
         if(isLoop):
@@ -885,16 +889,17 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             def stopCameraFromLoop():
                 newSequence.finish()
                 temp()
-            self.accept("mouse1", stopCameraFromLoop)
+            #self.accept("mouse1", stopCameraFromLoop)
             self.addSequence(newSequence)
             newSequence.loop()
         else:
             newSequence = Sequence(sequence,Func(temp))
             def stopCamera():
                 newSequence.finish()
-            self.accept("mouse1", stopCamera)
+            #self.accept("mouse1", stopCamera)
             self.addSequence(newSequence)
             newSequence.start()
+            #Sequence(Wait(runTime),Func(stopCamera)).start()
         
  
  
@@ -1737,7 +1742,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     def close(self):
         ##self.saveMan.saveWorld()
         #sys.exit()
-        self.conversationMgr.closeConversation()
+        #self.conversationMgr.closeConversation()
+        pass
     def playerDie(self):
         self.hero.setPos(self.spawnPoint)
         self.placeCamera(self.hero)
@@ -1757,7 +1763,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         ##    particle.loadConfig(Filename('./particles/steam.ptf'))
         ##    particle.start(model)
         moveLerp.start()
-        self.runCamera("camShroom")
+        self.runCamera("camShroom",10)
     def callFunc(self,funcName):
         print funcName
         exec "self."+funcName
@@ -1821,6 +1827,65 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.moveCamHprLerp.start()
         ##Sequence(Wait(runTime),self.moveCamPosLerp.stop,self.moveCamHprLerp.stop).start
 
+    def openCutScene(self):
+        self.runCamera("cam1",500)
+        self.scriptInterface.RunObjectRope(self.objects["cam1"],self.objects["ropeCam"],5)
+
+    def finalScene(self):
+         #Part3: stop all of the tasks
+        self.hero.getActorHandle().stop('anim_jogFemale')
+        self.tasks = []
+        self.enemyMan.pauseAll()
+        
+        for taskName in taskMgr.getAllTasks():
+            if not "Loop" in str(taskName) and not "ival" in str(taskName):
+                taskMgr.remove(taskName)
+                self.tasks.append( (taskName,str(taskName)[11:]) )
+            else:
+                print str(taskName)[11:] + " still working";
+        
+        self.toggleMouse(not True);
+        self.toggleMouse(False)
+        self.gameplayUI.hideAll()
+
+        self.runCamera("CameraFin",500,True)
+        self.hero.setPosHpr(self.objects["heroNode"].getPos(),(0,0,0))
+        self.disableMovement(self.hero)
+        red = (255,0,0)
+        black = (0,0,0)
+        seq = Sequence(
+                       Func(self.displayTextF,"Regulus: Ah, a primitive being here to worship at the alter of the false mother. You do know that she has used you and will continue to use you? She will direct you and manipulate you. She will tell you her tragedy and you will accept it without question, just like your father did, like his mother before him. You know that she is no God. She told you herself, but you will continue to worship her as if she were one. It is time to destroy the false God."),
+                       Wait(15),
+                       Func(self.displayTextF,"Vasherie: You can't do this!"),
+                       Wait(5),
+                       Func(self.displayTextF,"Regulus: I can and I will, thanks to you. By repairing the nanobot control consoles, you have given me the ability to directly influence the other nanobots-- to show them the truth.  My people need freedom. There can be no freedom with the continued existence of the false mother. She has ensured that your people remain at a primitive level. You cannot hope to destroy..."),
+                       Wait(10),
+                       Func(self.finalSoundBeep),
+                       Wait(3),
+                       Func(self.finalSoundBeep),
+                       Wait(3),
+                       Func(self.displayTextF,"AI:Fortunately for you, Regulus' speech gave me enough time to access his core functions. He is stunned, but not for long. You must dispose of him quickly."),
+                       Wait(5),
+                       Func(self.fadeToColor,"in",red,5),
+                       Wait(5),
+                       Func(self.fadeToColor,"out",black,.2),
+                       Wait(2),
+                       Func(sys.exit)
+                       )
+        seq.start()
+
+    def finalSoundBeep(self): #Oh god, such a bad specific function...
+        mySound = base.loader.loadSfx("Sounds\\alert_1.mp3")
+        mySound.play()
+
+    def displayTextF(self,text1):
+        self.textScreen.destroy()
+        self.textScreen = OnscreenText(text = text1, pos = (-.25, -.5), scale = 0.07,wordwrap = 30,fg = (1,1,1,1),bg = (0,0,0,1))
+
+    def fadeToColor(self,type,color,time):
+        transition = Transitions(loader) 
+        transition.setFadeColor(color[0],color[1],color[2])
+        transition.fadeOut(time)
 
 world = World()
 world.run();

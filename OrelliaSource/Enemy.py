@@ -131,7 +131,7 @@ class Enemy(DirectObject):
         messenger.send("addCollision",[self.collisionSphere,"Handle"])
         
         self.collisionNode.show()
-        self.collisionSphere.show()
+        #self.collisionSphere.show()
         self.collisionNode2.show()
         taskMgr.add(self.enemyUpdate,"enemyUpdate") #starts the enemy ai loop
         #taskMgr.add(self.updateHeight,"enemyHeight") #starts the enemy ai loop
