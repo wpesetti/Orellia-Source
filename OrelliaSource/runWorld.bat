@@ -1,2 +1,2 @@
-python "testmap1.py"
+python "Orellia.py"
 pause

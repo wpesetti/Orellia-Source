@@ -59,11 +59,11 @@ from direct.showbase.Transitions import Transitions
 SCENE_FILE = 'default_0.scene'
 
 LIBRARY_INDEX = 'lib.index'
-JOURNAL_FILE = 'testmap1.journal'
+JOURNAL_FILE = 'Orellia.journal'
 SCRIPTS_FILE = 'Scripts.py'
 
 from Scripts import *
-INVENTORY_FILE = 'testmap1.inventory'
+INVENTORY_FILE = 'Orellia.inventory'
 
 
 #== Values for Camera and Main Character Movement (feel free to change) =====#
