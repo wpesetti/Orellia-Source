@@ -64,6 +64,7 @@ class Clickable(DirectObject):
         self.textOn = False
         self.keyBind = 'u'
         self.disable = False
+        self.activeTerm = 0
         print textIn
         if not textIn == None:
             self.text = textIn.format(self.keyBind)
@@ -117,6 +118,16 @@ class Clickable(DirectObject):
 
         if eval("self.worldObj."+condition):
             exec "self.worldObj."+funcName
+            
+    def activateTerminal(self):
+        self.worldObj.activeTerm += 1
+        self.worldObj.scriptInterface.SetJournalEntryValue("Ship",10,True,0,None)
+        self.textScreen.destroy()
+        self.textOn = False
+        self.disable = True
+        self.ignore('u')
+        if self.worldObj.activeTerm == 3:
+            self.worldObj.scriptInterface.DestroyGameObject("SpecialWall")
     def delete(self):
         taskMgr.remove("clickUpdater")
         del self

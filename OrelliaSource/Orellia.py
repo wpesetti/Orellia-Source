@@ -1,7 +1,7 @@
 # Used as a basis by StandaloneExporter, which fills in some of the values to reflect the local computer and project name.
 from pandac.PandaModules import loadPrcFileData
-loadPrcFileData("", """fullscreen 1
-win-size 1024 768""")
+#loadPrcFileData("", """fullscreen 1
+#win-size 1024 768""")
 
 #== Python and Panda imports ==
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
@@ -13,7 +13,7 @@ from direct.showbase.ShowBase import ShowBase
 from pandac.PandaModules import *
 from panda3d.ai import *
 from direct.filter.CommonFilters import CommonFilters
-
+from direct.task.Task import Task, cont
 #== Special Imports for final: ####SPECIAL
 from direct.gui.OnscreenText import OnscreenText
 #####SPECIAL######
@@ -51,12 +51,12 @@ from ScriptInterface import *
 from CombatMgr import *
 from InventoryMgr import *
 from SpellConstants import *
-
+import Particle
 from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 from direct.showbase.Transitions import Transitions 
 
-SCENE_FILE = 'default_0.scene'
+SCENE_FILE = 'default_4.scene'
 
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'Orellia.journal'
@@ -164,6 +164,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.moveFactor = 2.0
 
         self.devMove = 1
+        self.activeTerm = 0
         #############################
         
 
@@ -344,7 +345,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.accept('playSound',self.scriptInterface.playSound)
         self.accept('playSound3d',self.scriptInterface.playSound3d)
         self.accept('addCollision',self.addCollision)  
-        self.accept('q',self.throwShroom)
+        ##self.accept('q',self.throwShroom)
+        #The code is there, it will live on in our hearts...
         self.accept('8',self.devTool,[1])
         self.accept('8-up',self.devTool,[-1])
         self.accept('[',self.devTool,[2])
@@ -1519,6 +1521,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.currLevel = sceneName
         print("Background Sound Scene: " + sceneName);
         self.updateBackgroundSound(sceneName);
+        self.gameplayUI.showAll();
         #self.loadBar.hide()
         #self.destroyLoadScreen() 
 ############################# SPECIAL TEST FUNCTIONS #######################################
@@ -1754,14 +1757,16 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         downObj = self.objects[gameObj]
         moveLerp = LerpPosInterval(downObj,sec,downObj.getPos() + (0,0,-150),downObj.getPos())
         self.stopTasks.append(moveLerp)
-        ##if useParticles:
-        ##    model = render.attachNewNode(PandaNode("DustParticle"))
-        ##    model.setPos(downObj.getPos() + (0,0,25))
-        ##    model.setScale(25,25,25)
-        ##    particle = ParticleEffect()
-        ##    print Filename('./particles/steam.ptf')
-        ##    particle.loadConfig(Filename('./particles/steam.ptf'))
-        ##    particle.start(model)
+        if useParticles:
+            model = render.attachNewNode(PandaNode("DustParticle"))
+            model.setPos(self.objects["Core"].getPos() + (0,0,20))
+            model.setScale(5,5,5)
+            print self.hero.getPos()
+            #particle = ParticleEffect()
+            #particle.addParticles(self.wtfParticle())
+            p = Particle.ParticleHolder()
+            p.addParticleEffect('./particles/dust.ptf',(0,0,0),(1,1,1),particleNode = model)
+            #particle.start(model)
         moveLerp.start()
         self.runCamera("camShroom",10)
     def callFunc(self,funcName):
@@ -1855,27 +1860,33 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         black = (0,0,0)
         seq = Sequence(
                        Func(self.displayTextF,"Regulus: Ah, a primitive being here to worship at the alter of the false mother. You do know that she has used you and will continue to use you? She will direct you and manipulate you. She will tell you her tragedy and you will accept it without question, just like your father did, like his mother before him. You know that she is no God. She told you herself, but you will continue to worship her as if she were one. It is time to destroy the false God."),
-                       Wait(15),
+                       Func(self.finalSoundBeep,"regulus1"),
+                       Wait(28),#28
                        Func(self.displayTextF,"Vasherie: You can't do this!"),
-                       Wait(5),
+                       Wait(5),#5
                        Func(self.displayTextF,"Regulus: I can and I will, thanks to you. By repairing the nanobot control consoles, you have given me the ability to directly influence the other nanobots-- to show them the truth.  My people need freedom. There can be no freedom with the continued existence of the false mother. She has ensured that your people remain at a primitive level. You cannot hope to destroy..."),
-                       Wait(10),
-                       Func(self.finalSoundBeep),
-                       Wait(3),
-                       Func(self.finalSoundBeep),
-                       Wait(3),
-                       Func(self.displayTextF,"AI:Fortunately for you, Regulus' speech gave me enough time to access his core functions. He is stunned, but not for long. You must dispose of him quickly."),
-                       Wait(5),
+                       Func(self.finalSoundBeep,"regulus2"),
+                       Wait(22),#22
+                       Func(self.finalSoundBeep,"alert_1"),
+                       Func(self.endParticles),
+                       Wait(3),#3
+                       Func(self.finalSoundBeep,"alert_1"),
+                       Wait(3),#3
+                       Func(self.displayTextF,"AI: Fortunately for you, Regulus' speech gave me enough time to access his core functions. He is stunned, but not for long. You must dispose of him quickly."),
+                       Func(self.finalSoundBeep,"regulus3"),
+                       Wait(10),#10
                        Func(self.fadeToColor,"in",red,5),
-                       Wait(5),
+                       Wait(5),#5
                        Func(self.fadeToColor,"out",black,.2),
-                       Wait(2),
-                       Func(sys.exit)
+                       Wait(2),#2
+                       Func(self.endingExit)
                        )
         seq.start()
 
-    def finalSoundBeep(self): #Oh god, such a bad specific function...
-        mySound = base.loader.loadSfx("Sounds\\alert_1.mp3")
+    def finalSoundBeep(self,soundName): #Oh god, such a bad specific function...
+        mySound = base.loader.loadSfx("Sounds\\"+soundName+".mp3")
+        if soundName == "alert_1":
+            mySound.setVolume(0.5)
         mySound.play()
 
     def displayTextF(self,text1):
@@ -1883,9 +1894,41 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.textScreen = OnscreenText(text = text1, pos = (-.25, -.5), scale = 0.07,wordwrap = 30,fg = (1,1,1,1),bg = (0,0,0,1))
 
     def fadeToColor(self,type,color,time):
-        transition = Transitions(loader) 
-        transition.setFadeColor(color[0],color[1],color[2])
-        transition.fadeOut(time)
+        if type == "in":
+            model = render.attachNewNode(PandaNode("DustParticle"))
+            model.setPos(self.objects["Core"].getPos())
+            model.setScale(25,25,25)
+            model.setSa(0)
+            print self.hero.getPos()
+            #particle = ParticleEffect()
+            #particle.addParticles(self.wtfParticle())
+            p = Particle.ParticleHolder()
+            p.addParticleEffect('./particles/fireish.ptf',(0,0,0),(25,25,25),particleNode = model)
+            #particle.start(model)
+            task = Task.Task(self.fadeToFire) 
+            taskMgr.add(task,"fading",extraArgs=[task,model])
+        else:
+            transition = Transitions(loader) 
+            transition.setFadeColor(color[0],color[1],color[2])
+            transition.fadeOut(time)
+
+    def fadeToFire(self,task,model):
+        model.setSa(model.getSa() + .01)
+        return task.cont
+    def endingExit(self): #This is really bad......
+        sys.exit()
+        pass
+    
+    def endParticles(self):
+        model = render.attachNewNode(PandaNode("DustParticle"))
+        model.setPos(self.objects["Core"].getPos() + (0,0,20))
+        model.setScale(2,2,2)
+        print self.hero.getPos()
+        #particle = ParticleEffect()
+        #particle.addParticles(self.wtfParticle())
+        p = Particle.ParticleHolder()
+        p.addParticleEffect('./particles/fireish.ptf',(0,0,0),(1,1,1),particleNode = model)
+        #particle.start(model)
 
 world = World()
 world.run();

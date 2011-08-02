@@ -32,7 +32,7 @@ class ShroomUI(UIBase):
                           text_scale = (0.15,0.15), pos = (-1.25, 0, -0.12), relief=None, scale=0.38, command=dummyMethod, parent= base.a2dTopRight,
                           text = "Shrooms: 0")
         self.shroomCount = 0;
-        self.updateShrooms(1);
+        self.updateShrooms(5);
             
     '''
     These functions are for the other parts to call to hide/show the JournalUI
@@ -43,7 +43,7 @@ class ShroomUI(UIBase):
             
 
     def showAll(self):
-        pass
+        self.b.show();
     
     def giveShroom(self):
         self.shroomCount += 1

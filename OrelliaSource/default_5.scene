@@ -3315,13 +3315,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -5351,10 +5351,10 @@
 					0.0
 				</x>
 				<y>
-					0.0
+					-1.42108547152e-14
 				</y>
 				<z>
-					0.0
+					2.67654237464e-15
 				</z>
 			</shear>
 			<colorScale>
@@ -5418,7 +5418,7 @@
 				character_female_alt2
 			</asset>
 			<currentAnim>
-				anim_chargeFemale
+				anim_idleFemale
 			</currentAnim>
 			<isLooping>
 				False

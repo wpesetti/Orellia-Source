@@ -40,7 +40,7 @@ class PauseUI(UIBase):
             
 
     def showAll(self):
-        pass
+        self.b.show();
             
 
 #-------------------------------------------------

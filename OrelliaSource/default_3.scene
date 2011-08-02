@@ -4758,7 +4758,7 @@
 				character_female
 			</asset>
 			<currentAnim>
-				anim_idleFemale
+				anim_chargeFemale
 			</currentAnim>
 			<isLooping>
 				False
@@ -5361,13 +5361,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9210,13 +9210,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9279,6 +9279,20 @@
 			<transparency>
 				0
 			</transparency>
+			<script>
+				<triggerType>
+					LE-trigger-onScene
+				</triggerType>
+				<scriptName>
+					worldFunc
+				</scriptName>
+				<parameter>
+					setMountainHeight(39)
+				</parameter>
+				<parameter>
+					
+				</parameter>
+			</script>
 			<asset>
 				ext_fanPlant_alt2
 			</asset>

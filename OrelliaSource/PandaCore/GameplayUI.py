@@ -127,6 +127,7 @@ class GameplayUI(UIBase):
         
     def showAll(self):
         self.pauseUI.showAll()
+        self.shroomUI.showAll();
         self.journalUI.showAll()
         #self.border.show()
 #        self.journalUI.show()
