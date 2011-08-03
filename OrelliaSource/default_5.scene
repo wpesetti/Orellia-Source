@@ -209,6 +209,121 @@
 				ext_glowyPlant
 			</asset>
 		</staticmesh>
+		<ambient>
+			<name>
+				Ambient:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-126.842269897
+				</x>
+				<y>
+					302.317260742
+				</y>
+				<z>
+					6.103515625e-05
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<color>
+				<a>
+					1.0
+				</a>
+				<r>
+					0.286274522543
+				</r>
+				<g>
+					0.329411774874
+				</g>
+				<b>
+					0.549019634724
+				</b>
+			</color>
+		</ambient>
 		<staticmesh>
 			<name>
 				ext_glowyPlant:1
@@ -5351,10 +5466,10 @@
 					0.0
 				</x>
 				<y>
-					-1.42108547152e-14
+					0.0
 				</y>
 				<z>
-					2.67654237464e-15
+					0.0
 				</z>
 			</shear>
 			<colorScale>

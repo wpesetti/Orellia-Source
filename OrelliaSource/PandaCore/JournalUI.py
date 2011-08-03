@@ -93,6 +93,8 @@ class JournalUI(UIBase):
     #Create a popout window        
     def popoutWindow(self):
         if self.window_show:
+            self.world.pause();
+            print "In in in in in in in in in in i in in  in in i in i i"
             self.longest_line = {"menu":[0,0],"quest":[0,0]}
             self.count = [0,0,0,0]
             self.update()
@@ -114,6 +116,7 @@ class JournalUI(UIBase):
             
       
         else:
+            self.world.resume();
             self.destroy()       
         self.window_show = not self.window_show
     
@@ -334,7 +337,7 @@ class JournalUI(UIBase):
                         
     def flashJournalButton(self,task):
         if task.time <= 0.5:
-            self.b['geom_scale']=(0.01,0.01,0.01)
+            self.b['geom_scale']=(0.9,0.9,0.9)
             return task.cont
         
         elif task.time <=1.0:

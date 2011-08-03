@@ -43,7 +43,7 @@ class JournalUI(UIBase):
 
         #variables that store the UI elements which are going to be created
         self.journal_window_frame = None
-        self.window_show = True  
+        self.window_show = True
         self.journal_window = None
         self.frame = None
         self.canvas = None

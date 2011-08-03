@@ -1176,13 +1176,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -2541,6 +2541,226 @@
 				0
 			</transparency>
 		</dummy>
+		<box>
+			<name>
+				SpawnPoint0:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					744.983459473
+				</x>
+				<y>
+					457.271972656
+				</y>
+				<z>
+					59.1304016113
+				</z>
+			</pos>
+			<scale>
+				<x>
+					0.999999880791
+				</x>
+				<y>
+					10.5999965668
+				</y>
+				<z>
+					4.96592664719
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.811479628086
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					5.08347919315e-10
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<tangible>
+				1
+			</tangible>
+			<fromBitMask>
+				1048575
+			</fromBitMask>
+			<intoBitMask>
+				1048575
+			</intoBitMask>
+		</box>
+		<box>
+			<name>
+				SpawnPoint0:2
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					754.816650391
+				</x>
+				<y>
+					1151.51721191
+				</y>
+				<z>
+					59.1304016113
+				</z>
+			</pos>
+			<scale>
+				<x>
+					0.999999821186
+				</x>
+				<y>
+					19.3298435211
+				</y>
+				<z>
+					4.96592664719
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.811479866505
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					1.4080548949e-09
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<tangible>
+				1
+			</tangible>
+			<fromBitMask>
+				1048575
+			</fromBitMask>
+			<intoBitMask>
+				1048575
+			</intoBitMask>
+		</box>
 		<staticmesh>
 			<name>
 				ext_umbrellaTree_alt2:1
@@ -5882,6 +6102,121 @@
 				ext_holePlant
 			</asset>
 		</staticmesh>
+		<ambient>
+			<name>
+				Ambient:1
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					-69.4494781494
+				</x>
+				<y>
+					594.853149414
+				</y>
+				<z>
+					46.7913208008
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					1.0
+				</y>
+				<z>
+					1.0
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					-0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					0.0
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<color>
+				<a>
+					1.28057551384
+				</a>
+				<r>
+					0.331443101168
+				</r>
+				<g>
+					0.507208406925
+				</g>
+				<b>
+					0.698039233685
+				</b>
+			</color>
+		</ambient>
 		<dummy>
 			<name>
 				botPoint-Point
@@ -8794,13 +9129,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9210,13 +9545,13 @@
 			</scale>
 			<hpr>
 				<x>
-					-0.0
+					0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					-0.0
+					0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9744,13 +10079,13 @@
 			</scale>
 			<hpr>
 				<x>
-					0.0
+					-0.0
 				</x>
 				<y>
 					0.0
 				</y>
 				<z>
-					0.0
+					-0.0
 				</z>
 			</hpr>
 			<shear>
@@ -9813,10 +10148,134 @@
 			<transparency>
 				0
 			</transparency>
+			<script>
+				<triggerType>
+					LE-trigger-onScene
+				</triggerType>
+				<scriptName>
+					worldFunc
+				</scriptName>
+				<parameter>
+					setMountainHeight(36)
+				</parameter>
+				<parameter>
+					
+				</parameter>
+			</script>
 			<asset>
 				ext_giantMushroom
 			</asset>
 		</staticmesh>
+		<box>
+			<name>
+				SpawnPoint0
+			</name>
+			<parent>
+				*render
+			</parent>
+			<pos>
+				<x>
+					300.66293335
+				</x>
+				<y>
+					572.152587891
+				</y>
+				<z>
+					59.1304016113
+				</z>
+			</pos>
+			<scale>
+				<x>
+					1.0
+				</x>
+				<y>
+					7.94085979462
+				</y>
+				<z>
+					4.96592664719
+				</z>
+			</scale>
+			<hpr>
+				<x>
+					19.0580863953
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					-0.0
+				</z>
+			</hpr>
+			<shear>
+				<x>
+					1.02549382319e-08
+				</x>
+				<y>
+					0.0
+				</y>
+				<z>
+					0.0
+				</z>
+			</shear>
+			<colorScale>
+				<a>
+					1.0
+				</a>
+				<r>
+					1.0
+				</r>
+				<g>
+					1.0
+				</g>
+				<b>
+					1.0
+				</b>
+			</colorScale>
+			<tag>
+				<key>
+					LE-aggression
+				</key>
+				<tag>
+					0
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-currentHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					LE-maxHealth
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<tag>
+				<key>
+					OBJRoot
+				</key>
+				<tag>
+					1
+				</tag>
+			</tag>
+			<transparency>
+				0
+			</transparency>
+			<tangible>
+				1
+			</tangible>
+			<fromBitMask>
+				1048575
+			</fromBitMask>
+			<intoBitMask>
+				1048575
+			</intoBitMask>
+		</box>
 		<staticmesh>
 			<name>
 				int_shelf:1

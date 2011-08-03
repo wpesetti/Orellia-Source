@@ -1,7 +1,7 @@
 # Used as a basis by StandaloneExporter, which fills in some of the values to reflect the local computer and project name.
 from pandac.PandaModules import loadPrcFileData
 loadPrcFileData("", """fullscreen 0
-win-size 1024 768""")
+win-size 800 600""")
 
 #== Python and Panda imports ==
 GAMEPLAY_FOLDER = 'C:/Panda3D-1.7.2/direct/ETCleveleditor'
@@ -186,8 +186,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.pauseState = PauseGameState(self)
         #self.mainMenu = MainMenuUI(self);
         
-        self.accept('p', self.pauseToggle);
-        self.createLoadScreen('./LEGameAssets/Textures/title_screen.png')
+        #self.accept('p', self.pauseToggle);
+        self.createLoadScreen('./LEGameAssets/Textures/title_screen.jpg')
         base.graphicsEngine.renderFrame()
         
     #== Environment and Rendering Settings ==
@@ -459,6 +459,9 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         Sequence(Wait(movieSound.length()),Func(self.killMovie)).start()
     
     def pauseToggle(self):
+        if self.conversationMgr.isConversationOpen():
+            return;
+        
         if self.paused:
             self.resume();
         else:
@@ -469,9 +472,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.hero.getActorHandle().stop('anim_jogFemale')
         self.tasks = []
         self.enemyMan.pauseAll()
-        self.ignore("j");
-        if self.gameplayUI.journalUI.window_show:
-            self.gameplayUI.journalUI.popoutWindow();
         
         for taskName in taskMgr.getAllTasks():
             if not "Loop" in str(taskName) and not "ival" in str(taskName) and not "takeSnapShot" in str(taskName):
@@ -483,10 +483,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.toggleMouse(not True);
         self.pauseState.activate()
     def resume(self):
-        world.accept("j", self.gameplayUI.journalUI.popoutWindow);
-        if not self.gameplayUI.journalUI.window_show:
-            self.gameplayUI.journalUI.popoutWindow();
-        
         if len(self.tempMovements) > 0:
             self.hero.getActorHandle().loop('anim_jogFemale')
         else:
@@ -1880,6 +1876,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
     def playBackground(self, sound):
         mySound = base.loader.loadSfx(sound)
         mySound.setLoop(True)
+        mySound.setVolume(0.9)
         mySound.play()
         
     def devTool(self,toolNum):
@@ -2012,7 +2009,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         base.setBackgroundColor(0,0,0,1)
         self.bcard.hide()
         self.fcard.show()
-        self.fcard.setColor(1.0,1.0,1.0,0.5)
+        self.fcard.setColor(1.0,1.0,1.0,0.3)
         self.fcard.setScale(1.00)
         self.fcard.setPos(0,0,0)
         self.fcard.setR(0)

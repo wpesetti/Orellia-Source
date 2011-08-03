@@ -2,7 +2,7 @@
   "egg-texture-cards -o button.egg -p 240,240 ok.png click.png disable.png rolling_over.png"
 }
 <Texture> rolling_over {
-  ../Textures/journalBtn.png
+  ../Textures/ui/journalBtn.png
 }
 <Texture> ok {
   ../Textures/ui/journalBtn.png

@@ -138,6 +138,7 @@ class ConversationMgrBase:
     def playLineSound(self,conversationName,conversationLine):
         self.convoSound.stop()
         self.convoSound = base.loader.loadSfx("Sounds\\" +str(conversationName)+"\\" + str(conversationLine) + ".mp3")
+        self.convoSound.setVolume(2.8)
         self.convoSound.play()
         pass
     

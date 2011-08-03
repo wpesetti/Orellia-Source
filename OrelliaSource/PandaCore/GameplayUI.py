@@ -51,10 +51,10 @@ class GameplayUI(UIBase):
         UIBase.__init__(self,world)
         
         #add frame border (temp!!!!!)
-        #self.border = DirectFrame(image = ("./LEGameAssets/Textures/border.png"), frameColor=(0, 0, 0, 0),
-        #                      image_scale = (1,1,1),image_pos = (0, 0, 0),frameSize=(-1,1,-1,1),pos=(0,0,0))
-        #self.border.setTransparency(1)
-        #self.border.reparentTo(render2d)
+        self.border = DirectFrame(image = ("./LEGameAssets/Textures/border.png"), frameColor=(0, 0, 0, 0),
+                              image_scale = (1,1,1),image_pos = (0, 0, 0),frameSize=(-1,1,-1,1),pos=(0,0,0))
+        self.border.setTransparency(1)
+        self.border.reparentTo(render2d)
         
         self.journalUI = JournalUI(world)
         self.pauseUI = PauseUI(world)
@@ -70,8 +70,8 @@ class GameplayUI(UIBase):
         taskMgr.add(self.update, "updateUI")
         
         # change the conversationUI position
-        self.world.accept('u', self.conversationUI.repositionUp)
-        self.world.accept('j', self.conversationUI.repositionDown)
+        #self.world.accept('u', self.conversationUI.repositionUp)
+        #self.world.accept('j', self.conversationUI.repositionDown)
         
         
         # health bars
@@ -117,7 +117,7 @@ class GameplayUI(UIBase):
         #self.shroomUI.hideAll()
         self.pauseUI.hideAll()
         self.journalUI.hideAll()
-        #self.border.hide()
+        self.border.hide()
 #        self.journalUI.hide()
 #        self.conversationUI.hide()
 #        self.lifebarUI.hide()
@@ -129,7 +129,7 @@ class GameplayUI(UIBase):
         self.pauseUI.showAll()
         #self.shroomUI.showAll();
         self.journalUI.showAll()
-        #self.border.show()
+        self.border.show()
 #        self.journalUI.show()
 #        self.conversationUI.show()
 #        self.lifebarUI.show()

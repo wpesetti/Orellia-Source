@@ -92,7 +92,14 @@ class Enemy(DirectObject):
         self.collisionView.addSolid(CollisionBox(Point3(-.5,0,- 10),Point3(.5,50,20)))
         self.collisionView.setIntoCollideMask(BitMask32.bit(2))
         self.collisionNode = self.ScanNodePath.attachNewNode(self.collisionView)
-        
+
+        plane1 = loader.loadModel("Models/scan.egg")
+        plane1.reparentTo(self.ScanNodePath)
+        plane1.setPos(0,0,10)
+        plane1.setColor(255,0,0)
+        plane1.setSa(.5)
+        plane1.setScale(1)
+
         self.scanNode2 = PandaNode(gameObj.getName()+"-ScanNode") #sets up all collision features
         self.ScanNodePath2 = gameObj.attachNewNode(self.scanNode2)
         
@@ -100,6 +107,14 @@ class Enemy(DirectObject):
         self.collisionView2.addSolid(CollisionBox(Point3(-.5,0,- 10),Point3(.5,50,20)))
         self.collisionView2.setIntoCollideMask(BitMask32.bit(2))
         self.collisionNode2 = self.ScanNodePath2.attachNewNode(self.collisionView2)
+
+        plane2 = loader.loadModel("Models/scan.egg")
+        plane2.reparentTo(self.ScanNodePath2)
+        plane2.setPos(0,0,10)
+        plane2.setColor(255,0,0)
+        plane2.setSa(.5)
+        plane2.setScale(1)
+
         self.movementType = "normal"
         if "point" in enemyTag:
             self.movementType = "point"
@@ -130,9 +145,9 @@ class Enemy(DirectObject):
         messenger.send("addCollision",[self.collisionNode2,"Queue"])
         messenger.send("addCollision",[self.collisionSphere,"Handle"])
         
-        self.collisionNode.show()
+        #self.collisionNode.show()
         #self.collisionSphere.show()
-        self.collisionNode2.show()
+        #self.collisionNode2.show()
         taskMgr.add(self.enemyUpdate,"enemyUpdate") #starts the enemy ai loop
         #taskMgr.add(self.updateHeight,"enemyHeight") #starts the enemy ai loop
         print "ENEMY CREATED"
@@ -208,6 +223,7 @@ class Enemy(DirectObject):
             ## taskMgr.doMethodLater(0,self.disableCollisions,"enemyDis"+self.gameObj.getName())
             print "ALERT! ALERT! DETECTED BY ",self.gameObj.getName()
             mySound = self.worldObj.loader.loadSfx("Sounds\\robot_alert.mp3")
+            mySound.setVolume(0.5)
             mySound.play()
             #messenger.send("playSound",["robot_alert",False,True]) # taken out by MC
             ##self.isAlerted = True
@@ -347,3 +363,69 @@ class Enemy(DirectObject):
             # TODO: unlink these from being in the same task in case we want pivot to not be linked to hero (ex. cutscene)
         self.enemyGroundHandler.clearEntries()
         return task.cont
+    #helper function to make a square given the Lower-Left-Hand and Upper-Right-Hand corners 
+def makeSquare(x1,y1,z1, x2,y2,z2):
+	format=GeomVertexFormat.getV3n3cpt2()
+	vdata=GeomVertexData('square', format, Geom.UHDynamic)
+
+	vertex=GeomVertexWriter(vdata, 'vertex')
+	normal=GeomVertexWriter(vdata, 'normal')
+	color=GeomVertexWriter(vdata, 'color')
+	texcoord=GeomVertexWriter(vdata, 'texcoord')
+	
+	#make sure we draw the sqaure in the right plane
+	if x1!=x2:
+		vertex.addData3f(x1, y1, z1)
+		vertex.addData3f(x2, y1, z1)
+		vertex.addData3f(x2, y2, z2)
+		vertex.addData3f(x1, y2, z2)
+
+		normal.addData3f(myNormalize(Vec3(2*x1-1, 2*y1-1, 2*z1-1)))
+		normal.addData3f(myNormalize(Vec3(2*x2-1, 2*y1-1, 2*z1-1)))
+		normal.addData3f(myNormalize(Vec3(2*x2-1, 2*y2-1, 2*z2-1)))
+		normal.addData3f(myNormalize(Vec3(2*x1-1, 2*y2-1, 2*z2-1)))
+		
+	else:
+		vertex.addData3f(x1, y1, z1)
+		vertex.addData3f(x2, y2, z1)
+		vertex.addData3f(x2, y2, z2)
+		vertex.addData3f(x1, y1, z2)
+
+		normal.addData3f(myNormalize(Vec3(2*x1-1, 2*y1-1, 2*z1-1)))
+		normal.addData3f(myNormalize(Vec3(2*x2-1, 2*y2-1, 2*z1-1)))
+		normal.addData3f(myNormalize(Vec3(2*x2-1, 2*y2-1, 2*z2-1)))
+		normal.addData3f(myNormalize(Vec3(2*x1-1, 2*y1-1, 2*z2-1)))
+
+	#adding different colors to the vertex for visibility
+	color.addData4f(1.0,0.0,0.0,1.0)
+	color.addData4f(0.0,1.0,0.0,1.0)
+	color.addData4f(0.0,0.0,1.0,1.0)
+	color.addData4f(1.0,0.0,1.0,1.0)
+
+	texcoord.addData2f(0.0, 1.0)
+	texcoord.addData2f(0.0, 0.0)
+	texcoord.addData2f(1.0, 0.0)
+	texcoord.addData2f(1.0, 1.0)
+
+	#quads arent directly supported by the Geom interface
+	#you might be interested in the CardMaker class if you are
+	#interested in rectangle though
+	tri1=GeomTriangles(Geom.UHDynamic)
+	tri2=GeomTriangles(Geom.UHDynamic)
+
+	tri1.addVertex(0)
+	tri1.addVertex(1)
+	tri1.addVertex(3)
+
+	tri2.addConsecutiveVertices(1,3)
+
+	tri1.closePrimitive()
+	tri2.closePrimitive()
+
+
+	square=Geom(vdata)
+	square.addPrimitive(tri1)
+	square.addPrimitive(tri2)
+	
+	return square
+

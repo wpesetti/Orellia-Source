@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{170f44b4-cef6-4f47-98ba-52e2aceccc78}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>testmap1.py</StartupFile>
+    <StartupFile>Orellia.py</StartupFile>
     <SearchPath>C:\Panda3D-1.7.2</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <AssemblyName>Orellia Source</AssemblyName>
@@ -26,6 +26,7 @@
   <ItemGroup>
     <Compile Include="Clickable.py" />
     <Compile Include="Enemy.py" />
+    <Compile Include="Orellia.py" />
     <Compile Include="PandaCore\ActionMgr.py" />
     <Compile Include="PandaCore\CamViewDialog.py" />
     <Compile Include="PandaCore\CombatMgr.py" />
@@ -151,7 +152,6 @@
     <Compile Include="Scripts\StartMob.py" />
     <Compile Include="Scripts\worldFunc.py" />
     <Compile Include="Scripts\worldFunc_2.py" />
-    <Compile Include="testmap1.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PandaCore" />
