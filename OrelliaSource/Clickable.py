@@ -127,9 +127,13 @@ class Clickable(DirectObject):
             exec "self.worldObj."+funcName
             
     def activateTerminal(self):
-        self.activeTerm += 1
+        self.worldObj.activeTerm += 1
+        self.textScreen.destroy()
+        self.textOn = False
+        self.ignore('u')
+        self.disable = True
         self.worldObj.scriptInterface.SetJournalEntryValue("Ship",10,True,0,None)
-        if self.activeTerm == 3:
+        if self.worldObj.activeTerm == 3:
             self.worldObj.scriptInterface.DestroyGameObject("SpecialWall")
     def delete(self):
         taskMgr.remove("clickUpdater")

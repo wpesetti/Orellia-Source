@@ -58,7 +58,7 @@ from panda3d.core import RopeNode
 from panda3d.core import NurbsCurveEvaluator
 from direct.showbase.Transitions import Transitions 
 
-SCENE_FILE = 'default_0.scene'
+SCENE_FILE = 'default_3.scene'
 
 LIBRARY_INDEX = 'lib.index'
 JOURNAL_FILE = 'Orellia.journal'
@@ -437,7 +437,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         # Add the task that initiates the screenshots.
         taskMgr.add(self.takeSnapShot, "takeSnapShot")
         
-        self.openCutScene()
+        if self.currScene == "default_0":
+            self.openCutScene()
 
 ##== Utility and World Initialization functions =============================##
     def playMovie(self, movieName):
@@ -1566,6 +1567,8 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         print("Background Sound Scene: " + sceneName);
         self.updateBackgroundSound(sceneName);
         self.gameplayUI.showAll();
+        if sceneName == "default_4.scene":
+            self.camTrail -= 15
         #self.loadBar.hide()
         #self.destroyLoadScreen() 
 ############################# SPECIAL TEST FUNCTIONS #######################################
@@ -1810,7 +1813,7 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
         self.stopTasks.append(moveLerp)
         if useParticles:
             model = render.attachNewNode(PandaNode("DustParticle"))
-            model.setPos(self.objects["Core"].getPos() + (0,0,20))
+            model.setPos(downObj.getPos() + (0,0,20))
             model.setScale(5,5,5)
             print self.hero.getPos()
             #particle = ParticleEffect()
@@ -1819,19 +1822,6 @@ class World(ShowBase): # CONDISER: change to DirectObject/FSM
             p.addParticleEffect('./particles/dust.ptf',(0,0,0),(1,1,1),particleNode = model)
             #particle.start(model)
         moveLerp.start()
-
-
-
-
-
-
-
-
-
-
-
-
-
         self.runCamera("camShroom",10)
     def setClickManLikeABoss(self):
         self.doingAnim = not False;
